@@ -40,15 +40,21 @@ body{
     display: inline-block;
 }
 
+#crop{
+    width: 9rem;
+    height: 10.6rem;
+    overflow: hidden;
+    border-radius: 7px;
+}
+
 #hero-image img{
     width: 9rem;
-    border-radius: 10px;
 }
 
 #accent-img{
     position: absolute;
-    top: 440px;
-    left: 120px
+    top: 510px;
+    left: 110px
    
 }
 
