@@ -43,6 +43,29 @@ body{
     border-radius: 10px;
 }
 
+#bentoContainer{
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    gap: 1rem;
+    grid-template-areas: 
+    "box-1 box-3"
+    "box-4 box-5"
+    "box-6 box-7";
+    overflow: hidden;
+    padding-left: 0.5rem;
+    
+
+
+}
+.bentoImg{
+   
+    width: 10rem;
+    height: 15rem;
+    object-fit: cover;
+}
+
 #accent-img{
     
 }
