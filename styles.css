@@ -27,6 +27,10 @@ body{
     border-radius: 10px;
 }
 
+#accent-img{
+    
+}
+
 #hero-text{
     width: 7rem;
 }
@@ -40,8 +44,4 @@ body{
     justify-content: center;
     list-style: none;
     gap: 1rem;
-}
-
-#new-in {
-
 }
