@@ -1,0 +1,47 @@
+:root{
+    --bgColor: black;
+    --primaryColor: white;
+}
+body{
+    color: var(--primaryColor);
+    background-color: var(--bgColor);
+}
+
+
+#hero{
+    display: flex;
+    width: 22rem;
+    height: 10rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 2rem;
+}
+
+#hero-image{
+    
+}
+
+#hero-image img{
+    width: 9rem;
+    border-radius: 10px;
+}
+
+#accent-img{
+    
+}
+
+#hero-text{
+    width: 7rem;
+}
+
+#hero-text p{
+    font-size: 0.7rem;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+}
