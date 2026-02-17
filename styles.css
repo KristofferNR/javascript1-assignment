@@ -17,6 +17,21 @@ body{
     gap: 1rem;
     padding-top: 2rem;
 }
+#headerImg{
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+#headerContainer{
+    margin-bottom: 1rem;
+}
+#headerContainer > a > h1{
+    position: absolute;
+    top: 16.3rem;
+    left: 3.8rem;
+    text-shadow: 1px 2px 1px black;
+    color: var(--primaryColor);
+}
 
 #hero-image{
     
