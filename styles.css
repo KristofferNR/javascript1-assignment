@@ -24,10 +24,11 @@ body{
 }
 #headerContainer{
     margin-bottom: 1rem;
+    position: relative;
 }
 #headerContainer > a > h1{
     position: absolute;
-    top: 16.3rem;
+    top: 16rem;
     left: 3.8rem;
     text-shadow: 1px 2px 1px black;
     color: var(--primaryColor);
