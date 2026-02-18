@@ -49,15 +49,17 @@ body {
   display: inline-block;
 }
 
-#crop {
-  width: 9rem;
-  height: 10.6rem;
-  overflow: hidden;
-  border-radius: 7px;
+#crop{
+    position: relative;
+    width: 9rem;
+    height: 10.6rem;
+    overflow: hidden;
+    border-radius: 7px;
 }
 
-#hero-image img {
-  width: 9rem;
+#hero-image img{
+    width: 100%;
+    display: block;
 }
 
 #bentoContainer {
@@ -79,10 +81,10 @@ body {
   object-fit: cover;
 }
 
-#accent-img {
-  position: absolute;
-  top: 510px;
-  left: 110px;
+#accent-img{
+    position: absolute;
+    top: 60%;
+    left: 24%;
 }
 
 #hero-text {
