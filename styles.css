@@ -89,13 +89,55 @@ body{
     font-size: 0.7rem;
 }
 
-.nav-container {
+/*-- Navigeringsmenyn --*/
+.main-nav {
     display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start; /*viktig för positionering*/
+    /*align-items: center;*/
+    margin-left: 0.3rem;
+    padding-bottom: 2.4rem;
 }
 
+.nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+nav a:hover{
+    font-size: 1.5rem;
+}
+
+#new-in {
+    color: rgb(245, 71, 71);
+}
+
+#new-in:hover {
+    background-color: black;
+    font-size: 1.5rem;
+}
+
+.btn button {
+    width: 100%;
+    padding: 0.3rem;
+    text-align: center;
+    cursor: pointer; 
+    margin-bottom: 0.8rem;
+    width: 5.9rem;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+  border-color: greenyellow;
+  border-radius: 0.2rem;
+}
 footer {
     font-family: 'Space Grotesk';
 }
