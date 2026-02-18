@@ -9,8 +9,7 @@ body{
     background-color: var(--bgColor);
 }
 
-
-#hero{
+#hero {
     display: flex;
     width: 100%;
     height: 10rem;
@@ -19,16 +18,19 @@ body{
     gap: 1rem;
     padding-top: 2rem;
 }
-#headerImg{
+
+#headerImg {
     width: 100%;
     height: 20rem;
     object-fit: cover;
 }
-#headerContainer{
+
+#headerContainer {
     margin-bottom: 1rem;
     position: relative;
 }
-#headerContainer > a > h1{
+
+#headerContainer > a > h1 {
     position: absolute;
     top: 16rem;
     left: 3.8rem;
@@ -36,22 +38,22 @@ body{
     color: var(--primaryColor);
 }
 
-#hero-image{
+#hero-image {
     display: inline-block;
 }
 
-#crop{
+#crop {
     width: 9rem;
     height: 10.6rem;
     overflow: hidden;
     border-radius: 7px;
 }
 
-#hero-image img{
+#hero-image img {
     width: 9rem;
 }
 
-#bentoContainer{
+#bentoContainer {
     margin-top: 5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -63,29 +65,25 @@ body{
     "box-6 box-7";
     overflow: hidden;
     padding-left: 0.5rem;
-    
-
-
 }
-.bentoImg{
-   
+
+.bentoImg {
     width: 10rem;
     height: 15rem;
     object-fit: cover;
 }
 
-#accent-img{
+#accent-img {
     position: absolute;
     top: 510px;
-    left: 110px
-   
+    left: 110px 
 }
 
-#hero-text{
+#hero-text {
     width: 9rem;
 }
 
-#hero-text p{
+#hero-text p {
     font-size: 0.7rem;
 }
 
@@ -117,6 +115,7 @@ footer {
     gap: 10px;
 
 }
+
 /* bild-karusell*/
 .carousel-gallery {
     padding: 1rem;
