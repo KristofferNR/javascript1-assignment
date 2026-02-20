@@ -1,133 +1,149 @@
-:root{
-    --bgColor: black;
-    --primaryColor: white;
+:root {
+  --bgColor: black;
+  --primaryColor: white;
 }
-body{
-    margin: 0;
-    width: 100%;
-    color: var(--primaryColor);
-    background-color: var(--bgColor);
+body {
+  margin: 0;
+  width: 100%;
+
+  color: var(--primaryColor);
+  background-color: var(--bgColor);
 }
 
 #hero {
-    display: flex;
-    width: 100%;
-    height: 10rem;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding-top: 2rem;
-}
+  margin-bottom: 4rem;
+  display: flex;
+  width: 100%;
 
+  align-items: start;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 2rem;
+}
 #headerImg {
-    width: 100%;
-    height: 20rem;
-    object-fit: cover;
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  display: block;
 }
-
 #headerContainer {
-    margin-bottom: 1rem;
-    position: relative;
+  margin-bottom: 1rem;
+  width: 100%;
+  position: relative;
+  text-align: center;
 }
-
-#headerContainer > a > h1 {
-    position: absolute;
-    top: 16rem;
-    left: 3.8rem;
-    text-shadow: 1px 2px 1px black;
-    color: var(--primaryColor);
+#headerContainer > h1 {
+  width: 100%;
+  position: absolute;
+  top: 16rem;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 2em;
+  text-shadow: 1px 2px 1px black;
+  color: var(--primaryColor);
+}
+#main {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 #hero-image {
-    display: inline-block;
+  display: inline-block;
 }
 
 #crop {
-    width: 9rem;
-    height: 10.6rem;
-    overflow: hidden;
-    border-radius: 7px;
+  position: relative;
+  width: 9rem;
+
+  overflow: hidden;
+  border-radius: 7px;
 }
 
 #hero-image img {
-    width: 9rem;
+  width: 100%;
+  display: block;
 }
 
 #bentoContainer {
-    margin-top: 5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
-    gap: 1rem;
-    grid-template-areas: 
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1rem;
+  grid-template-areas:
     "box-1 box-3"
     "box-4 box-5"
     "box-6 box-7";
-    overflow: hidden;
-    padding-left: 0.5rem;
+  overflow: hidden;
+  padding-left: 0.5rem;
 }
-
 .bentoImg {
-    width: 10rem;
-    height: 15rem;
-    object-fit: cover;
+  width: 10rem;
+  height: 15rem;
+  object-fit: cover;
 }
 
 #accent-img {
-    position: absolute;
-    top: 510px;
-    left: 110px 
+  position: absolute;
+  top: 60%;
+  left: 24%;
 }
 
 #hero-text {
-    width: 9rem;
+  padding: 0;
+  margin: 0;
+  width: 9rem;
 }
 
 #hero-text p {
-    font-size: 0.7rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0.7rem;
 }
 
 /*-- Navigeringsmenyn --*/
 .main-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /*viktig för positionering*/
-    /*align-items: center;*/
-    margin-left: 0.3rem;
-    padding-bottom: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /*viktig för positionering*/
+  /*align-items: center;*/
+  margin-left: 0.3rem;
+  padding-bottom: 2.4rem;
 }
 
 .nav-list {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .nav-list li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.4rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
 }
 
-nav a:hover{
-    font-size: 1.5rem;
+nav a:hover {
+  font-size: 1.5rem;
 }
 
 #new-in {
-    color: rgb(245, 71, 71);
+  color: rgb(245, 71, 71);
 }
 
 #new-in:hover {
-    background-color: black;
-    font-size: 1.5rem;
+  background-color: black;
+  font-size: 1.5rem;
 }
 
 .btn button {
-    width: 100%;
-    padding: 0.3rem;
-    text-align: center;
-    cursor: pointer; 
-    margin-bottom: 0.8rem;
-    width: 5.9rem;
+  width: 100%;
+  padding: 0.3rem;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 0.8rem;
+  width: 5.9rem;
 }
 
 button:hover {
@@ -137,55 +153,62 @@ button:hover {
   border-radius: 0.2rem;
 }
 footer {
-    font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
 }
 
 .carousel {
-    background-image: url(/imges/image\ 65.png);
-    background-size: cover;
-    background-color: grey;
-    background-blend-mode: multiply;
-    align-content: center;
-    align-items: center;
-    padding: 0;
-    margin-top: 3rem;
+  max-width: 871px;
+  background-image: url(/imges/image\ 65.png);
+  object-fit: fill;
+  background-size: fill;
+  background-color: grey;
+  background-blend-mode: multiply;
+  align-content: center;
+  align-items: center;
+  padding: 0;
+  margin-top: 3rem;
 }
 
 .carousel p {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 /* bild-karusell*/
 .carousel-gallery {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(5, 45vw);
-    grid-column-gap: 0.5rem;
-    overflow: scroll;
-    height: 100%;
-    scroll-snap-type: both mandatory;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 170px);
+  grid-column-gap: 0.5rem;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primaryColor) transparent;
+  
+
+  height: 100%;
+  scroll-snap-type: both mandatory;
 }
 
+
 .carousel-item {
-    scroll-snap-align: center; /* centrerar bild */
-    display: inline-block;
+  scroll-snap-align: center; /* centrerar bild */
+  display: inline-block;
 }
 
 .carousel-item img {
-    border-radius: 2px;
+  border-radius: 2px;
 }
- 
+
 #footer-list ul {
-    display: flex;
-    list-style: none;
-    font-size: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0.5rem;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  font-size: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem;
+  padding: 0;
 }
 
 #footer-list ul:hover {
@@ -193,24 +216,24 @@ footer {
 }
 
 #social-media {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
-    padding: 0;
-    margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0;
+  margin: 0.5rem;
 }
 
 #social-media ul {
-    display: flex;
-    list-style: none;
-    gap: 5rem;
+  display: flex;
+  list-style: none;
+  gap: 5rem;
 }
 
 .social-media-btn {
-    font-size: 30px;
-    background-color: black;
-    border: none;
+  font-size: 30px;
+  background-color: black;
+  border: none;
 }
 
 .social-media-btn:hover {
@@ -218,11 +241,102 @@ footer {
 }
 
 .fa.fa-instagram {
-    color: white;
-    background: black; 
+  color: white;
+  background: black;
 }
 
 .fa.fa-twitter {
-    color: white;
-    background: black;
+  color: white;
+  background: black;
+}
+@media screen and (min-width: 376px) {
+  
+  #bentoContainer {
+    margin-top: 5rem;
+    display: grid;
+    max-width: 375px;
+  }
+  #crop {
+    width: 12rem;
+  }
+
+  #hero-text {
+    width: 10rem;
+  }
+
+  #hero-text p {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 667px) {
+   
+  #bentoContainer {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: fit-content;
+    gap: 1rem;
+    grid-template-areas:
+      "box-1 box-3 box-4"
+      "box-5 box-6 box-7";
+  }
+  #headerImg {
+  
+  height: 25rem;
+  
+}
+  #crop {
+    width: 20rem;
+  }
+
+  #hero-text {
+    width: 12rem;
+  }
+
+  #hero-text p {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  #hero {
+    align-items: start;
+  }
+  #headerContainer > h1 {
+    font-size: 3em;
+    top: 18rem;
+    
+  }
+  .carousel-gallery {
+  
+  grid-template-columns: repeat(5, 17rem);
+  grid-template-rows: 20rem;
+
+}
+.carousel {
+  max-width: 1000px;
+}
+.carousel-item img {
+  width:15rem;
+  height: 19rem;
+  
+}
+.bentoImg{
+        width:15rem;
+        height: 20rem;
+    }
+
+}
+
+@media screen and (min-width: 875px) {
+    #headerContainer > h1 {
+    
+    top: 30rem;
+    
+  }
+  #headerImg {
+  height: 40rem;
+  
+}
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
