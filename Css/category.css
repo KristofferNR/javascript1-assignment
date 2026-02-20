@@ -1,0 +1,39 @@
+:root {
+    --secondary-text: #9C9C9C;
+}
+
+* {
+    font-family: space grotesk; 
+}
+
+section #main-category {
+    display: flex;
+}
+
+#category-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+#secondary-category {
+    color: var(--secondary-text);
+}
+
+#logo img {
+    width: 150px;
+    padding: 0;
+    margin: 0;
+}
+
+#category-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#category-container div img {
+    height: 200px;
+}
