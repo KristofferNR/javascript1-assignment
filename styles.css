@@ -155,7 +155,6 @@ footer {
     display: flex;
     justify-content: center;
     gap: 10px;
-
 }
 
 /* bild-karusell*/
@@ -189,6 +188,10 @@ footer {
     padding: 0;
 }
 
+#footer-list ul:hover {
+    cursor: pointer;
+}
+
 #social-media {
     display: flex;
     justify-content: center;
@@ -208,6 +211,10 @@ footer {
     font-size: 30px;
     background-color: black;
     border: none;
+}
+
+.social-media-btn:hover {
+    cursor: pointer;
 }
 
 .fa.fa-instagram {
