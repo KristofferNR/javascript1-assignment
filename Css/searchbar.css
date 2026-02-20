@@ -1,0 +1,34 @@
+#searchbar-container {
+
+}
+
+#searchbar {
+
+}
+
+#search-modal {
+    position: absolute;
+    width: 100vw;
+    height: 60%;
+    display: none;
+}
+
+#search-modal.show {
+    display: block;
+}
+
+#trending {
+
+}
+
+#trending-product{
+
+}
+
+#recent {
+
+}
+
+#recent-product {
+
+}

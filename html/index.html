@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../Css/styles.css">
+    <link rel="stylesheet" href="../Css/searchbar.css">
 
     <title>Cool fashion</title>
     <script src="../js/index.js" defer></script>
@@ -35,8 +36,28 @@
                
                <div class="nav-desktop">
                     <a href="#"><img src="/person.svg" alt=""></a>
-                    <a href="#"><img src="/search.svg" alt=""></a>
+                    <a href="#" id="search-btn"><img src="/search.svg" alt=""></a>
                     <a href="#"><img src="/shopping_cart.svg" alt=""></a>
+                </div>
+                <div id="searchbar-container">
+                    <input id="searchbar">
+                </div>
+                <div id="search-modal">
+                    <p id="close-btn">x</p>
+                    <div id="trending">
+                        <div class="trending-product">
+                            <img src="" alt="">
+                            <img src="" alt="">
+                        </div>
+                        <div class="trending-product">
+                            <img src="" alt="">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                    <div id="recent">
+                        <div class="recent-product"></div>
+                        <div class="recent-product"></div>
+                    </div>
                 </div>
 
                 <div class="nav-img">
