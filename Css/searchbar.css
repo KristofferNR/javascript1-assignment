@@ -1,16 +1,28 @@
 #searchbar-container {
-
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 #searchbar {
-
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 #search-modal {
     position: absolute;
+    left: 0;
     width: 100vw;
-    height: 60%;
+    height: 100%;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 100;
     display: none;
+    border-radius: 0 0 8px 8px;
 }
 
 #search-modal.show {
@@ -31,4 +43,8 @@
 
 #recent-product {
 
+}
+
+#search-btn {
+    z-index: 101;
 }

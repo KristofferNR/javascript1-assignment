@@ -1,5 +1,3 @@
-const searchBtn = document.getElementById("search")
-
 
 //Aktiverar Hamburgermenyn
 const hamburger = document.querySelector(".hamburger");
