@@ -10,7 +10,7 @@ section #main-category {
     display: flex;
 }
 
-#category-name {
+#category-title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,16 +22,21 @@ section #main-category {
 #secondary-category {
     color: var(--secondary-text);
 }
-
+ 
 #logo img {
-    width: 150px;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    gap: 0;
     padding: 0;
-    margin: 0;
-}
+} 
 
 #category-container {
     display: grid;
     grid-template-columns: auto auto;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem;
 }
 
 #category-container div img {
