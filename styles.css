@@ -105,27 +105,27 @@ body {
 
 /*-- Navigeringsmenyn --*/
 .main-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /*viktig för positionering*/
-  /*align-items: center;*/
-  margin-left: 0.3rem;
-  padding-bottom: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /*viktig för positionering*/
+    /*align-items: center;*/
+    margin-left: 0.3rem;
+    padding-bottom: 2.4rem;
 }
 
 .nav-list {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .nav-list li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.4rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
 }
 
-nav a:hover {
-  font-size: 1.5rem;
+nav a:hover{
+    font-size: 1.5rem;
 }
 
 #new-in {
@@ -133,25 +133,47 @@ nav a:hover {
 }
 
 #new-in:hover {
-  background-color: black;
-  font-size: 1.5rem;
+    background-color: black;
+    font-size: 1.5rem;
 }
 
 .btn button {
-  width: 100%;
-  padding: 0.3rem;
-  text-align: center;
-  cursor: pointer;
-  margin-bottom: 0.8rem;
-  width: 5.9rem;
+    width: 100%;
+    padding: 0.3rem;
+    text-align: center;
+    cursor: pointer; 
+    margin-bottom: 0.8rem;
+    width: 5.9rem;
 }
 
-button:hover {
-  background-color: black;
-  color: white;
-  border-color: greenyellow;
-  border-radius: 0.2rem;
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
 }
+
+.nav-img {
+    display: flex;
+    width: 650px;
+    height: auto;
+    gap: 0.5rem;
+}
+
+/*linjerna i ham-ikonen roterar och 
+bildar ett kryss när man klickar*/
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0; /*Linjen döljs*/
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
 footer {
   font-family: "Space Grotesk";
 }
@@ -239,95 +261,4 @@ footer {
 .fa.fa-twitter {
   color: white;
   background: black;
-}
-@media screen and (min-width: 376px) {
-  
-  #bentoContainer {
-    margin-top: 5rem;
-    display: grid;
-    max-width: 375px;
-  }
-  #crop {
-    width: 12rem;
-  }
-
-  #hero-text {
-    width: 10rem;
-  }
-
-  #hero-text p {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (min-width: 667px) {
-   
-  #bentoContainer {
-    grid-template-columns: 1fr 1fr 1fr;
-    max-width: fit-content;
-    gap: 1rem;
-    grid-template-areas:
-      "box-1 box-3 box-4"
-      "box-5 box-6 box-7";
-  }
-  #headerImg {
-  
-  height: 25rem;
-  
-}
-  #crop {
-    width: 20rem;
-  }
-
-  #hero-text {
-    width: 12rem;
-  }
-
-  #hero-text p {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-  }
-  #hero {
-    align-items: start;
-  }
-  #headerContainer > h1 {
-    font-size: 3em;
-    top: 18rem;
-    
-  }
-  .carousel-gallery {
-  
-  grid-template-columns: repeat(5, 17rem);
-  grid-template-rows: 20rem;
-
-}
-.carousel {
-  max-width: 1000px;
-}
-.carousel-item img {
-  width:15rem;
-  height: 19rem;
-  
-}
-.bentoImg{
-        width:15rem;
-        height: 20rem;
-    }
-
-}
-
-@media screen and (min-width: 875px) {
-    #headerContainer > h1 {
-    
-    top: 30rem;
-    
-  }
-  #headerImg {
-  height: 40rem;
-  
-}
-  footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 }
