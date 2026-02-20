@@ -23,20 +23,26 @@ async function loadProducts() {
                 //<p>Price: $${product.price}</p>
             //`;
 
+
             const productImg = document.createElement("img")
             const productTitle = document.createElement("h3")
-            const productDescription = document.createElement("p")
+            //const productDescription = document.createElement("p")
             const productPrice = document.createElement("p")
 
-            productImg.textContent = product.image
+            productImg.classList.add("bentoImg")
+
+            productImg.src = product.image
+            productImg.alt = product.title
+
             productTitle.textContent = product.title
-            productDescription.textContent = product.description
-            productPrice.textContent = product.price
+            //productDescription.textContent = product.description
+            productPrice.textContent = `$ ${product.price}`
 
             //kopplar productCard till bentoContainern och gör productCard till ett child av bentoContainer
             // <div id="bentoContainer">
             //      <div class="product-card"></div>
             // </div>
+            productCard.append(productImg, productTitle, productPrice)
             bentoContainer.appendChild(productCard);
             
         });
