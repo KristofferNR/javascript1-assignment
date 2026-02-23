@@ -22,7 +22,7 @@ section #main-category {
     padding: 0;
 } 
 
-@media screen and (min-width: 376px) {
+@media screen and (min-width: 375px) {
 
 #category-title {
     display: flex;
@@ -62,4 +62,43 @@ section #main-category {
     #category-container {
         grid-template-columns: auto auto auto auto;
     }
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.pagination a {
+    display: inline-block;
+    margin: 0 12px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+a.active {
+    padding: 0.3rem;
+    border: solid;
+    border-radius: 30%;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.page-btn:hover {
+    background-color: white;
+    border-radius: 30%;
+    color: black;
 }
