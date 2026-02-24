@@ -168,3 +168,44 @@ body{
     height: 13rem;
     background-color: white;
 }
+#bg-Img{
+    width: 10rem;
+    opacity: 30%;
+}
+#art {
+
+margin-top: 5rem;
+display: flex;
+position: relative;
+width: 375px;
+box-sizing: border-box;
+align-items: center;
+justify-content: center;
+
+
+}
+#bg-continer{
+    text-align: center;
+    position: relative;
+}
+#art-text{
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    font-size: 12px;
+    width: 120px;
+}
+.side-art{
+    border-radius: 5px;
+    width: 5rem;
+}
+.left{
+    position: absolute;
+    left: 2.5rem;
+    z-index: 1;
+}
+.right{
+    position: absolute;
+    right: 2.5rem;
+    z-index: 1;
+}
