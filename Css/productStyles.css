@@ -31,6 +31,25 @@ body {
   width: fit-content;
   max-width: 375px;
 }
+#information{
+  display: block;
+  background-color: rgba(0, 0, 0, 0.938);
+  color: var(--primaryColor);
+  border: 1px solid rgba(255, 255, 255, 0.219);
+  gap: 1rem;
+  padding: 0rem 1rem;
+  padding-bottom: 0.5rem;
+  width: 90%;
+  box-sizing: border-box;
+  position: absolute;
+
+
+}
+#information > div{
+  gap: 0;
+  padding-bottom: 0.5rem;
+  box-shadow: 0px 1px 0px white;
+}
 #productImg-list {
   flex-direction: row;
   display: flex;
