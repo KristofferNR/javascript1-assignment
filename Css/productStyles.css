@@ -152,9 +152,9 @@ body {
   border-radius: 12px;
   background-color: var(--greenBtnColor);
 }
-#infoBtn{
-    margin-top: 1rem;
-    text-align: end;
+#infoBtn {
+  margin-top: 1rem;
+  text-align: end;
 }
 
 #more-like-continer {
@@ -183,6 +183,9 @@ body {
   height: 13rem;
   background-color: white;
 }
+ #more-like-section > div > img{
+    display: none;
+  }
 #bg-Img {
   width: 10rem;
   opacity: 30%;
@@ -227,6 +230,20 @@ body {
   right: 2.5rem;
   z-index: 1;
 }
+#money {
+  font-size: 20px;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+}
+#money-big {
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+#infoBtn-small {
+  width: 10rem;
+}
+
 
 @media screen and (min-width: 665px) {
   #more-like-section {
@@ -260,7 +277,7 @@ body {
   }
   #color-list-big {
     padding-left: 0;
-    margin-top: 5rem;
+
     margin-bottom: 0;
     justify-content: start;
   }
@@ -278,3 +295,91 @@ body {
     display: flex;
   }
 }
+
+@media screen and (min-width: 768px) {
+  #bg-Img {
+    width: 20rem;
+  }
+  #art {
+    margin-top: 10rem;
+    width: 768px;
+    margin-bottom: 5rem;
+  }
+
+  #art-text {
+    top: 7rem;
+    left: 5rem;
+    font-size: 20px;
+    width: 10rem;
+  }
+  .side-art {
+    width: 10rem;
+  }
+  .left {
+    left: 5.5rem;
+  }
+  .right {
+    right: 5.5rem;
+  }
+
+  #productInfo-continer {
+    max-width: 320px;
+  }
+  #product-section {
+    margin-top: 10rem;
+  }
+  #more-like-section {
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #productInfo-continer {
+    max-width: max-content;
+  }
+  #mainProductImg {
+    width: 25rem;
+    height: 30rem;
+  }
+  #productImg-continer {
+    max-width: fit-content;
+  }
+  #product-section {
+    gap: 5rem;
+    justify-content: center;
+  }
+  #productImg-list {
+    max-width: 400px;
+    overflow-x: scroll;
+    list-style: none;
+  }
+  .sideImg {
+    width: 5rem;
+    height: 6rem;
+  }
+  #money-big {
+    margin-top: 5rem;
+    font-size: 35px;
+  }
+  #productInfo-continer > h2 {
+    width: 20rem;
+  }
+  #more-like-section > div{
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+}
+
+@media screen and (min-width: 1200px){
+  #more-like-section > div > img{
+    width: 15rem;
+    height: 10rem;
+    display: flex;
+  }
+} 
