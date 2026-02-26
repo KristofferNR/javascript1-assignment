@@ -1,11 +1,12 @@
+/* --- NAVBAR --- */
 .navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: black;
-    color: white;
-    position: relative;
-}
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   background-color: black;
+   color: white;
+   position: relative; 
+} 
 
 .nav-header {
     width: 100%;
@@ -14,6 +15,7 @@
     align-items: center;
 }
 
+/* --- HAMBURGER ---*/
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -35,41 +37,54 @@
     transition: 0.3s;
 }
 
+/*linjerna i ham-ikonen roterar och 
+bildar ett kryss när man klickar */
+.hamburger.active .bar:nth-child(1) { 
+    transform: translateY(11px) rotate(45deg); 
+}
+.hamburger.active .bar:nth-child(2) { 
+    opacity: 0; /*Linjen döljs*/
+}
+.hamburger.active .bar:nth-child(3) { 
+    transform: translateY(-11px) rotate(-45deg); 
+}
+
+/* --- Mobile Nav Meny --- */
 .nav-menu {
     position: absolute;
     top: 30%;
     left: 0;
     z-index: 100;
-    height: 40vh;
-    width: 50vw;
-    max-width: 320px;
+    height: 35vh; /*Ändrad*/
+    max-width: 200px; /*Ändrad*/
     
     background-color: rgba(0, 0, 0, 0.95);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     padding: 1.5rem 1rem;
     gap: 1rem;
-    
     transform: translateX(-100%);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
     pointer-events: none;
 }
 
-/*växla mellan dold och synlig meny*/
+/*Växla mellan dold och synlig meny*/
 .nav-menu.active {
     transform: translateX(0);
     opacity: 1;
     pointer-events: all;
 }
 
-#new-in {
-    color: rgb(245, 71, 71);
-}
 li {
     list-style: none;
-    font-family: 'Space Grotesk';
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#new-in {
+    color: rgb(245, 71, 71);
 }
 
 .nav-link {
@@ -79,6 +94,7 @@ li {
     display: block;
 }
 
+/* Ikoner mobil */
 .nav-img {
     display: flex;
     width: 650px;
@@ -86,31 +102,101 @@ li {
     gap: 0.5rem;
 }
 
+/* Ikoner desktop - dold på mobil */
 .nav-desktop {
     display: none;
 }
 
-/*linjerna i ham-ikonen roterar och 
-bildar ett kryss när man klickar*/
-.hamburger.active .bar:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
-}
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0; /*Linjen döljs*/
-}
-.hamburger.active .bar:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
+/* ===================== DROPDOWN PANEL ===================== */
+.dropdown-panel {
+    display: none; /* syns bara på desktop */
+    position: absolute;
+    top: 73%;
+    left: 0;
+    margin-right: 0.2;
+    max-width: 88%;
+    background-color: black;
+    border: 1.5px solid #333;
+    z-index: 200;
+    padding: 1.8rem 2.5rem;
+    gap: 1.5rem;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.dropdown-panel.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
 
+.dropdown-close {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.2rem 0.4rem;
+}
 
-@media screen and (min-width: 667px)  {
-    
+.dropdown-close:hover { 
+    color: red;
+}
+
+.dropdown-columns {
+    display: flex;
+    gap: 2rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.dropdown-col h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.dropdown-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.dropdown-col ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.dropdown-col ul li a:hover { 
+    color: white; 
+}
+
+/* Bild i dropdown */
+.dropdown-image {
+    margin-left: auto;
+    width: 200px;
+    height: 180px;
+    width: fit-content;
+    object-position: top;
+}
+
+@media screen and (min-width: 667px) {
     .navbar {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 1rem 2rem;
+        position: relative; /*för dropdown*/
     }
 
     .hamburger {
@@ -132,6 +218,7 @@ bildar ett kryss när man klickar*/
         pointer-events: all;
         flex-direction: row;
         align-items: center;
+        background: transparent;;
     }
 
     .nav-link {
@@ -139,12 +226,28 @@ bildar ett kryss när man klickar*/
     }
 
     .nav-link:hover {
-        
         background-color: grey;
         border-radius: 10%;
         padding: 0.01rem;
     }
 
+    .dropdown-panel {
+        left: 2%;
+        width: 84%;
+    }
+
+    /* Bild i dropdown */
+    .dropdown-image {
+      height: 150px;
+      width: fit-content;
+    }
+
+    /* Woman-länken markeras när dropdown är öppen */
+    .nav-link.woman-active {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+      
     .nav-desktop {
         display: flex;
         margin-left: 25vw;
@@ -161,22 +264,64 @@ bildar ett kryss när man klickar*/
         background-color: grey;
         border-radius: 40%;
     }
-
+    
     .nav-img {
-        display: none;
-        margin-left: auto;
-        margin-right: 1rem;    
+        display: none;    
+    }
+
+    /* Visa dropdown på desktop */
+    .dropdown-panel {
+        display: flex;
+        align-items: flex-start;
+    }
+}
+    @media screen and (min-width: 770px) {
+        
+    .dropdown-panel {
+        gap: 0.1rem;
+    }
+
+    /* Bild i dropdown */
+    .dropdown-image {
+        height: 150px;
+        width: fit-content;
     }
 }
 
-@media (min-width: 992px) {
-    .nav-menu {
-        gap: 3rem;
-    }
+    @media screen and (min-width: 840px) {
     
+    .dropdown-panel {
+        left: 10%;
+        width: 74%;
+        gap: 0rem;
+    }
+}
+
+    @media (min-width: 992px) {
+
+    .nav-menu { 
+        gap: 3rem; 
+    }
+
     .nav-link {
         font-size: 1.2rem;
         transition: color 0.3s ease;
     }
-    
+
+    .dropdown-panel {
+       left: 10%;
+       width: 65%;
+    }
+}
+
+    @media screen and (min-width: 1200px) {
+
+    body {
+        max-width: 1300px;
+    }
+
+    .dropdown-panel {
+        left: 15%;
+        width: 55%;
+    }
 }
