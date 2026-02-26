@@ -1,6 +1,8 @@
 const sizeBtn = document.getElementById("size-dropdown");
 const infoBtn = document.getElementById("infoBtn-small");
-const infopopup = document.getElementById("information");
+const infoBtnBig = document.getElementById("infoBtn")
+const infopopup = document.getElementById("information-small");
+const infopopupBig = document.getElementById("information");
 
 infoBtn.addEventListener("click", () => {
   
@@ -10,3 +12,13 @@ infoBtn.addEventListener("click", () => {
     infopopup.style.display = "block";
   }
 });
+infoBtnBig.addEventListener("click", () => {
+  
+  if (infopopupBig.style.display === "block"){
+    infopopupBig.style.display = "none";
+  }else{
+    infopopupBig.style.display = "block";
+  }
+});
+
+
