@@ -127,22 +127,24 @@ body {
 #size-dropdown {
   background-color: var(--primaryColor);
   color: var(--bgColor);
-  text-align: end;
+  text-align: center;
   box-sizing: border-box;
   padding: 0 1rem;
-  border-radius: 2px;
+  border-radius: 5px;
+  position: relative;
+  
 }
 #size-dropdown-content {
   display: none;
   position: absolute;
+  left: 0;
+  top: 1.5rem;
   background-color: #f9f9f9;
   min-width: 130px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
 }
-#size-dropdown:hover #size-dropdown-content {
-  display: block;
-}
+
 #color-list {
   gap: 1rem;
   width: 100%;
@@ -167,14 +169,20 @@ body {
   background-color: white;
   border-radius: 50%;
 }
+.selected{
+  scale: 1.2;
+}
 #addBtn {
   margin-top: 1rem;
   box-sizing: border-box;
+  font-weight: 700;
+  
   padding: 0.5rem 1rem;
   height: 2rem;
-  border: none;
+  border: 2px solid rgba(58, 212, 2, 0.349) ;
   border-radius: 12px;
-  background-color: var(--greenBtnColor);
+  
+  background-color: rgb(68, 255, 0, 0.90);
 }
 #infoBtn {
   margin-top: 1rem;
