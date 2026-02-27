@@ -115,20 +115,7 @@ body {
   width: 100%;
   gap: 1rem;
 }
-/* #small-productImg {
-  background-color: var(--primaryColor);
-  width: 10rem;
-  height: 12rem;
-}
-#small-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
-#small-description {
-  margin-top: 0;
-  font-size: 12px;
-}  mby take away*/
+
 #size-dropdown {
   background-color: var(--primaryColor);
   color: var(--bgColor);
