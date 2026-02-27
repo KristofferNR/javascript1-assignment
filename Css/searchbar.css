@@ -1,43 +1,60 @@
+input:focus {
+    outline: none;
+}
+
 #searchbar-container {
-    position: relative;
+    display: flex;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    
+    justify-content: center;
 }
 
 #searchbar {
-    width: 100%;
-    padding: 10px;
+    width: 60%;
+    box-sizing: border-box;
+    padding: 5px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-shadow: 0 12px 12px rgba(0,0,0,0.1);
+    
 }
 
 #search-modal {
     position: absolute;
     box-sizing: border-box;
-    padding: 2rem;
+    top: 315px;
     left: 0;
     width: 100%;
-    height: 150%;
-    background: white;
+    height: 700px;
+    background-image: url(../imges/image\ 33\ \(1\).png);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     z-index: 100;
     display: none;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px;
 }
 
 #search-modal.show {
     display: block;
 }
 
-#trending {
-
+.modal-img {
+    width: 11rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-#trending-product{
+#trending-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
 
+#trending-product p {
+    margin-bottom: 0;
+    font-size: 1.3rem;
 }
 
 #recent {
@@ -50,30 +67,56 @@
 
 #search-btn {
     z-index: 101;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+#search-btn img {
+    width: 1.6rem;
 }
 
 #categorie-ul {
+    position: absolute;
     list-style-type: none;
     padding: 0;
     margin: 0;
+    margin-top: 30px;
+    border: 1px solid rgba(0,0,0,0.1);
+    width: 60%;
+    max-width: 359px;
+    backdrop-filter: blur(10px);
 }
 
 
 #categorie-ul li a {
-  border: 1px solid #ddd;
-  width: 98%;
-  margin-top: -1px;
-  background-color: #f6f6f6;
-  padding: 1rem;
+  margin-top: -2px;
+  padding: 0.5rem;
   text-decoration: none;
   font-size: 1rem;
-  color: black;
+  color: white;
   display: block;
+  box-sizing: border-box;
 }
 
 #close-btn {
-    background-color: white;
+    background-color: transparent;
     border: 1px solid transparent;
     border-radius: 25px;
     font-size: 2rem;
+}
+
+@media screen and (min-width: 376px) {
+    
+}
+
+@media screen and (min-width: 667px) {
+    #search-modal {
+    top: 400px;
+    }
+}
+
+@media screen and (min-width: 875px) {
+    #search-modal {
+    top: 600px;
+    }
 }

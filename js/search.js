@@ -1,4 +1,5 @@
 const searchBtn = document.getElementById("search-btn")
+const searchBtnMenu = document.getElementById("search-btn-menu")
 const closeBtn = document.getElementById("close-btn")
 const searchbar = document.getElementById("searchbar")
 const searchModal = document.getElementById("search-modal")
@@ -12,6 +13,11 @@ function closeModal () {
 }
 
 searchBtn.addEventListener("click", () => {
+    showModal()
+    searchbar.focus()
+})
+
+searchBtnMenu.addEventListener("click", () => {
     showModal()
     searchbar.focus()
 })
@@ -39,6 +45,10 @@ async function loadProducts() {
         const products = await response.json();
         //hämtar bento diven med id
         const bentoContainer = document.getElementById('bentoContainer');
+
+        if(!response.ok) {
+            throw new error("Server didnt start properly")
+        }
 
         //går igenom alla products och printar ut dom till bentoContainer div
         products.forEach((product) => {
@@ -83,45 +93,66 @@ async function loadProducts() {
     }}
 
 async function addProducts() {
+
+    const newProducts = {
+        id: 21,
+            title: "string",
+            price: 0.1,
+            description: "string",
+            category: "string",
+            image: "http://example.com"}
+
     try {
         const response = await fetch('https://fakestoreapi.com/products', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(product)
+        body: JSON.stringify({newProducts})
         });
 
-        const product = {
-            "id": 21,
-            "title": "string",
-            "price": 0.1,
-            "description": "string",
-            "category": "string",
-            "image": "http://example.com"
+        if(!response.ok){
+            throw new error("Something went wrong with adding product" + response.error)
         }
+        
+        return await response.json()
+       
     } catch(error) {
 
     }
 }
 
+async function updateProducts(id, title, image, price) {
+
+    try {
+        const response = await fetch('https://fakestoreapi.com/products/'`${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            id: `${id}`,
+
+        })
+        });
+
+        if(!response.ok){
+            throw new error("Something went wrong with updating product" + response.error)
+        }
+        
+        return await response.json()
+       
+    } catch(error) {
+        console.log("Something went wrong when updating product")
+    }
+}
 
 async function search (searchbar) {
     const searchInput = document.getElementById(searchbar)
     const searchValue = searchInput.value.toUpperCase()
     const ul = document.getElementById("categorie-ul")
     const li = ul.getElementsByTagName("li")
-    
-    
-    if(searchInput) {
-        console.log(searchValue)
-
-    } else {
-        console.log("No searches found...")
-    }
 
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0]
         txtValue = a.textContent
-        if(txtValue.toUpperCase().indexOf(searchValue) > -1) {
+        if(searchValue.length > 0 && txtValue.toUpperCase().indexOf(searchValue) > -1) {
             li[i].style.display = ""
 
         } else {
@@ -137,4 +168,3 @@ searchbar.addEventListener("input", () => {
 
 addProducts();
 loadProducts();
-
