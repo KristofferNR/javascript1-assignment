@@ -4,6 +4,7 @@
 }
 body {
   margin: 0;
+  
   width: 100%;
 
   color: var(--primaryColor);
@@ -214,7 +215,7 @@ footer {
    
   #bentoContainer {
     grid-template-columns: 1fr 1fr 1fr;
-    max-width: fit-content;
+    max-width: 771px;
     gap: 1rem;
     grid-template-areas:
       "box-1 box-3 box-4"
