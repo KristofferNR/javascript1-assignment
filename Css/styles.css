@@ -124,6 +124,7 @@ footer {
   display: flex;
   justify-content: center;
   gap: 10px;
+  cursor: pointer;
 }
 /* bild-karusell*/
 .carousel-gallery {
@@ -159,6 +160,7 @@ footer {
   gap: 0.5rem;
   margin: 0.5rem;
   padding: 0;
+  cursor: pointer;
 }
 
 #social-media {
@@ -180,6 +182,7 @@ footer {
   font-size: 30px;
   background-color: black;
   border: none;
+  cursor: pointer;
 }
 
 .fa.fa-instagram {

@@ -13,7 +13,8 @@ document.querySelectorAll(".nav-link").forEach(n => n.
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
     }));
-    
+ 
+
 async function loadProducts() {
 
     try {
@@ -66,6 +67,7 @@ async function loadProducts() {
         console.error('Error fetching products:', error);
     }}
 
+
 async function addProducts() {
     try {
         const response = await fetch('https://fakestoreapi.com/products', {
@@ -80,12 +82,12 @@ async function addProducts() {
             "price": 0.1,
             "description": "string",
             "category": "string",
-            "image": "http://example.com"
+            "image": "/imges/group-10.png"
         }
     } catch(error) {
 
     }
-}
+} 
 
 addProducts();
 loadProducts();

@@ -37,13 +37,26 @@ section #main-category {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.2rem;
     margin: 1rem;
 }
-
-#category-container div img {
-    height: 200px;
 }
+
+#category-container div {
+    display: grid;
+    text-align: center;
+    background: white;
+    color: black;
+    font-size: 0.7rem;
+    border-radius: 1%;
+    height: 17rem;
+    width: 10rem;
+}
+
+#category-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 @media screen and (min-width: 667px) {
@@ -68,7 +81,7 @@ section #main-category {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0px;
+    margin-top: 2rem;
     padding: 0px;
 }
 
@@ -102,3 +115,4 @@ a.active {
     border-radius: 30%;
     color: black;
 }
+
