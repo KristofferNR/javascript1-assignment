@@ -29,6 +29,8 @@ sizeCmboBox.addEventListener("click", () => {
   } else {
     sizeList.style.display = "block";
   }
+
+  
 });
 sizeList.addEventListener("click", (event) => {
   event.stopPropagation();
