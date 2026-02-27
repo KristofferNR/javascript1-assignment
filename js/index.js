@@ -70,7 +70,7 @@ function closeAll() {
   document.querySelectorAll('.woman-active').forEach(navLinkElement => 
     navLinkElement.classList.remove('woman-active'));
 }
-    
+   
 async function loadProducts() {
 
     try {

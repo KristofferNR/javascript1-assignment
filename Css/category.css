@@ -44,13 +44,18 @@ section #main-category {
 
 #category-container div {
     display: grid;
-    text-align: center;
     background: white;
     color: black;
-    font-size: 0.7rem;
     border-radius: 1%;
-    height: 17rem;
-    width: 10rem;
+    margin-top: 0px;
+    text-align: center;
+    padding: 0px;
+}
+
+.product-name-price {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
 }
 
 #category-container img {

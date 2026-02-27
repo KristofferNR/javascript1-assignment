@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/Css/styles.css">
     <link rel="stylesheet" href="/Css/category.css">
-    <link rel="stylesheet" href="../Css/navbarStyle.css">
+    <link rel="stylesheet" href="/Css/navbarStyle.css">
 
     <title>Cool fashion</title>
 </head>
@@ -20,40 +20,114 @@
             <img id="headerImg" src="../imges/image 1.png" alt="">
             <h1>✦ Cool fashion ✦ </h1>
         </div>
-        <nav class="navbar">
-            <div class="nav-header">
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
+         <nav class="navbar">
+             <div class="nav-header">
+                  <!--Ikonen för hamburgermeny-->
+                 <div class="hamburger" id="hamburger">
+                     <span class="bar"></span>
+                     <span class="bar"></span>
+                     <span class="bar"></span>
+                 </div>
+             </div>
 
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-link">Woman</a></li>
-                <li><a href="#" class="nav-link" id="new-in">NewIn</a></li>
-                <li><a href="#" class="nav-link">Man</a></li>
+             <ul class="nav-menu" id="navMenu">
+                 <li><a href="#" class="nav-link" id="womanLink">Woman</a></li>
+                 <li><a href="#" class="nav-link" id="new-in">NewIn</a></li>
+                 <li><a href="#" class="nav-link" id="manLink">Man</a></li>
 
-                <div class="nav-desktop">
-                    <a href="#"><img src="/person.svg" alt=""></a>
-                    <a href="#"><img src="/search.svg" alt=""></a>
-                    <a href="#"><img src="/shopping_cart.svg" alt=""></a>
-                </div>
+                 <!--Ikoner och länkar för desktop-->
+                 <div class="nav-desktop">
+                     <a href="#"><img src="../imges/person.svg"></a>
+                     <a href="#"><img src="../imges/search.svg"></a>
+                     <a href="#"><img src="../imges/shopping_cart.svg"></a>
+                 </div>
 
-                <div class="nav-img">
-                    <img src="person.svg" alt="">
-                    <li><a href="#" class="nav-link">My Account</a></li>
-                </div>
-                <div class="nav-img">
-                    <img src="search.svg" alt="">
-                    <li><a href="#" class="nav-link">Search</a></li>
-                </div>
-                <div class="nav-img">
-                    <img src="shopping_cart.svg" alt="">
-                    <li><a href="#" class="nav-link">Shop</a></li>
-                </div>
-            </ul>
-        </nav>
+                 <!--Ikoner och länkar för hamburgermeny-->
+                 <div class="nav-img">
+                     <img src="../imges/person.svg" alt="">
+                     <li class="nav-item"><a href="#" class="nav-link">My Account</a></li>
+                 </div>
+                 <div class="nav-img">
+                     <img src="../imges/search.svg" alt="">
+                     <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
+                 </div>
+                 <div class="nav-img">
+                     <img src="../imges/shopping_cart.svg" alt="">
+                     <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+                 </div>
+             </ul>
+
+             <!-- Dropdown-navigering meny (woman) -->
+             <div class="dropdown-panel" id="womanDropdown">
+                 <button class="dropdown-close" aria-label="Stäng">✕</button>
+
+                 <div class="dropdown-columns">
+                     <div class="dropdown-col">
+                         <h4>Clothes</h4>
+                         <ul>
+                             <li><a href="#"></a>T-Shirt</li>
+                             <li><a href="#"></a>Pants</li>
+                             <li><a href="#"></a>Sweatshirt</li>
+                             <li><a href="#"></a>Hoodie</li>
+                         </ul>
+                     </div>
+                     <div class="dropdown-col">
+                         <h4>Shoes</h4>
+                         <ul>
+                             <li><a href="#"></a>Boots</li>
+                             <li><a href="#"></a>Sneakers</li>
+                             <li><a href="#"></a>Loafers</li>
+                         </ul>
+                     </div>
+                     <div class="dropdown-col">
+                         <h4>Accessories</h4>
+                         <ul>
+                             <li><a href="#"></a>Headwear</li>
+                             <li><a href="#"></a>Bags</li>
+                             <li><a href="#"></a>Jewelry</li>
+                         </ul>
+                     </div>
+                 </div>
+                 <!-- Bild i dropdown -->
+                 <img class="dropdown-image" src="../imges/nav-woman.png" alt="">
+             </div>
+
+             <!-- Dropdown-navigering meny (man) -->
+             <div class="dropdown-panel" id="manDropdown">
+                 <button class="dropdown-close" aria-label="Stäng">✕</button>
+
+                 <div class="dropdown-columns">
+                     <div class="dropdown-col">
+                         <h4>Clothes</h4>
+                         <ul>
+                             <li><a href="#"></a>T-Shirt</li>
+                             <li><a href="#"></a>Pants</li>
+                             <li><a href="#"></a>Sweatshirt</li>
+                             <li><a href="#"></a>Hoodie</li>
+                         </ul>
+                     </div>
+                     <div class="dropdown-col">
+                         <h4>Shoes</h4>
+                         <ul>
+                             <li><a href="#"></a>Boots</li>
+                             <li><a href="#"></a>Sneakers</li>
+                             <li><a href="#"></a>Loafers</li>
+                         </ul>
+                     </div>
+                     <div class="dropdown-col">
+                         <h4>Accessories</h4>
+                         <ul>
+                             <li><a href="#"></a>Headwear</li>
+                             <li><a href="#"></a>Bags</li>
+                             <li><a href="#"></a>Jewelry</li>
+                         </ul>
+                     </div>
+                 </div>
+                 <!-- Bild i dropdown -->
+                 <img class="dropdown-image" src="../imges/nav-man.png" alt="">
+             </div>
+         </div>
+     </nav>   
     </header>
     <main>
         <section id="main-category">
@@ -65,16 +139,55 @@
                 </div>
             </div>
             <div id="category-page">
-                <div id="category-container"> <!--Lägger bilder nu för att visualisera-->
-                    <div class="category-img"></div>
-                    <!--
-                    <div><img src="/imges/Group-10.png"></div>
-                    <div><img src="/imges/Group-6.png"></div>
-                    <div><img src="/imges/Group-11.png"></div>
-                    <div><img src="/imges/Group-12.png"></div>
-                    <div><img src="/imges/Group-13.png"></div>
-                    <div><img src="/imges/Group-9.png"></div>
-                    <div><img src="/imges/statement2.png"></div> -->
+                <div id="category-container"> 
+                    <div><img src="/imges/Group-10.png">
+                        <div class="product-name-price">
+                            <p>Product</p>
+                            <p>Price</p>
+                        </div>
+                    </div>
+                    <div><img src="/imges/Group-6.png">
+                         <div class="product-name-price">
+                            <p>Product</p>
+                            <p>Price</p>
+                        </div>
+                    </div>
+                    <div><img src="/imges/Group-11.png">
+                         <div class="product-name-price">
+                            <p>Product</p>
+                            <p>Price</p>
+                        </div>
+                    </div>
+                    <div><img src="/imges/Group-12.png">
+                         <div class="product-name-price">
+                            <p>Product</p>
+                            <p>Price</p>
+                        </div>
+                    </div>
+                    <div><img src="/imges/Group-13.png">
+                         <div class="product-name-price">
+                            <p>Product</p>
+                            <p>Price</p>
+                        </div>
+                    </div>
+                    <div><img src="/imges/Group-9.png">
+                        <div class="product-name-price">
+                            <p>Product</p>
+                            <p>Price</p>
+                        </div>
+                    </div>
+                    <div><img src="/imges/Group-3.png">
+                        <div class="product-name-price">
+                            <p>Product</p>
+                            <p>Price</p>
+                        </div>
+                    </div>
+                    <div><img src="/imges/Group-10.png">
+                        <div class="product-name-price">
+                            <p>Product</p>
+                            <p>Price</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- pagination -->
@@ -148,5 +261,4 @@
         </div>
     </footer>
 </body>
-<script src="/js/test.js"></script>
 </html>
