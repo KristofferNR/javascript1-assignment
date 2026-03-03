@@ -98,6 +98,10 @@ li {
 .nav-img {
     display: flex;
     width: 100%;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 17727ee0d01cfe6376e3a584aceeb9f3d213027b
     height: auto;
     gap: 0.5rem;
 }
@@ -315,7 +319,13 @@ li {
 }
 
     @media screen and (min-width: 1200px) {
+<<<<<<< HEAD
         
+=======
+
+   
+
+>>>>>>> 17727ee0d01cfe6376e3a584aceeb9f3d213027b
     .dropdown-panel {
         left: 15%;
         width: 55%;

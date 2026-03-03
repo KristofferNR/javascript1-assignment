@@ -35,24 +35,30 @@ body {
 }
 #information {
   left: 0rem;
+  margin-top: 21.5rem;
+  width: 100%;
+}
+#information > div{
+  box-shadow: 0.1px 1px 0px rgb(0, 0, 0);
 }
 .infopopup {
   display: none;
-  background-color: rgba(0, 0, 0, 0.938);
-  color: var(--primaryColor);
-  margin-top: 20rem;
+  background-color: var(--primaryColor);
+  color: var(--bgColor);
+  margin-top: 21.5rem;
   gap: 1rem;
   z-index: 1;
-  padding: 0rem 1rem;
-  padding-bottom: 0.5rem;
+  padding: 1rem 1rem;
+  text-align: start;
   width: 100%;
+  border-radius: 5px;
   box-sizing: border-box;
   position: absolute;
 }
 .infopopup > div {
   gap: 0;
   padding-bottom: 0.5rem;
-  box-shadow: 0px 1px 0px white;
+  box-shadow: 0px 1px 0px rgb(0, 0, 0);
 }
 #productImg-list {
   flex-direction: row;
@@ -132,6 +138,8 @@ body {
 #size-dropdown-content {
   display: none;
   position: absolute;
+  justify-content: center;
+  align-items: center;
   left: 0;
   z-index: 1;
   top: 1.5rem;
@@ -139,6 +147,26 @@ body {
   width: 6rem;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+}
+#size-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: start;
+  gap: 0.4rem;
+  width: 100%;
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0rem;
+}
+#size-list > li{
+  width: 100%;
+  box-sizing: border-box;
+}
+#size-list > li:hover{
+  
+  background-color: rgba(0, 0, 0, 0.11);
 }
 
 #color-list {
@@ -209,7 +237,7 @@ body {
 #more-like-continer {
   display: flex;
   width: 100%;
-  max-width: 775px;
+  max-width: 685px;
   overflow-x: scroll;
   gap: 1rem;
   padding: 1rem;
@@ -293,6 +321,7 @@ body {
 #infoBtn-small {
   justify-content: center;
   width: 18rem;
+  position: relative;
   background-color: var(--primaryColor);
   border: none;
   border-radius: 5px;
@@ -317,6 +346,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
   }
   #product-section {
     justify-content: center;
