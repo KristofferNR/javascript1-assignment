@@ -97,7 +97,7 @@ li {
 /* Ikoner mobil */
 .nav-img {
     display: flex;
-    width: 650px;
+    width: 100%;
     height: auto;
     gap: 0.5rem;
 }
@@ -315,11 +315,7 @@ li {
 }
 
     @media screen and (min-width: 1200px) {
-
-    body {
-        max-width: 1300px;
-    }
-
+        
     .dropdown-panel {
         left: 15%;
         width: 55%;
