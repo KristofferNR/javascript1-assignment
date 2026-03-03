@@ -1,3 +1,4 @@
+//Hämta element
 const infoBtn = document.getElementById("infoBtn-small");
 const infoBtnBig = document.getElementById("infoBtn");
 const infopopup = document.getElementById("information-small");
@@ -9,7 +10,11 @@ const colors = document.getElementById("color-list-big");
 const colorsSmall = document.getElementById("color-list");
 
 let size;
+
+//Arry för att spara i localstorage
 const cartArray = [];
+
+//Class
 class item {
   constructor(img, price, size, color, name) {
     this.img = img;
@@ -17,8 +22,11 @@ class item {
     this.size = size;
     this.color = color;
     this.name = name;
+    this.amount = 1;
   }
 }
+
+// Info
 infoBtn.addEventListener("click", () => {
   if (infopopup.style.display === "block") {
     infopopup.style.display = "none";
@@ -33,6 +41,9 @@ infoBtnBig.addEventListener("click", () => {
     infopopupBig.style.display = "block";
   }
 });
+
+
+//For size
 sizeCmboBox.addEventListener("click", () => {
   if (sizeList.style.display === "block") {
     sizeList.style.display = "none";
@@ -43,7 +54,20 @@ sizeCmboBox.addEventListener("click", () => {
 sizeList.addEventListener("click", (event) => {
   event.stopPropagation();
 });
+const sizeUl = document.getElementById("size-list");
 
+sizeUl.addEventListener("click", (event) => {
+  if (event.target.classList.contains("size")) {
+    sizeCmboBox.textContent = event.target.textContent;
+    sizeCmboBox.classList.add("ready");
+    size = sizeCmboBox.textContent;
+    sizeCmboBox.appendChild(sizeList);
+    sizeList.style.display = "none";
+  }
+});
+
+
+//For adding to cart
 addBotton.addEventListener("click", () => {
   
   let color;
@@ -107,13 +131,15 @@ addBotton.addEventListener("mouseup", () => {
   addBotton.style.boxShadow = "none";
 });
 
+
+//För färger select
 colors.addEventListener("click", (event) => {
   if (event.target.classList.contains("color-Choice")) {
     const allLi = colors.querySelectorAll("li");
     allLi.forEach((li) => {
       li.classList.remove("selected");
     });
-    event.target.classList.add("selected");
+    event.target.classList.add("selected" , "ready");
   }
 });
 colorsSmall.addEventListener("click", (event) => {
@@ -126,19 +152,10 @@ colorsSmall.addEventListener("click", (event) => {
   }
 });
 
-const sizeUl = document.getElementById("size-list");
 
-sizeUl.addEventListener("click", (event) => {
-  if (event.target.classList.contains("size")) {
-    sizeCmboBox.textContent = event.target.textContent;
-    sizeCmboBox.classList.add("ready");
-    size = sizeCmboBox.textContent;
-    sizeCmboBox.appendChild(sizeList);
-    sizeList.style.display = "none";
-  }
-});
+//bilder
 
-addMainImg(
+addImg(
   document.getElementById("mainProductImg"),
   "/imges/Group-13.png",
   "Description of image",
@@ -150,7 +167,7 @@ addMainImg(
 // );
 
 //En åternvändbar funktion för att lägga till bilder i divarna som jag skapat som placeholders
-function addMainImg(continer, imgSrc, imgAlt) {
+function addImg(continer, imgSrc, imgAlt) {
   const img = document.createElement("img");
   img.src = imgSrc;
   img.alt = imgAlt;

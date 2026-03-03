@@ -209,7 +209,7 @@ body {
 #more-like-continer {
   display: flex;
   width: 100%;
-  max-width: 775px;
+  max-width: 685px;
   overflow-x: scroll;
   gap: 1rem;
   padding: 1rem;
@@ -317,6 +317,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
   }
   #product-section {
     justify-content: center;
