@@ -314,11 +314,7 @@ li {
 }
 
     @media screen and (min-width: 1200px) {
-
-    body {
-        max-width: 1300px;
-    }
-
+        
     .dropdown-panel {
         left: 15%;
         width: 55%;

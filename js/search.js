@@ -44,7 +44,8 @@ async function loadProducts() {
         //parsar response till json och lägger till i products
         const products = await response.json();
         //hämtar bento diven med id
-        const bentoContainer = document.getElementById('bentoContainer');
+        //const bentoContainer = document.getElementById('bentoContainer');
+        const carouselGallery = document.querySelector(".carousel-gallery")
 
         if(!response.ok) {
             throw new error("Server didnt start properly")
@@ -55,7 +56,7 @@ async function loadProducts() {
             //skapar en div som är kopplad till productCard
             const productCard = document.createElement('div');
             //ger alla nya div class="product-card"
-            productCard.classList.add('product-card')
+            productCard.classList.add('carousel-item')
             //detta pushas in i product-card diven
             //ÄNDRA innerHTML till textContent
             //productCard.innerHTML = `
@@ -67,25 +68,25 @@ async function loadProducts() {
 
 
             const productImg = document.createElement("img")
-            const productTitle = document.createElement("h3")
+            //const productTitle = document.createElement("h3")
             //const productDescription = document.createElement("p")
-            const productPrice = document.createElement("p")
+            //const productPrice = document.createElement("p")
 
-            productImg.classList.add("bentoImg")
+            productImg.classList.add("carousel-item")
 
             productImg.src = product.image
             productImg.alt = product.title
 
-            productTitle.textContent = product.title
+            //productTitle.textContent = product.title
             //productDescription.textContent = product.description
-            productPrice.textContent = `$ ${product.price}`
+            //productPrice.textContent = `$ ${product.price}`
 
             //kopplar productCard till bentoContainern och gör productCard till ett child av bentoContainer
             // <div id="bentoContainer">
             //      <div class="product-card"></div>
             // </div>
-            productCard.append(productImg, productTitle, productPrice)
-            bentoContainer.appendChild(productCard);
+            productCard.append(productImg)
+            carouselGallery.appendChild(productCard);
             
         });
     } catch (error) {
@@ -133,7 +134,7 @@ async function updateProducts(id, title, image, price) {
         });
 
         if(!response.ok){
-            throw new error("Something went wrong with updating product" + response.error)
+            throw new error("Something went wrong with updatings product" + response.error)
         }
         
         return await response.json()
@@ -153,7 +154,7 @@ async function search (searchbar) {
         a = li[i].getElementsByTagName("a")[0]
         txtValue = a.textContent
         if(searchValue.length > 0 && txtValue.toUpperCase().indexOf(searchValue) > -1) {
-            li[i].style.display = ""
+            li[i].style.display = "block"
 
         } else {
             li[i].style.display = "none"
