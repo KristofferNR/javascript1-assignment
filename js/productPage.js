@@ -42,7 +42,6 @@ infoBtnBig.addEventListener("click", () => {
   }
 });
 
-
 //For size
 sizeCmboBox.addEventListener("click", () => {
   if (sizeList.style.display === "block") {
@@ -66,10 +65,8 @@ sizeUl.addEventListener("click", (event) => {
   }
 });
 
-
 //For adding to cart
 addBotton.addEventListener("click", () => {
-  
   let color;
   if (!sizeCmboBox.classList.contains("ready")) {
     console.log("size not valid");
@@ -77,7 +74,6 @@ addBotton.addEventListener("click", () => {
   }
 
   if (window.getComputedStyle(colors).display === "flex") {
-    
     if ((color = testColor(colors)) === "") {
       console.log("color not valid");
       return;
@@ -85,20 +81,19 @@ addBotton.addEventListener("click", () => {
   }
 
   if (window.getComputedStyle(colorsSmall).display === "flex") {
-    
     if ((color = testColor(colorsSmall)) === "") {
       console.log("color not valid small");
       return;
     }
   }
   const img = document.getElementById("mainImg");
-  
+
   let newItem = new item(
     img.getAttribute("src"),
     document.getElementById("money").textContent,
     size,
     color,
-    document.getElementById("product-title").textContent
+    document.getElementById("product-title").textContent,
   );
   console.log(newItem);
 });
@@ -131,15 +126,14 @@ addBotton.addEventListener("mouseup", () => {
   addBotton.style.boxShadow = "none";
 });
 
-
 //För färger select
 colors.addEventListener("click", (event) => {
   if (event.target.classList.contains("color-Choice")) {
     const allLi = colors.querySelectorAll("li");
     allLi.forEach((li) => {
-      li.classList.remove("selected");
+      li.classList.remove("selected", "ready");
     });
-    event.target.classList.add("selected" , "ready");
+    event.target.classList.add("selected", "ready");
   }
 });
 colorsSmall.addEventListener("click", (event) => {
@@ -152,14 +146,22 @@ colorsSmall.addEventListener("click", (event) => {
   }
 });
 
-
 //bilder
 
-addImg(
-  document.getElementById("mainProductImg"),
+ addImg(
+   document.getElementById("mainProductImg"),
   "/imges/Group-13.png",
   "Description of image",
-);
+ );
+
+// addInfo(
+//   document.getElementById("mainProductImg"),
+//   "/imges/Group-13.png",
+//   "Description of image",
+//   "Cargo Pants",
+//   "$400",
+//   "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+// );
 // addImg(
 //   document.getElementById("small-productImg"),
 //   "/imges/Group-13.png",
@@ -171,7 +173,7 @@ function addImg(continer, imgSrc, imgAlt) {
   const img = document.createElement("img");
   img.src = imgSrc;
   img.alt = imgAlt;
-  img.id = "mainImg"
+  img.id = "mainImg";
   continer.style.position = "relative";
 
   img.style.width = "100%";
@@ -181,6 +183,14 @@ function addImg(continer, imgSrc, imgAlt) {
   img.style.objectFit = "cover";
 
   continer.appendChild(img);
+}
+function addInfo(continer, imgSrc, imgAlt, title, price, description) {
+  addImg(continer, imgSrc, imgAlt);
+  document.getElementById("money").textContent = price;
+  document.getElementById("money-big").textContent = price;
+  document.getElementById("product-title").textContent = title;
+  document.getElementById("product-description").textContent = description;
+
 }
 
 addMoreLike(document.getElementById("more-like-continer"));
