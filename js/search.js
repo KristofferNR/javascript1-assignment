@@ -1,8 +1,11 @@
 const searchBtn = document.getElementById("search-btn")
 const searchBtnMenu = document.getElementById("search-btn-menu")
-const closeBtn = document.getElementById("close-btn")
+
 const searchbar = document.getElementById("searchbar")
 const searchModal = document.getElementById("search-modal")
+
+const closeBtn = document.getElementById("close-btn")
+
 
 function showModal () {
     searchModal.classList.toggle("show")
@@ -35,36 +38,35 @@ window.addEventListener("keydown", (e) => {
         }
     }
 })
+//function till att hämta ett api där vi specificerar vilket api vi
+//vill hämta i paramsen på functionen
+//Detta gör functionen återanvändiningsbar
+async function getDataFromApi(url) {
+        
+        const response = await fetch(url);
+
+        if(!response.ok) {
+            throw new Error("Server didnt start properly")
+        }
+
+        //parsar response till json och lägger till i products
+        const data = await response.json();
+
+        return data;
+}
 
 async function loadProducts() {
 
     try {
-        //hämtar api till variablen response
-        const response = await fetch('https://fakestoreapi.com/products');
-        //parsar response till json och lägger till i products
-        const products = await response.json();
-        //hämtar bento diven med id
-        //const bentoContainer = document.getElementById('bentoContainer');
+        const data = await getDataFromApi('https://fakestoreapi.com/products')
+
         const carouselGallery = document.querySelector(".carousel-gallery")
 
-        if(!response.ok) {
-            throw new error("Server didnt start properly")
-        }
-
-        //går igenom alla products och printar ut dom till bentoContainer div
-        products.forEach((product) => {
+        //går igenom alla products och printar ut dom till carousel div
+        data.forEach((product) => {
             //skapar en div som är kopplad till productCard
             const productCard = document.createElement('div');
-            //ger alla nya div class="product-card"
-            productCard.classList.add('carousel-item')
-            //detta pushas in i product-card diven
-            //ÄNDRA innerHTML till textContent
-            //productCard.innerHTML = `
-                //<img src="${product.image}" alt="${product.title}">
-                //<h3>${product.title}</h3>
-                //<p>${product.description}</p>
-                //<p>Price: $${product.price}</p>
-            //`;
+            const productDiv = document.createElement('div');
 
 
             const productImg = document.createElement("img")
@@ -72,83 +74,50 @@ async function loadProducts() {
             //const productDescription = document.createElement("p")
             //const productPrice = document.createElement("p")
 
-            productImg.classList.add("carousel-item")
-
             productImg.src = product.image
             productImg.alt = product.title
-
             //productTitle.textContent = product.title
             //productDescription.textContent = product.description
             //productPrice.textContent = `$ ${product.price}`
-
-            //kopplar productCard till bentoContainern och gör productCard till ett child av bentoContainer
-            // <div id="bentoContainer">
-            //      <div class="product-card"></div>
-            // </div>
-            productCard.append(productImg)
-            carouselGallery.appendChild(productCard);
             
+            productCard.classList.add("carousel-item")
+
+            productDiv.append(productImg)
+            productCard.append(productDiv)
+            carouselGallery.appendChild(productCard); 
         });
     } catch (error) {
         console.error('Error fetching products:', error);
     }}
 
-async function addProducts() {
 
-    const newProducts = {
-        id: 21,
-            title: "string",
-            price: 0.1,
-            description: "string",
-            category: "string",
-            image: "http://example.com"}
 
-    try {
-        const response = await fetch('https://fakestoreapi.com/products', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({newProducts})
-        });
+async function searchHTML (searchbar) {
 
-        if(!response.ok){
-            throw new error("Something went wrong with adding product" + response.error)
-        }
-        
-        return await response.json()
-       
-    } catch(error) {
-
-    }
-}
-
-async function updateProducts(id, title, image, price) {
-
-    try {
-        const response = await fetch('https://fakestoreapi.com/products/'`${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            id: `${id}`,
-
-        })
-        });
-
-        if(!response.ok){
-            throw new error("Something went wrong with updatings product" + response.error)
-        }
-        
-        return await response.json()
-       
-    } catch(error) {
-        console.log("Something went wrong when updating product")
-    }
-}
-
-async function search (searchbar) {
     const searchInput = document.getElementById(searchbar)
     const searchValue = searchInput.value.toUpperCase()
+
     const ul = document.getElementById("categorie-ul")
     const li = ul.getElementsByTagName("li")
+
+    const apiResultContainer = document.getElementById("categorie-ul");
+ 
+    const data = await getDataFromApi('https://fakestoreapi.com/products');
+
+    apiResultContainer.innerHTML = "";
+
+    data.forEach(product => {
+        if (product.title.toUpperCase().includes(searchValue)) {
+            const li = document.createElement("li");
+            const productTitle = document.createElement("a")
+
+            productTitle.textContent = product.title;
+                
+            li.append(productTitle)
+            apiResultContainer.appendChild(li);
+        }
+    });
+    
 
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0]
@@ -163,9 +132,8 @@ async function search (searchbar) {
 }
 
 searchbar.addEventListener("input", () => {
-    search("searchbar")
+    searchHTML("searchbar")
 })
 
 
-addProducts();
 loadProducts();

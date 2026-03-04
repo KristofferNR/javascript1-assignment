@@ -6,9 +6,7 @@
 }
 body {
   margin: 0;
-  
   width: 100%;
-  font-family: 'Fira Code', 'Courier New', monospace;
   color: var(--primaryColor);
   background-color: var(--bgColor);
   overflow-x: hidden
@@ -152,6 +150,10 @@ footer {
 
 .carousel-item img {
   border-radius: 2px;
+  width: 150px;
+  height: 200px;
+  background-color: white;
+
 }
 
 #footer-list ul {
