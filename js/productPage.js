@@ -10,10 +10,6 @@ const colors = document.getElementById("color-list-big");
 const colorsSmall = document.getElementById("color-list");
 
 let size;
-
-//Arry för att spara i localstorage
-const cartArray = [];
-
 //Class
 class item {
   constructor(img, price, size, color, name) {
@@ -25,6 +21,16 @@ class item {
     this.amount = 1;
   }
 }
+
+//Arry för att spara i localstorage
+const cartArray = [
+  new item("/imges/Group-1.png", "$130", "45", "red", "item-1"),
+  new item("/imges/Group-2.png", "$85", "38", "blue", "item-2"),
+  new item("/imges/Group-3.png", "$210", "52", "black", "item-3"),
+  new item("/imges/Group-4.png", "$60", "41", "white", "item-4"),
+  new item("/imges/Group-5.png", "$175", "47", "green", "item-5"),
+];
+updateCart(document.getElementById("cart-content"), cartArray);
 
 // Info
 infoBtn.addEventListener("click", () => {
@@ -96,6 +102,65 @@ addBotton.addEventListener("click", () => {
     document.getElementById("product-title").textContent,
   );
   console.log(newItem);
+  cartArray.push(newItem);
+  console.log(cartArray);
+  document.getElementById("cart-continer").style.display = "flex";
+  document.getElementById("cart-continer").focus();
+  updateCart(document.getElementById("cart-content"), cartArray);
+});
+
+//cart section
+//Denna functionen uppdaterar carten genom en array
+document.getElementById("cart").addEventListener("click", (e) => {
+  document.getElementById("cart-continer").style.display = "flex";
+  document.getElementById("cart-continer").focus();
+  if (document.getElementById("navMenu").classList.contains("active")) {
+    document.getElementById("navMenu").classList.remove("active");
+  }
+});
+document.getElementById("desktop-cart").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.getElementById("cart-continer").focus();
+  document.getElementById("cart-continer").style.display = "flex";
+});
+function updateCart(continer, cartArray) {
+  continer.textContent = "";
+
+  for (let i = 0; i < cartArray.length; i++) {
+    const divItem = document.createElement("div");
+    const itemImg = document.createElement("img");
+    const itemTitle = document.createElement("span");
+    const itemPrice = document.createElement("span");
+    const deleteItem = document.createElement("button");
+
+    divItem.style.display = "flex";
+    deleteItem.id = i;
+    divItem.classList.add("item-continer");
+    itemImg.classList.add("item-img");
+    itemTitle.classList.add("item-title");
+    itemPrice.classList.add("item-price");
+    deleteItem.classList.add("delete-item");
+
+    deleteItem.textContent = "X";
+    itemImg.src = cartArray[i].img;
+    itemTitle.textContent = cartArray[i].name;
+    itemPrice.textContent = cartArray[i].price;
+    divItem.append(itemImg, itemTitle, itemPrice, deleteItem);
+    continer.appendChild(divItem);
+  }
+}
+//När man klickar på delete så tar vi bort det "item som inte ska var med längre i våran array eller cart"
+document.getElementById("cart-content").addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete-item")) {
+    console.log("du tryckte delete");
+    let deleteIndex = e.target.id;
+    console.log(cartArray.splice(deleteIndex, 1).name + " was deleted");
+  }
+  updateCart(document.getElementById("cart-content"), cartArray);
+});
+
+document.getElementById("exit-cart").addEventListener("click", () => {
+  document.getElementById("cart-continer").style.display = "none";
 });
 //Retunerar om användare har gjort ett val med färg eller inte samt att den kollar vilken färg.
 function testColor(continer) {
@@ -148,11 +213,11 @@ colorsSmall.addEventListener("click", (event) => {
 
 //bilder
 
- addImg(
-   document.getElementById("mainProductImg"),
+addImg(
+  document.getElementById("mainProductImg"),
   "/imges/Group-13.png",
   "Description of image",
- );
+);
 
 // addInfo(
 //   document.getElementById("mainProductImg"),
@@ -190,7 +255,6 @@ function addInfo(continer, imgSrc, imgAlt, title, price, description) {
   document.getElementById("money-big").textContent = price;
   document.getElementById("product-title").textContent = title;
   document.getElementById("product-description").textContent = description;
-
 }
 
 addMoreLike(document.getElementById("more-like-continer"));
