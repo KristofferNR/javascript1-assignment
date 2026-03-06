@@ -1,69 +1,67 @@
-* {
-    font-family: 'Space Grotesk', sans-serif;
-    color: white; 
-}
+#login-img {
+        width: 200px;
+    }
 
-#go-back-to-frontpage, a {
-    display: flex;
-    text-decoration: none;
-}
+    #login-section {
+        font-family: 'Space Grotesk', sans-serif;
+        color: white; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        gap: 0.8rem;
+        padding-bottom: 2rem;
+    }
 
-#login-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    background-color: black;
-    padding-bottom: 2rem;
-}
+    label {
+        padding-bottom: 1rem;
+    }
 
-#login-container > img {
-    width: 250px;
-}
+    input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0.4rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: black;
+    }
 
-label {
-    padding-bottom: 1rem;
-}
+    #Btn-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; 
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+    } 
 
-input {
-  display: block;
-  width: 100%;
-  padding: 0.4rem;
-  margin-top: 0.2rem;
-  margin-bottom: 0.4rem;
-  border-radius: 6px;
-}
+    button {
+        background: grey;
+        color: white;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 9rem;
+        transition: background 0.2s;
+    }
 
-#loginBtn {
-  font-weight: 800;
-  width: 8rem;
-  height: 2.4rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid rgb(68, 255, 0, 0.9);
-  border-radius: 6px;
-  cursor: pointer;
-  background-color: rgb(68, 255, 0, 0.9);
-  color: black;
-}
+    button:hover {
+        background-color: rgb(68, 255, 0, 0.9);
+        color: black;
+        font-weight: 800;
+    }
 
-#createAccount-container, p {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#createBtn {
-    font-weight: 800;
-    width: 10rem;
-    height: 2rem;
-    border: 2px solid rgba(58, 212, 2);
-    border-radius: 6px;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-}
-
-
-
+    #go-back-to-frontpage, a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+    }

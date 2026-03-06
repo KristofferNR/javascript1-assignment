@@ -13,6 +13,7 @@
 
      <title>Cool fashion</title>
      <script src="../js/index.js" defer></script>
+     <script src="../js/loginPage.js"></script>
  </head>
 
  <body>
@@ -130,28 +131,30 @@
              </div>
          </div>
      </nav>
-     
-     <!-- Login-sektion -->
-     <div id="login-container"> 
-         <img src="../imges/imageLogin.png">
-        <form>
-             <label>Username</label>
-             <input type="text" placeholder="Username">
-             <label id="label-password">Password</label>
-             <input type="text" placeholder="Password">
+ </header>
+
+  <!-- LOGIN OCH REGISTRERING -->
+  <section id="login-section">
+     <img src="../imges/imageLogin.png" id="login-img" alt="">
+     <div class="form-container">
+         <!--<h1>Logga in på ditt konto</h1>-->
+         <form id="login-form">
+             <label for="username">Username</label>
+             <input type="text" id="username" required />        
+             <label for="password">Password</label>
+             <input type="password" id="password" required /> 
          </form>
-         <button id="loginBtn">Login</button>
-         <div>
-             <p>or</p>
-             <button id="createBtn">Create account</button>
-         </div>
-         <br>
+         
+         <div id="Btn-section">
+             <button type="submit" id="loginBtn">Login</button>
+             <p>or</p> 
+             <button id="show-register" type="button">Create account</button>             
+         </div>   
+     
          <div id="go-back-to-frontpage">
-            <img src="../imges/arrow_back.svg" alt="">
-             <a href="index.html">back</a>
-            </div>
-     </div>
-  </header>
+             <img src="../imges/arrow_back.svg" alt="">
+             <a href="../html/index.html">back to frontpage</a>
+         </div>    
 
 </body>
 
