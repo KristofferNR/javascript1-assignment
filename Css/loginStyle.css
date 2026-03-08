@@ -1,67 +1,90 @@
+* {
+    font-family: 'Space Grotesk', sans-serif;
+    color: white; 
+}
+
 #login-img {
-        width: 200px;
-    }
+    width: 250px;
+    padding-bottom: 1rem;
+}
 
-    #login-section {
-        font-family: 'Space Grotesk', sans-serif;
-        color: white; 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: black;
-        gap: 0.8rem;
-        padding-bottom: 2rem;
-    }
+#login-section, #app-section {
+    background-color: black;
+    gap: 0.8rem;
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+    margin-left: 20px;
+}
 
-    label {
-        padding-bottom: 1rem;
-    }
+label {
+    padding-bottom: 1rem;
+}
 
-    input {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding: 0.4rem;
-        border-radius: 6px;
-        font-size: 1rem;
-        margin-bottom: 1rem;
-        color: black;
-    }
+#Btn-section, input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    padding: 0.4rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: black;
+} 
 
-    #Btn-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center; 
-        margin-top: 1rem;
-        margin-bottom: 2.5rem;
-    } 
+button {
+    background: grey;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 9rem;
+    transition: background 0.2s;
+}
 
-    button {
-        background: grey;
-        color: white;
-        padding: 0.5rem;
-        border: none;
-        border-radius: 6px;
-        font-size: 1rem;
-        cursor: pointer;
-        width: 9rem;
-        transition: background 0.2s;
-    }
+button:hover {
+    background-color: rgb(68, 255, 0, 0.9);
+    color: black;
+    font-weight: 800;
+}
 
-    button:hover {
-        background-color: rgb(68, 255, 0, 0.9);
-        color: black;
-        font-weight: 800;
-    }
+#go-back-to-frontpage, a {
+    display: flex;
+    margin-left: 8px;
+    text-decoration: none;
+}
 
-    #go-back-to-frontpage, a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        color: white;
-    }
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 667px) {
+
+    #login-section, #app-section {
+    padding-left: 200px;
+}
+}
+
+@media screen and (min-width: 850px) {
+
+    #login-section, #app-section {
+    padding-left: 350px;
+}
+}
+
+@media screen and (min-width: 1200px) {
+
+    #login-section, #app-section {
+    padding-left: 480px;
+}
+}
