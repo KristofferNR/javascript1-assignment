@@ -48,8 +48,6 @@ async function getDataFromApi(url) {
         if(!response.ok) {
             throw new Error("Server didnt start properly")
         }
-
-        //parsar response till json och lägger till i products
         const data = await response.json();
 
         return data;
@@ -91,23 +89,20 @@ async function loadProducts() {
     }}
 
 
+//sökfunktion som går igenom alla product titlar som vi hämtar från api:et, om titeln på producten matchar det vi har skrivit i inputfältet så skapar den en ny li för den titeln
+async function apiSearchFunction(searchValue) {
 
-async function searchHTML (searchbar) {
+    const apiResultContainer = document.getElementById("api-search-results");
 
-    const searchInput = document.getElementById(searchbar)
-    const searchValue = searchInput.value.toUpperCase()
+    apiResultContainer.innerHTML = ""
 
-    const ul = document.getElementById("categorie-ul")
-    const li = ul.getElementsByTagName("li")
-
-    const apiResultContainer = document.getElementById("categorie-ul");
+    if(searchValue.length === 0) return;
  
     const data = await getDataFromApi('https://fakestoreapi.com/products');
 
-    apiResultContainer.innerHTML = "";
-
     data.forEach(product => {
         if (product.title.toUpperCase().includes(searchValue)) {
+
             const li = document.createElement("li");
             const productTitle = document.createElement("a")
 
@@ -117,22 +112,51 @@ async function searchHTML (searchbar) {
             apiResultContainer.appendChild(li);
         }
     });
+}
+
+//sök funktion som går igenom alla hårdkodade li och visar dom på skärmen om dom matchar det du har skrivit i inputfältet annars syns dom inte
+function htmlSearchFunction(searchValue) {
     
+    const li = document.querySelectorAll("#categorie-ul li")
 
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0]
-        txtValue = a.textContent
-        if(searchValue.length > 0 && txtValue.toUpperCase().indexOf(searchValue) > -1) {
-            li[i].style.display = "block"
-
+    li.forEach(item => {
+        const text = item.textContent.toUpperCase()
+        if (searchValue.length === 0) {
+            item.style.display  = "none"
+        } else if (text.includes(searchValue)) {
+            item.style.display = "block"
         } else {
-            li[i].style.display = "none"
+            item.style.display = "none"
         }
+        
+    })
+}
+
+//en funktion som hämtar båda sökfunktionerna för kategorie och api
+async function searchHandler (searchbar) {
+
+    const searchValue = document.getElementById(searchbar)
+    const searchResult = searchValue.value.toUpperCase()
+
+    htmlSearchFunction(searchResult)
+    await apiSearchFunction(searchResult)
+}
+
+//funktion för att inte ladda alla sökresultat direkt när du skriver, den väntar 300ms innan den ger dig sökresultat på det du har skrivit, för varje gång du skriver något så börjar timern om
+function debounce(func, delay) {
+    let timer;
+    return function(...args) {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            func.apply(this, args);
+        }, delay)
     }
 }
 
+let debounceSearch = debounce(searchHandler, 300)
+
 searchbar.addEventListener("input", () => {
-    searchHTML("searchbar")
+    debounceSearch("searchbar")
 })
 
 
