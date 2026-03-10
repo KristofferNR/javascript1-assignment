@@ -1,0 +1,41 @@
+#shoppingcart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#checkout h1, #order-info h1 {
+    font-size: 1.6rem;
+}
+
+#checkout, #delivery, #payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#checkout-products, #delivery-options, #payment-options {
+    border: 1px solid white;
+    width: 17rem;
+    height: 150px
+}
+
+#payment-options {
+    display: flex;
+}
+
+.payment-btn img {
+    width: 5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.payment-btn {
+    display: flex;
+    align-self: center;
+    border-radius: 50px;
+    border: transparent;
+    height: 30px;
+    padding: 0;
+}
+
