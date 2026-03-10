@@ -12,15 +12,18 @@
     background-color: black;
     gap: 0.8rem;
     padding-bottom: 2rem;
-    padding-left: 3rem;
-    margin-left: 20px;
+}
+
+#register-section {
+    margin-top: 4rem;
+    border-top: 2px solid #333;
 }
 
 label {
     padding-bottom: 1rem;
 }
 
-#Btn-section, input {
+.Btn-section, input {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,7 +36,7 @@ label {
     color: black;
 } 
 
-button {
+.Btn-section button {
     background: grey;
     color: white;
     padding: 0.5rem;
@@ -45,7 +48,7 @@ button {
     transition: background 0.2s;
 }
 
-button:hover {
+.Btn-section button:hover {
     background-color: rgb(68, 255, 0, 0.9);
     color: black;
     font-weight: 800;
@@ -57,34 +60,82 @@ button:hover {
     text-decoration: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-width: 667px) {
-
-    #login-section, #app-section {
-    padding-left: 200px;
-}
+.content-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /* centrerar wrappern horisontellt */
+    padding: 1rem;
 }
 
-@media screen and (min-width: 850px) {
-
-    #login-section, #app-section {
-    padding-left: 350px;
-}
+#app-section .content-wrapper {
+    max-width: 700px; 
 }
 
-@media screen and (min-width: 1200px) {
+#protected-content {
+  width: 100%;
+  max-width: 700px;
+}
 
-    #login-section, #app-section {
-    padding-left: 480px;
+.hidden {
+  display: none;
 }
+
+.error-message {
+  color: #dc3545;
+  background: #f8d7da;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border-left: 4px solid #dc3545;
+  margin: 1rem 0;
+  width: 253px;
 }
+
+.success-message {
+  color: #155724;
+  background: #d4edda;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border-left: 4px solid #28a745;
+  margin: 1rem 0;
+}
+
+/* Produktkort */
+.product-card {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background-color: rgb(37, 37, 37);
+  width: 150px;
+}
+
+.product-image {
+  max-width: 140px;
+}
+
+.price {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1rem;
+}
+
+/* Layout för inloggad vy */
+.account-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#previous-purchases {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+
+
