@@ -1,3 +1,5 @@
+import { startCart } from "./cart.js";
+
 //Hämta element
 const infoBtn = document.getElementById("infoBtn-small");
 const infoBtnBig = document.getElementById("infoBtn");
@@ -11,7 +13,7 @@ const colorsSmall = document.getElementById("color-list");
 
 let size;
 //Class
-class item {
+ export class item {
   constructor(img, price, size, color, name) {
     this.img = img;
     this.price = price;
@@ -22,15 +24,12 @@ class item {
   }
 }
 
+
+
+let activeArray = startCart();
+
+
 //Arry för att spara i localstorage
-const cartArray = [
-  new item("/imges/Group-1.png", "$130", "45", "red", "item-1"),
-  new item("/imges/Group-2.png", "$85", "38", "blue", "item-2"),
-  new item("/imges/Group-3.png", "$210", "52", "black", "item-3"),
-  new item("/imges/Group-4.png", "$60", "41", "white", "item-4"),
-  new item("/imges/Group-5.png", "$175", "47", "green", "item-5"),
-];
-updateCart(document.getElementById("cart-content"), cartArray);
 
 // Info
 infoBtn.addEventListener("click", () => {
@@ -102,11 +101,11 @@ addBotton.addEventListener("click", () => {
     document.getElementById("product-title").textContent,
   );
   console.log(newItem);
-  cartArray.push(newItem);
-  console.log(cartArray);
+  activeArray.push(newItem);
+  console.log(activeArray);
   document.getElementById("cart-continer").style.display = "flex";
   document.getElementById("cart-continer").focus();
-  updateCart(document.getElementById("cart-content"), cartArray);
+  updateCart(document.getElementById("cart-content"), activeArray);
 });
 
 //cart section
@@ -123,10 +122,10 @@ document.getElementById("desktop-cart").addEventListener("click", (e) => {
   document.getElementById("cart-continer").focus();
   document.getElementById("cart-continer").style.display = "flex";
 });
-function updateCart(continer, cartArray) {
+export function updateCart(continer, activeArray) {
   continer.textContent = "";
 
-  for (let i = 0; i < cartArray.length; i++) {
+  for (let i = 0; i < activeArray.length; i++) {
     const divItem = document.createElement("div");
     const itemImg = document.createElement("img");
     const itemTitle = document.createElement("span");
@@ -142,21 +141,23 @@ function updateCart(continer, cartArray) {
     deleteItem.classList.add("delete-item");
 
     deleteItem.textContent = "X";
-    itemImg.src = cartArray[i].img;
-    itemTitle.textContent = cartArray[i].name;
-    itemPrice.textContent = cartArray[i].price;
+    itemImg.src = activeArray[i].img;
+    itemTitle.textContent = activeArray[i].name;
+    itemPrice.textContent = activeArray[i].price;
     divItem.append(itemImg, itemTitle, itemPrice, deleteItem);
     continer.appendChild(divItem);
   }
+  localStorage.setItem("cart", JSON.stringify(activeArray));
+  
 }
 //När man klickar på delete så tar vi bort det "item som inte ska var med längre i våran array eller cart"
 document.getElementById("cart-content").addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-item")) {
     console.log("du tryckte delete");
     let deleteIndex = e.target.id;
-    console.log(cartArray.splice(deleteIndex, 1).name + " was deleted");
+    console.log(activeArray.splice(deleteIndex, 1).name + " was deleted");
   }
-  updateCart(document.getElementById("cart-content"), cartArray);
+  updateCart(document.getElementById("cart-content"), activeArray);
 });
 
 document.getElementById("exit-cart").addEventListener("click", () => {
@@ -234,7 +235,7 @@ addImg(
 // );
 
 //En åternvändbar funktion för att lägga till bilder i divarna som jag skapat som placeholders
-function addImg(continer, imgSrc, imgAlt) {
+export function addImg(continer, imgSrc, imgAlt) {
   const img = document.createElement("img");
   img.src = imgSrc;
   img.alt = imgAlt;
@@ -257,11 +258,11 @@ function addInfo(continer, imgSrc, imgAlt, title, price, description) {
   document.getElementById("product-description").textContent = description;
 }
 
-addMoreLike(document.getElementById("more-like-continer"));
-//First prototype for adding the right imges in more like.
-function addMoreLike(continer) {
-  const allDiv = continer.querySelectorAll("div");
-  allDiv.forEach((div) => {
-    addImg(div, "/imges/Group-9.png", "Description of image");
-  });
-}
+// addMoreLike(document.getElementById("more-like-continer"));
+// //First prototype for adding the right imges in more like.
+// function addMoreLike(continer) {
+//   const allDiv = continer.querySelectorAll("div");
+//   allDiv.forEach((div) => {
+//     addImg(div, "/imges/Group-2.png", "Description of image");
+//   });
+// }

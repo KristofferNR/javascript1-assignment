@@ -162,7 +162,13 @@ body {
   
   background-color: rgba(0, 0, 0, 0.11);
 }
+.morelike-img{
 
+  display: block;
+  height: 100%;
+  width: 100%;
+  
+}
 #color-list {
   gap: 1rem;
   width: 100%;
