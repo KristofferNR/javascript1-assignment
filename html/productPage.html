@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/Css/styles.css">
     <link rel="stylesheet" href="/Css/productStyles.css">
+    <link rel="stylesheet" href="/Css/cart.css">
      <link rel="stylesheet" href="../Css/navbarStyle.css">
       <link rel="icon" type="image/x-icon" href="/imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png">
      <script src="../js/index.js" defer></script>
-     <script src="../js/productPage.js" defer></script>
+     <script src="../js/productPage.js" type="module" ></script>
     <title>product page</title>
 </head>
 <body>
@@ -38,7 +39,7 @@
                  <div class="nav-desktop">
                      <a href="#"><img src="../imges/person.svg"></a>
                      <a href="#"><img src="../imges/search.svg"></a>
-                     <a href="#"><img src="../imges/shopping_cart.svg"></a>
+                     <a id="desktop-cart" href="#"><img src="../imges/shopping_cart.svg"></a>
                  </div>
 
                  <!--Ikoner och länkar för hamburgermeny-->
@@ -50,7 +51,7 @@
                      <img src="../imges/search.svg" alt="">
                      <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
                  </div>
-                 <div class="nav-img">
+                 <div id="cart" class="nav-img">
                      <img src="../imges/shopping_cart.svg" alt="">
                      <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
                  </div>
@@ -128,20 +129,22 @@
          </div>
      </nav>     
     </header>
+<section id="cart-section">
+    <div id="cart-continer">
+    <button id="exit-cart">X</button>
+    <div id="cart-content">
 
+    </div>
+    <button id="checkoutBtn">Checkout</button>
+    </div>
+</section>
    <main>
         <section id="product-section">
             <div id="productImg-continer">
                 <div id="mainProductImg">
                     
                 </div>
-                <ul id="productImg-list">
-                    <li class="sideImg"></li>
-                    <li class="sideImg"></li>
-                    <li class="sideImg"></li>
-                    <li class="sideImg"></li>
-                    <li class="sideImg"></li>
-                </ul>
+                
             </div>
             <div id="productInfo-continer">
                 <ul id="color-list" class="small">
@@ -221,13 +224,15 @@
             <div>
                 <img src="/imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png" alt="">
                 <div id="more-like-continer">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div><img src="/imges/Group-9.png" class="morelike-img" alt=""></div>
+                <div><img src="/imges/Group-1.png" class="morelike-img" alt=""></div>
+                <div><img src="/imges/Group-3.png" class="morelike-img" alt=""></div>
+                <div><img src="/imges/Group-4.png" class="morelike-img" alt=""></div>
+                <div><img src="/imges/Group-8.png" class="morelike-img" alt=""></div>
+                <div><img src="/imges/Group-10.png" class="morelike-img" alt=""></div>
+                <div><img src="/imges/Group-11.png" class="morelike-img" alt=""></div>
+                <div><img src="/imges/Group-9.png" class="morelike-img" alt=""></div>
+                
                 </div>
                 <img src="/imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png" alt="" >
             </div>

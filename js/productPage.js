@@ -1,3 +1,5 @@
+import { startCart } from "./cart.js";
+
 //Hämta element
 const infoBtn = document.getElementById("infoBtn-small");
 const infoBtnBig = document.getElementById("infoBtn");
@@ -10,12 +12,8 @@ const colors = document.getElementById("color-list-big");
 const colorsSmall = document.getElementById("color-list");
 
 let size;
-
-//Arry för att spara i localstorage
-const cartArray = [];
-
 //Class
-class item {
+ export class item {
   constructor(img, price, size, color, name) {
     this.img = img;
     this.price = price;
@@ -25,6 +23,13 @@ class item {
     this.amount = 1;
   }
 }
+
+
+
+let activeArray = startCart();
+
+
+//Arry för att spara i localstorage
 
 // Info
 infoBtn.addEventListener("click", () => {
@@ -96,6 +101,67 @@ addBotton.addEventListener("click", () => {
     document.getElementById("product-title").textContent,
   );
   console.log(newItem);
+  activeArray.push(newItem);
+  console.log(activeArray);
+  document.getElementById("cart-continer").style.display = "flex";
+  document.getElementById("cart-continer").focus();
+  updateCart(document.getElementById("cart-content"), activeArray);
+});
+
+//cart section
+//Denna functionen uppdaterar carten genom en array
+document.getElementById("cart").addEventListener("click", (e) => {
+  document.getElementById("cart-continer").style.display = "flex";
+  document.getElementById("cart-continer").focus();
+  if (document.getElementById("navMenu").classList.contains("active")) {
+    document.getElementById("navMenu").classList.remove("active");
+  }
+});
+document.getElementById("desktop-cart").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.getElementById("cart-continer").focus();
+  document.getElementById("cart-continer").style.display = "flex";
+});
+export function updateCart(continer, activeArray) {
+  continer.textContent = "";
+
+  for (let i = 0; i < activeArray.length; i++) {
+    const divItem = document.createElement("div");
+    const itemImg = document.createElement("img");
+    const itemTitle = document.createElement("span");
+    const itemPrice = document.createElement("span");
+    const deleteItem = document.createElement("button");
+
+    divItem.style.display = "flex";
+    deleteItem.id = i;
+    divItem.classList.add("item-continer");
+    itemImg.classList.add("item-img");
+    itemTitle.classList.add("item-title");
+    itemPrice.classList.add("item-price");
+    deleteItem.classList.add("delete-item");
+
+    deleteItem.textContent = "X";
+    itemImg.src = activeArray[i].img;
+    itemTitle.textContent = activeArray[i].name;
+    itemPrice.textContent = activeArray[i].price;
+    divItem.append(itemImg, itemTitle, itemPrice, deleteItem);
+    continer.appendChild(divItem);
+  }
+  localStorage.setItem("cart", JSON.stringify(activeArray));
+  
+}
+//När man klickar på delete så tar vi bort det "item som inte ska var med längre i våran array eller cart"
+document.getElementById("cart-content").addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete-item")) {
+    console.log("du tryckte delete");
+    let deleteIndex = e.target.id;
+    console.log(activeArray.splice(deleteIndex, 1).name + " was deleted");
+  }
+  updateCart(document.getElementById("cart-content"), activeArray);
+});
+
+document.getElementById("exit-cart").addEventListener("click", () => {
+  document.getElementById("cart-continer").style.display = "none";
 });
 //Retunerar om användare har gjort ett val med färg eller inte samt att den kollar vilken färg.
 function testColor(continer) {
@@ -148,11 +214,11 @@ colorsSmall.addEventListener("click", (event) => {
 
 //bilder
 
- addImg(
-   document.getElementById("mainProductImg"),
+addImg(
+  document.getElementById("mainProductImg"),
   "/imges/Group-13.png",
   "Description of image",
- );
+);
 
 // addInfo(
 //   document.getElementById("mainProductImg"),
@@ -169,7 +235,7 @@ colorsSmall.addEventListener("click", (event) => {
 // );
 
 //En åternvändbar funktion för att lägga till bilder i divarna som jag skapat som placeholders
-function addImg(continer, imgSrc, imgAlt) {
+export function addImg(continer, imgSrc, imgAlt) {
   const img = document.createElement("img");
   img.src = imgSrc;
   img.alt = imgAlt;
@@ -190,14 +256,13 @@ function addInfo(continer, imgSrc, imgAlt, title, price, description) {
   document.getElementById("money-big").textContent = price;
   document.getElementById("product-title").textContent = title;
   document.getElementById("product-description").textContent = description;
-
 }
 
-addMoreLike(document.getElementById("more-like-continer"));
-//First prototype for adding the right imges in more like.
-function addMoreLike(continer) {
-  const allDiv = continer.querySelectorAll("div");
-  allDiv.forEach((div) => {
-    addImg(div, "/imges/Group-9.png", "Description of image");
-  });
-}
+// addMoreLike(document.getElementById("more-like-continer"));
+// //First prototype for adding the right imges in more like.
+// function addMoreLike(continer) {
+//   const allDiv = continer.querySelectorAll("div");
+//   allDiv.forEach((div) => {
+//     addImg(div, "/imges/Group-2.png", "Description of image");
+//   });
+// }
