@@ -40,6 +40,10 @@ section #main-category {
     gap: 1.2rem;
     margin: 1rem;
 }
+
+#category-container div img {
+        height: 200px;
+    }
 }
 
 #category-container div {
@@ -53,9 +57,14 @@ section #main-category {
 }
 
 .product-name-price {
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.product-name-price p {
+    margin: 0.4rem;
+    word-wrap: break-word;
 }
 
 #category-container img {
@@ -105,7 +114,7 @@ a.active {
     border-radius: 30%;
 }
 
-.page-btn {
+#prev-btn {
     display: inline-flex;
     align-items: center;
     background-color: black;
@@ -115,7 +124,23 @@ a.active {
     cursor: pointer;
 }
 
-.page-btn:hover {
+#prev-btn:hover {
+    background-color: white;
+    border-radius: 30%;
+    color: black;
+}
+
+#next-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#next-btn:hover {
     background-color: white;
     border-radius: 30%;
     color: black;
