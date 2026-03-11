@@ -1,5 +1,6 @@
 :root {
     --secondary-text: #9C9C9C;
+    --filter-btn: rgb(68, 255, 0);
 }
 
 * {
@@ -112,7 +113,7 @@ section #main-category {
     text-decoration: none;
 }
 
-a.active {
+.page-link.active {
     padding: 0.3rem;
     border: solid;
     border-radius: 30%;
@@ -170,4 +171,10 @@ a.active {
     background-color: black;
     color: white;
     border-color: black;
+}
+
+.filter-btn.active {
+    background-color: var(--filter-btn);
+    color: black;
+    border: var(--filter-btn);
 }
