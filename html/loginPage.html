@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+     <html lang="en">
+         <head>
+             <meta charset="UTF-8">
+             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <link href='https://fonts.googleapis.com/css?family=Space Grotesk' rel='stylesheet'>
+             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+             <link rel="stylesheet" href="../Css/styles.css">
+             <link rel="stylesheet" href="../Css/navbarStyle.css">
+             <link rel="stylesheet" href="../Css/loginStyle.css">
+
+             <title>Cool fashion</title>
+             <script src="../js/index.js" defer></script>
+             <script src="../js/loginPage.js" defer></script>
+             
+         </head>
+         <body>
+             <header>
+                 <div id="headerContainer">
+                     <img id="headerImg" src="../imges/image 1.png" alt="">
+                     <h1>✦ Cool fashion ✦ </h1>
+                 </div>
+                 <nav class="navbar">
+                     <div class="nav-header">
+                         <!--Ikonen för hamburgermeny-->
+                         <div class="hamburger" id="hamburger">
+                             <span class="bar"></span>
+                             <span class="bar"></span>
+                             <span class="bar"></span>
+                         </div>
+                     </div>
+
+                     <ul class="nav-menu" id="navMenu">
+                         <li><a href="#" class="nav-link" id="womanLink">Woman</a></li>
+                         <li><a href="#" class="nav-link" id="new-in">NewIn</a></li>
+                         <li><a href="#" class="nav-link" id="manLink">Man</a></li>
+
+                         <!--Ikoner och länkar för desktop-->
+                         <div class="nav-desktop">
+                             <a href="#"><img src="../imges/person.svg"></a>
+                             <a href="#"><img src="../imges/search.svg"></a>
+                             <a href="#"><img src="../imges/shopping_cart.svg"></a>
+                         </div>
+
+                         <!--Ikoner och länkar för hamburgermeny-->
+                         <div class="nav-img">
+                             <img src="../imges/person.svg" alt="">
+                             <li class="nav-item"><a href="#" class="nav-link">My Account</a></li>
+                         </div>
+                         <div class="nav-img">
+                             <img src="../imges/search.svg" alt="">
+                             <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
+                         </div>
+                         <div class="nav-img">
+                             <img src="../imges/shopping_cart.svg" alt="">
+                             <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+                         </div>
+                     </ul>
+
+                     <!-- Dropdown-navigering meny (woman) -->
+                     <div class="dropdown-panel" id="womanDropdown">
+                         <button class="dropdown-close" aria-label="Stäng">✕</button>
+
+                         <div class="dropdown-columns">
+                             <div class="dropdown-col">
+                                 <h4>Clothes</h4>
+                                 <ul>
+                                     <li><a href="#"></a>T-Shirt</li>
+                                     <li><a href="#"></a>Pants</li>
+                                     <li><a href="#"></a>Sweatshirt</li>
+                                     <li><a href="#"></a>Hoodie</li>
+                                 </ul>
+                             </div>
+                             <div class="dropdown-col">
+                                 <h4>Shoes</h4>
+                                 <ul>
+                                     <li><a href="#"></a>Boots</li>
+                                     <li><a href="#"></a>Sneakers</li>
+                                     <li><a href="#"></a>Loafers</li>
+                                 </ul>
+                             </div>
+                             <div class="dropdown-col">
+                                 <h4>Accessories</h4>
+                                 <ul>
+                                     <li><a href="#"></a>Headwear</li>
+                                     <li><a href="#"></a>Bags</li>
+                                     <li><a href="#"></a>Jewelry</li>
+                                 </ul>
+                             </div>
+                         </div>
+                         <!-- Bild i dropdown -->
+                         <img class="dropdown-image" src="../imges/nav-woman.png" alt="">
+                     </div>
+
+                     <!-- Dropdown-navigering meny (man) -->
+                     <div class="dropdown-panel" id="manDropdown">
+                         <button class="dropdown-close" aria-label="Stäng">✕</button>
+
+                         <div class="dropdown-columns">
+                             <div class="dropdown-col">
+                                 <h4>Clothes</h4>
+                                 <ul>
+                                     <li><a href="#"></a>T-Shirt</li>
+                                     <li><a href="#"></a>Pants</li>
+                                     <li><a href="#"></a>Sweatshirt</li>
+                                     <li><a href="#"></a>Hoodie</li>
+                                 </ul>
+                             </div>
+                             <div class="dropdown-col">
+                                 <h4>Shoes</h4>
+                                 <ul>
+                                     <li><a href="#"></a>Boots</li>
+                                     <li><a href="#"></a>Sneakers</li>
+                                     <li><a href="#"></a>Loafers</li>
+                                 </ul>
+                             </div>
+                             <div class="dropdown-col">
+                                 <h4>Accessories</h4>
+                                 <ul>
+                                     <li><a href="#"></a>Headwear</li>
+                                     <li><a href="#"></a>Bags</li>
+                                     <li><a href="#"></a>Jewelry</li>
+                                 </ul>
+                             </div>
+                         </div>
+                         <!-- Bild i dropdown -->
+                         <img class="dropdown-image" src="../imges/nav-man.png" alt="">
+                     </div>
+                 </div>
+             </nav>
+         </header>
+
+         <!-- LOGIN vy -->
+         <section id="login-section">
+             <div class="content-wrapper">
+                 <img src="../imges/imageLogin.png" id="login-img" alt="">
+                 <form>
+                     <label for="username">Username</label>
+                     <input type="text" id="username" required />
+                     <label for="password">Password</label>
+                     <input type="password" id="password" required />
+                 </form>
+
+                 <div class="Btn-section">
+                     <button type="submit" id="loginBtn">Login</button>
+                     <p>or</p>
+                     <button id="show-register" type="button">Create account</button>
+                 </div>
+
+                 <div id="go-back-to-frontpage">
+                     <img src="../imges/arrow_back.svg" alt="">
+                     <a href="../html/index.html">back to frontpage</a>
+                 </div>
+
+                 <p id="login-error" class="error-message hidden"></p>
+             </div>
+
+             <!-- REGISTRERINGS vy -->
+             <div id="register-section" class="form-container hidden">
+                 <div class="content-wrapper">
+                     <h2>Create account</h2>
+                     <form id="register-form">
+                         <label for="reg-username">Your username</label>
+                         <input type="text" id="reg-username" required />
+                         <label for="reg-password">Your password</label>
+                         <input type="password" id="reg-password" required />
+                         
+                         <div class="Btn-section">
+                             <button type="submit">Create</button>
+                         </div>   
+                     </form>
+                     
+                     <p id="register-error" class="error-message hidden"></p>
+                     <p id="register-success" class="success-message hidden"></p>
+                 </div> 
+             </div>
+         </section>
+
+         <!-- INLOGGAD vy -->
+         <section id="app-section" class="hidden">
+            <div class="content-wrapper"> 
+                 <h1>My account</h1>
+                 <div class="Btn-section">
+                     <div class="account-actions">
+                         <button>My profile</button>
+                         <button>Just for you</button>
+                         <button id="logout-btn">Logout</button>
+                     </div>
+                 </div> 
+
+                 <div id="protected-content">
+                     <h2>View order history</h2>
+                     <div id="previous-purchases">
+                         <p>Loading previous-purchases...</p>
+                     </div>
+                 </div>
+             </div>
+         </section>
+     </body>
+ </html>
