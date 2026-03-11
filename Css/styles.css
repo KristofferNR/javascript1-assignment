@@ -1,14 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
 :root {
   --bgColor: black;
   --primaryColor: white;
 }
 body {
   margin: 0;
-  
   width: 100%;
-
   color: var(--primaryColor);
   background-color: var(--bgColor);
+  overflow-x: hidden
 }
 
 #hero {
@@ -131,7 +132,7 @@ footer {
 .carousel-gallery {
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(5, 170px);
+  grid-template-columns: repeat(25, 170px);
   grid-column-gap: 0.5rem;
   overflow-x: scroll;
   scrollbar-width: thin;
@@ -150,6 +151,10 @@ footer {
 
 .carousel-item img {
   border-radius: 2px;
+  width: 150px;
+  height: 200px;
+  background-color: white;
+
 }
 
 #footer-list ul {
@@ -249,7 +254,7 @@ footer {
   }
   .carousel-gallery {
   
-  grid-template-columns: repeat(5, 17rem);
+  grid-template-columns: repeat(25, 17rem);
   grid-template-rows: 20rem;
 
 }
