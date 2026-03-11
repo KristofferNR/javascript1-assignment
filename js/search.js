@@ -38,9 +38,9 @@ window.addEventListener("keydown", (e) => {
         }
     }
 })
-//function till att hämta ett api där vi specificerar vilket api vi
-//vill hämta i paramsen på functionen
-//Detta gör functionen återanvändiningsbar
+/*function till att hämta ett api där vi specificerar vilket api vi
+vill hämta i paramsen på functionen
+Detta gör functionen återanvändiningsbar*/
 async function getDataFromApi(url) {
         
         const response = await fetch(url);
@@ -62,7 +62,6 @@ async function loadProducts() {
 
         //går igenom alla products och printar ut dom till carousel div
         data.forEach((product) => {
-            //skapar en div som är kopplad till productCard
             const productCard = document.createElement('div');
             const productDiv = document.createElement('div');
 

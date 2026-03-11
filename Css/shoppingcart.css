@@ -20,8 +20,57 @@
     height: 150px
 }
 
+#delivery-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+input[type="radio"] {
+    display: none
+}
+
+label {
+    position: relative;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 0.2rem;
+    width: 10rem;
+    border: 2px solid white;
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+}
+
+label:before {
+    content: "";
+    height: 0.7rem;
+    width: 0.7rem;
+    border: 2px solid white;
+    border-radius: 50px;
+}
+
+input[type="radio"]:checked + label:before {
+    height: 0.7rem;
+    width: 0.7rem;
+    border: 1px solid black;
+    background-color: black;
+    align-items: center;
+}
+
+input[type="radio"]:checked + label {
+    background-color: white;
+    color: black;
+    align-items: center;
+}
+
 #payment-options {
     display: flex;
+    width: auto;
+    height: auto;
+    padding: 0.6rem;
+    border-radius: 25px;
+    gap: 0.3rem;
 }
 
 .payment-btn img {
