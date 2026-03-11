@@ -56,6 +56,10 @@ section #main-category {
     padding: 0px;
 }
 
+#category-container div:hover {
+    cursor: pointer;
+}
+
 .product-name-price {
     display: flex;
     align-items: center;
@@ -146,3 +150,24 @@ a.active {
     color: black;
 }
 
+#filtering {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.filter-btn {
+    border-radius: 10%;
+    cursor: pointer;
+    border-color: white;
+    padding: 0.3rem;
+    border-style: solid;
+}
+
+.filter-btn:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
