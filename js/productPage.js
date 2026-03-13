@@ -26,7 +26,7 @@ let size;
 
 
 
-let activeArray = startCart();
+let activeArray = startCart(document.getElementById("cart-content"));
 
 
 //Arry för att spara i localstorage

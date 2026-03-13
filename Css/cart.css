@@ -63,7 +63,7 @@
     border-bottom: 1px solid var(--bgColor);
     align-items: center;
     max-height: 367px;
-    overflow-x: scroll;
+    overflow-y: scroll;
 }
 .item-continer{
     flex-direction: row;
