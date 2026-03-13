@@ -1,4 +1,4 @@
-import { updateCart,item } from "./productPage.js";
+import { updateCart, item } from "./CartFunctions.js";
 
 //Funktion som startar carten när användaren är i product sidan. Uppdaterar även cart så att den stämmer.
 export function startCart(continer) {
@@ -27,9 +27,34 @@ export function startCart(continer) {
     for (let i = 0; i < updatedArry.length; i++) {
       activeArray.push(updatedArry[i]);
     }
-    console.log(activeArray);
+
     updateCart(continer, activeArray);
   }
 
   return activeArray;
 }
+
+document.getElementById("cart-content").addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete-item")) {
+    let deleteIndex = e.target.id;
+    activeArray.splice(deleteIndex, 1);
+  }
+  updateCart(document.getElementById("cart-content"), activeArray);
+});
+
+document.getElementById("exit-cart").addEventListener("click", () => {
+  document.getElementById("cart-continer").style.display = "none";
+});
+
+document.getElementById("cart").addEventListener("click", (e) => {
+  document.getElementById("cart-continer").style.display = "flex";
+  document.getElementById("cart-continer").focus();
+  if (document.getElementById("navMenu").classList.contains("active")) {
+    document.getElementById("navMenu").classList.remove("active");
+  }
+});
+document.getElementById("desktop-cart").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.getElementById("cart-continer").focus();
+  document.getElementById("cart-continer").style.display = "flex";
+});

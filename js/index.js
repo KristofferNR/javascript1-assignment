@@ -1,3 +1,4 @@
+
 // Hämtar ikonen och navigering från HTML
 const hamburgerIcon = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
@@ -146,4 +147,3 @@ async function addProducts() {
 
 addProducts();
 loadProducts();
-
