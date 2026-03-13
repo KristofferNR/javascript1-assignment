@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../Css/styles.css">
     <link rel="stylesheet" href="/Css/cart.css">
+    <link rel="stylesheet" href="../Css/searchbar.css">
     <link rel="stylesheet" href="../Css/navbarStyle.css">
     <script src="/js/cart.js" type="module" ></script>
     <script src="../js/index.js" type="module" ></script>
     <title>Cool fashion</title>
+    <script src="../js/search.js" defer></script>
     
     
 </head>
@@ -41,17 +43,24 @@
 
                  <!--Ikoner och länkar för desktop-->
                  <div class="nav-desktop">
+<<<<<<< HEAD
                      <a href="#"><img src="../imges/person.svg"></a>
                      <a href="#"><img src="../imges/search.svg"></a>
                      <a href="#"><img id="desktop-cart" src="../imges/shopping_cart.svg"></a>
+=======
+
+                     <a href="loginPage.html"><img src="../imges/person.svg"></a>                                    
+                     <a id="search-btn"><img src="../imges/search.svg"></a>
+                     <a href="#"><img src="../imges/shopping_cart.svg"></a>
+>>>>>>> 42a7cb8431629b6e150c2735da2e0fd495c97a84
                  </div>
 
                  <!--Ikoner och länkar för hamburgermeny-->
                  <div class="nav-img">
                      <img src="../imges/person.svg" alt="">
-                     <li class="nav-item"><a href="#" class="nav-link">My Account</a></li>
+                     <li class="nav-item"><a href="loginPage.html" class="nav-link">My Account</a></li>
                  </div>
-                 <div class="nav-img">
+                 <div id="search-btn-menu" class="nav-img">
                      <img src="../imges/search.svg" alt="">
                      <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
                  </div>
@@ -69,7 +78,7 @@
                      <div class="dropdown-col">
                          <h4>Clothes</h4>
                          <ul>
-                             <li><a href="#"></a>T-Shirt</li>
+                             <li><a href="/html/category.html"></a>T-Shirt</li>
                              <li><a href="#"></a>Pants</li>
                              <li><a href="#"></a>Sweatshirt</li>
                              <li><a href="#"></a>Hoodie</li>
@@ -143,6 +152,41 @@
     </div>
 </section>
     <main>
+        <div id="search-modal">
+            <button id="close-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#D9D9D9"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+            <div id="logo-wrapper">
+                    <img id="logo1-search-img" src="../imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png" alt=""/>
+                    <img id="logo2-search-img" src="../imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png" alt=""/>
+                </div>
+            <div id="searchbar-container">
+                <img id="search-img" src="../imges/image 33 (1).png" alt=""/>
+                <input id="searchbar">
+                <div id="search-result-container">
+                    <ul id="categorie-ul">
+                        <li><a href="#">T-shirt</a></li>
+                        <li><a href="#">Hoodie</a></li>
+                        <li><a href="#">Pants</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Jeans</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="productPage.html">Cargo Pants</a></li>
+                    </ul>
+                    <ul id="api-search-results"></ul>
+                </div>
+            </div>
+            <div id="modal-products">
+                <div id="trending-product">
+                    <p>Trending Products</p>
+                    <img class="modal-img" src="../imges/Group.png" alt="">
+                    <img class="modal-img" src="../imges/Group-6.png" alt="">
+                </div>
+                <div id="recent-product">
+                    <p>Recently Viewed</p>
+                    <img class="modal-img" src="../imges/Group-10.png" alt="">
+                    <img class="modal-img" src="../imges/Group-3.png" alt="">
+                </div>
+            </div>
+        </div>
         <section id="hero">
             <div id="hero-image">
                 <div id="crop">
@@ -175,27 +219,27 @@
             <div class="carousel-gallery">
                 <div class="carousel-item">
                     <div>
-                        <img src="../imges/group-4.png" alt="carousel image" height="200px;">
+                        <img src="../imges/group-4.png" alt="carousel image">
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div>
-                        <img src="../imges/group-5.png" alt="carousel image" height="200px;">
+                        <img src="../imges/group-5.png" alt="carousel image">
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div>
-                        <img src="../imges/group-6.png" alt="carousel image" height="200px">
+                        <img src="../imges/group-6.png" alt="carousel image">
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div>
-                        <img src="../imges/group-7.png" alt="carousel image" height="200px;">
+                        <img src="../imges/group-7.png" alt="carousel image">
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div>
-                        <img src="../imges/group-8.png" alt="carousel image" height="200px;">
+                        <img src="../imges/group-8.png" alt="carousel image">
                     </div>
                 </div>
             </div>

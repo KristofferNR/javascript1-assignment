@@ -1,3 +1,7 @@
+
+
+//Updaterar cart inehållet efter en ändring som att läga till eller ta bort. 
+//Den rendrar in nya "updateringar" till carten.
 export function updateCart(continer, activeArray) {
   continer.textContent = "";
 
