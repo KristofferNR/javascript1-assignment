@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="../Css/searchbar.css">
     <link rel="stylesheet" href="../Css/shoppingcart.css">
     <link rel="stylesheet" href="../Css/navbarStyle.css">
+    <link rel="stylesheet" href="/Css/cart.css">
 
     <title>Cool fashion</title>
     <script src="../js/search.js" defer></script>
     <script src="../js/index.js" defer></script>
+    <script src="../js/shoppingcart.js" type="module"></script>
     
 </head>
 
@@ -37,7 +39,7 @@
 
              <ul class="nav-menu" id="navMenu">
                  <li><a href="#" class="nav-link" id="womanLink">Woman</a></li>
-                 <li><a href="#" class="nav-link" id="new-in">NewIn</a></li>
+                 <li><a href="index.html" class="nav-link" id="new-in">NewIn</a></li>
                  <li><a href="#" class="nav-link" id="manLink">Man</a></li>
 
                  <!--Ikoner och länkar för desktop-->
@@ -170,36 +172,53 @@
                 </div>
             </div>
         </div>
-        <div id="shoppingcart-container">
-            <div id="checkout">
-                <h1>checkout</h1>
-                <div id="checkout-products">
+        <div id="shoppingcart">
+            <div id="shoppingcart-container">
+                <div id="checkout">
+                    <h1>checkout</h1>
+                    <div id="checkout-products">
+                        <div id="cart-content">
 
+                        </div>
+                    </div>
                 </div>
+                <div id="order-info">
+                    <div id="delivery">
+                        <h1>Select delivery</h1>
+                        <div id="delivery-options">
+                            <div class="delivery-input">
+                                <input type="radio" name="delivery-select" id="delivery-select-1" class="delivery-selected">
+                                <label for="delivery-select-1">UPS</label>
+                                <p id="delivery-time-1">delivery in 5-6 days</p>
+                            </div>
+                            <div class="delivery-input">
+                                <input type="radio" name="delivery-select" id="delivery-select-2" class="delivery-selected">
+                                <label for="delivery-select-2">Postnord</label>
+                                <p id="delivery-time-2">Delivery in 2-3 days</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="payment">
+                        <h1>Select payment</h1>
+                        <div id="payment-options">
+                            <button class="payment-btn" id="swish"><img class="payment-img" src="../imges/Swish_(payment)-Logo.wine.svg"></button>
+                            <button class="payment-btn" id="paypal"><img class="payment-img" src="../imges/PayPal-Logo.wine.svg"></button>
+                            <button class="payment-btn" id="apple-pay"><img class="payment-img" src="../imges/Apple_Pay-Logo.wine.svg"></button>
+                            <button class="payment-btn" id="google-pay"><img class="payment-img" src="../imges/Google_Pay-Logo.wine.svg"></button>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
-            <div id="order-info">
-                <div id="delivery">
-                    <h1>Select delivery</h1>
-                    <div id="delivery-options">
-                        <div>
-                            <input type="radio" name="delivery-select" id="delivery-select">
-                            <label for="delivery-select">UPS</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="delivery-select" id="delivery-select-two">
-                            <label for="delivery-select-two">Postnord</label>
-                        </div>
-                    </div>
-                </div>
-                <div id="payment">
-                    <h1>Select payment</h1>
-                    <div id="payment-options">
-                        <button class="payment-btn" id="swish"><img src="../imges/Swish_(payment)-Logo.wine.svg"></button>
-                        <button class="payment-btn" id="paypal"><img src="../imges/PayPal-Logo.wine.svg"></button>
-                        <button class="payment-btn" id="apple-pay"><img src="../imges/Apple_Pay-Logo.wine.svg"></button>
-                        <button class="payment-btn" id="google-pay"><img src="../imges/Google_Pay-Logo.wine.svg"></button>
-                    </div>
-                </div>
+            <button type="button" id="order-btn">Confirm Order</button>
+            <div id="order-complete">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="125" height="125"  
+                fill="#60b326" viewBox="0 0 24 24" >
+                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                <path d="M17.31 14H9.72L5.95 2.68A1 1 0 0 0 5 2H2v2h2.28l3.54 10.63A2 2 0 0 0 9.72 16h7.59a2 2 0 0 0 1.87-1.3l2.76-7.35-1.87-.7zM10 18a2 2 0 1 0 0 4 2 2 0 1 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 1 0 0-4"></path><path d="m11.71 7.29-1.42 1.42 2.71 2.7 4.71-4.7-1.42-1.42L13 8.59z"></path>
+                </svg>
+                <h1>Thanks for your order</h1>
+                <p>"Good taste can’t be bought. But you just came pretty close."</p>
             </div>
         </div>
         <div id="footer-list">
@@ -220,7 +239,7 @@
             <button class="social-media-btn">
                 <i class="fa fa-instagram"></i>
             </button>
-            <button class="social-media-btn">
+            <button type="button" class="social-media-btn">
                 <i class="fa fa-twitter"></i>
             </button>
         </div>
