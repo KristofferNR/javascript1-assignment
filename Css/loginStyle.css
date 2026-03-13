@@ -1,0 +1,141 @@
+* {
+    font-family: 'Space Grotesk', sans-serif;
+    color: white; 
+}
+
+#login-img {
+    width: 250px;
+    padding-bottom: 1rem;
+}
+
+#login-section, #app-section {
+    background-color: black;
+    gap: 0.8rem;
+    padding-bottom: 2rem;
+}
+
+#register-section {
+    margin-top: 4rem;
+    border-top: 2px solid #333;
+}
+
+label {
+    padding-bottom: 1rem;
+}
+
+.Btn-section, input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    padding: 0.4rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: black;
+} 
+
+.Btn-section button {
+    background: grey;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 9rem;
+    transition: background 0.2s;
+}
+
+.Btn-section button:hover {
+    background-color: rgb(68, 255, 0, 0.9);
+    color: black;
+    font-weight: 800;
+}
+
+#go-back-to-frontpage, a {
+    display: flex;
+    margin-left: 8px;
+    text-decoration: none;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /* centrerar wrappern horisontellt */
+    padding: 1rem;
+}
+
+#app-section .content-wrapper {
+    max-width: 700px; 
+}
+
+#protected-content {
+  width: 100%;
+  max-width: 700px;
+}
+
+.hidden {
+  display: none;
+}
+
+.error-message {
+  color: #dc3545;
+  background: #f8d7da;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border-left: 4px solid #dc3545;
+  margin: 1rem 0;
+  width: 253px;
+}
+
+.success-message {
+  color: #155724;
+  background: #d4edda;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border-left: 4px solid #28a745;
+  margin: 1rem 0;
+}
+
+/* Produktkort */
+.product-card {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background-color: rgb(37, 37, 37);
+  width: 150px;
+}
+
+.product-image {
+  max-width: 140px;
+}
+
+.price {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1rem;
+}
+
+/* Layout för inloggad vy */
+.account-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#previous-purchases {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+
+
