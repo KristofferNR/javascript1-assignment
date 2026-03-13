@@ -4,6 +4,11 @@
   --bgColor: black;
   --primaryColor: white;
 }
+
+* {
+    font-family: space grotesk; 
+}
+
 body {
   margin: 0;
   width: 100%;
