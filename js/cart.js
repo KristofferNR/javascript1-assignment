@@ -34,13 +34,6 @@ export function startCart(continer) {
   return activeArray;
 }
 
-document.getElementById("cart-content").addEventListener("click", (e) => {
-  if (e.target.classList.contains("delete-item")) {
-    let deleteIndex = e.target.id;
-    activeArray.splice(deleteIndex, 1);
-  }
-  updateCart(document.getElementById("cart-content"), activeArray);
-});
 
 document.getElementById("exit-cart").addEventListener("click", () => {
   document.getElementById("cart-continer").style.display = "none";

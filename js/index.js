@@ -1,4 +1,14 @@
-
+import { startCart } from "./cart.js";
+import { updateCart } from "./CartFunctions.js";
+let activeArray = startCart(document.getElementById("cart-content"));
+//När man klickar på delete så tar vi bort det "item som inte ska var med längre i våran array eller cart"
+document.getElementById("cart-content").addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete-item")) {
+    let deleteIndex = e.target.id;
+    activeArray.splice(deleteIndex, 1);
+  }
+  updateCart(document.getElementById("cart-content"), activeArray);
+});
 // Hämtar ikonen och navigering från HTML
 const hamburgerIcon = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
