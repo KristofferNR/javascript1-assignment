@@ -90,3 +90,9 @@ nextButton.addEventListener("click", () => {
 });
 
 showPage(currentPage);
+
+import {item } from "./CartFunctions.js";
+
+document.getElementById("category-container").addEventListener("click", (e) => {
+    
+});
