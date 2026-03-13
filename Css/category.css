@@ -44,7 +44,8 @@ section #main-category {
 
 #category-container div img {
         height: 200px;
-    }
+        object-fit: contain;
+    } 
 }
 
 #category-container div {
@@ -70,12 +71,6 @@ section #main-category {
 .product-name-price p {
     margin: 0.4rem;
     word-wrap: break-word;
-}
-
-#category-container img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
 }
 
 @media screen and (min-width: 667px) {
