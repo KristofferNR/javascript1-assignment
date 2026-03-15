@@ -169,13 +169,10 @@ colorsSmall.addEventListener("click", (event) => {
 });
 
 //bilder
+let objectString = localStorage.getItem("activeItem");
+let activeitem = JSON.parse(objectString);
 
-addImg(
-  document.getElementById("mainProductImg"),
-  "/imges/Group-13.png",
-  "Description of image",
-);
-
+addInfo(document.getElementById("mainProductImg"), activeitem.imgSrc, activeitem.description, activeitem.title, activeitem.price, activeitem.description)
 // addInfo(
 //   document.getElementById("mainProductImg"),
 //   "/imges/Group-13.png",
@@ -212,6 +209,13 @@ function addInfo(continer, imgSrc, imgAlt, title, price, description) {
   document.getElementById("money-big").textContent = price;
   document.getElementById("product-title").textContent = title;
   document.getElementById("product-description").textContent = description;
+  const aboutList = document.querySelectorAll(".about-des");
+
+  aboutList.forEach(
+    (text) => {
+      text.textContent = description;
+    });
+
 }
 
 // addMoreLike(document.getElementById("more-like-continer"));

@@ -90,42 +90,117 @@ nextButton.addEventListener("click", () => {
 
 showPage(currentPage);
 
-import { item } from "./CartFunctions.js";
+
 const descriptions = [
-  { name: "Matrix Wash Tee",    description: "Iconic Matrix graphic on a premium acid-washed oversized tee." },
-  { name: "Grey Tee",           description: "Minimalist essential grey tee with a relaxed streetwear fit." },
-  { name: "Stud Tee",           description: "Clean workwear-inspired tee with subtle Stud branding on the back." },
-  { name: "All Star Wash Tee",  description: "Bold Stay Hydrated graphic on a vintage acid-washed heavy tee." },
-  { name: "Strawberry Jaws Tee",description: "Wild cat graphic with red lettering, not your average streetwear tee." },
-  { name: "Print Tee",          description: "Subtle photo print tee with an understated downtown aesthetic." },
-  { name: "Spiraling Wash Tee", description: "Purple galaxy graphic with an oversized washed finish, standout piece." },
-  { name: "Carhartt Tee",       description: "Premium Carhartt collab tee built for the streets and the skatepark." },
-  { name: "Green Print Tee",    description: "Positive vibes tee with a retro flower graphic and motivational text." },
-  { name: "With Love Tee",      description: "Washed forest green tee with tonal branding, effortlessly cool." },
-  { name: "Print Wash Tee",     description: "Vintage-washed black tee with a raw photo graphic on the chest." },
-  { name: "Sinners Tee",        description: "Dark graphic tee with gothic Sinners artwork for a bold statement." },
-  { name: "Fluke Tee",          description: "Retro surf-inspired tee with a beachside California feel." },
-  { name: "Alaska Tee",         description: "Classic tourist-style Alaska graphic tee with a clean summer look." },
-  { name: "Aura Tee",           description: "Colorful abstract print tee with an artistic modern streetwear vibe." },
-  { name: "Reality Tee",        description: "Dreamy floral back graphic with blue tones on a premium black tee." },
+  {
+    name: "Matrix Wash Tee",
+    description:
+      "Iconic Matrix graphic on a premium acid-washed oversized tee.",
+  },
+  {
+    name: "Grey Tee",
+    description: "Minimalist essential grey tee with a relaxed streetwear fit.",
+  },
+  {
+    name: "Stud Tee",
+    description:
+      "Clean workwear-inspired tee with subtle Stud branding on the back.",
+  },
+  {
+    name: "All Star Wash Tee",
+    description:
+      "Bold Stay Hydrated graphic on a vintage acid-washed heavy tee.",
+  },
+  {
+    name: "Strawberry Jaws Tee",
+    description:
+      "Wild cat graphic with red lettering, not your average streetwear tee.",
+  },
+  {
+    name: "Print Tee",
+    description:
+      "Subtle photo print tee with an understated downtown aesthetic.",
+  },
+  {
+    name: "Spiraling Wash Tee",
+    description:
+      "Purple galaxy graphic with an oversized washed finish, standout piece.",
+  },
+  {
+    name: "Carhartt Tee",
+    description:
+      "Premium Carhartt collab tee built for the streets and the skatepark.",
+  },
+  {
+    name: "Green Print Tee",
+    description:
+      "Positive vibes tee with a retro flower graphic and motivational text.",
+  },
+  {
+    name: "With Love Tee",
+    description:
+      "Washed forest green tee with tonal branding, effortlessly cool.",
+  },
+  {
+    name: "Print Wash Tee",
+    description:
+      "Vintage-washed black tee with a raw photo graphic on the chest.",
+  },
+  {
+    name: "Sinners Tee",
+    description:
+      "Dark graphic tee with gothic Sinners artwork for a bold statement.",
+  },
+  {
+    name: "Fluke Tee",
+    description: "Retro surf-inspired tee with a beachside California feel.",
+  },
+  {
+    name: "Alaska Tee",
+    description:
+      "Classic tourist-style Alaska graphic tee with a clean summer look.",
+  },
+  {
+    name: "Aura Tee",
+    description:
+      "Colorful abstract print tee with an artistic modern streetwear vibe.",
+  },
+  {
+    name: "Reality Tee",
+    description:
+      "Dreamy floral back graphic with blue tones on a premium black tee.",
+  },
 ];
 //Hämtar alla producter i listan
 const productList = document.querySelectorAll(".card");
-// Klick event för alla producter så att vi kan ta 
+// Klick event för alla producter så att vi kan ta
 // information från det som vi klickar.
 productList.forEach((product) => {
   product.addEventListener("click", (e) => {
-    const card = e.currentTarget; 
-    const ImgSrc = card.querySelector("img").src;
+    const card = e.currentTarget;
+    const ImgSrc = card.querySelector("img").getAttribute("src");
     const title = card.querySelector(".title").textContent;
     const price = card.querySelector(".price").textContent;
 
-    const found = descriptions.find(item => item.name === title);
+    const found = descriptions.find((item) => item.name === title);
     const description = found.description;
 
     console.log(ImgSrc);
     console.log(title);
     console.log(description);
     console.log(price);
+
+    const activeProduct = {
+      imgSrc: ImgSrc,
+      title: title,
+      description: description,
+      price: price,
+    };
+    console.log(activeProduct);
+    localStorage.setItem("activeItem", JSON.stringify(activeProduct));
+    let objectString = localStorage.getItem("activeItem");
+    let item = JSON.parse(objectString);
+    console.log(item);
+    window.open("http://127.0.0.1:5500/html/productPage.html");
   });
 });
