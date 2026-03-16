@@ -4,6 +4,11 @@
   --bgColor: black;
   --primaryColor: white;
 }
+
+* {
+    font-family: space grotesk; 
+}
+
 body {
   margin: 0;
   width: 100%;
@@ -45,6 +50,19 @@ body {
   text-shadow: 1px 2px 1px black;
   color: var(--primaryColor);
 }
+
+#headerContainer > a h1 {
+  width: 100%;
+  position: absolute;
+  top: 16rem;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 2em;
+  text-shadow: 1px 2px 1px black;
+  color: var(--primaryColor);
+  cursor: pointer;
+} 
+
 #main {
   display: flex;
   justify-content: center;
@@ -255,6 +273,11 @@ footer {
     top: 18rem;
     
   }
+   #headerContainer > a h1 {
+    font-size: 3em;
+    top: 18rem;
+    
+  }
   .carousel-gallery {
   
   grid-template-columns: repeat(25, 17rem);
@@ -281,6 +304,11 @@ footer {
     
     top: 25rem;
     font-size: 7rem;
+    
+  }
+   #headerContainer > a h1 {
+    
+    top: 30rem;
     
   }
   #headerImg {
