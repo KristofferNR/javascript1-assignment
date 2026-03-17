@@ -24,7 +24,7 @@
     border: 2px solid white;
     border-radius: 15px;
     width: 17rem;
-    height: 150px
+    
 }
 
 #delivery-options {
@@ -160,6 +160,98 @@ input[type="radio"]:checked + p {
     display: flex;
 }
 
+:root {
+  --bgColor: black;
+  --primaryColor: white;
+  --greenBtnColor: rgb(68, 255, 0);
+}
+#cart-section{
+    display: flex;
+    position: relative;
+    justify-content: end;
+    width: 100%;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    margin: 0;
+}
+#cart-continer{
+    display: none;
+    gap: 1rem;
+    border-radius: 7px;
+    flex-direction: column;
+    position: absolute;
+    width: 50%;
+    min-width: 250px;
+    max-width: 277px;
+    
+    background-color: var(--primaryColor);
+    z-index: 1;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+#exit-cart{
+    display: flex;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    align-self: end;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+#exit-cart:hover{
+    background-color: rgba(0, 0, 0, 0.103);
+}
+#checkoutBtn:hover{
+   background-color: rgba(0, 0, 0, 0.144); 
+}
+#checkoutBtn{
+    align-self: center;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 7px;
+    border: none;
+
+}
+#cart-content{
+    display: flex;
+    flex-direction: column;
+    min-height: 6rem;
+    width: 100%;
+    padding: 1rem 0rem;
+    box-sizing: border-box;
+    align-items: center;
+    max-height: 367px;
+    overflow-x: scroll;
+}
+
+#cart-content::-webkit-scrollbar {
+  display: none;
+}
+
+.item-continer{
+    flex-direction: row;
+    padding: 0.5rem;
+    width: 90%;
+    color: white;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid white;
+}
+.delete-item{
+    margin-left: auto;
+}
+.item-img{
+    width: 2rem;
+    border-radius: 2px;
+}
+
+#exit-cart{
+    display: none;
+}
+
 @media screen and (min-width: 1200px) {
     #shoppingcart-container {
         flex-direction: row;
@@ -168,7 +260,7 @@ input[type="radio"]:checked + p {
     }
     
     #checkout-products {
-        height: 20rem
+
     }
 
     #order-btn {

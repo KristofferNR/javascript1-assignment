@@ -332,11 +332,6 @@ body {
   cursor: pointer;
 }
 
-#checkoutBtn a {
-  text-decoration: none;
-  color: black;
-}
-
 @media screen and (min-width: 665px) {
   #add-continer {
     margin-bottom: 0;

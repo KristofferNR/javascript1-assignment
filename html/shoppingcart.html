@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="../Css/searchbar.css">
     <link rel="stylesheet" href="../Css/shoppingcart.css">
     <link rel="stylesheet" href="../Css/navbarStyle.css">
-    <link rel="stylesheet" href="/Css/cart.css">
 
     <title>Cool fashion</title>
-    <script src="../js/search.js" defer></script>
-    <script src="../js/index.js" defer></script>
+    <script src="../js/search.js" type="module"></script>
+    <script src="../js/index.js" type="module"></script>
     <script src="../js/shoppingcart.js" type="module"></script>
+    <script src="../js/cart.js" type="module"></script>
+    <script src="../js/CartFunctions.js" type="module"></script>
+    
     
 </head>
 
@@ -46,7 +48,7 @@
                  <div class="nav-desktop">
                      <a href="#"><img src="../imges/person.svg"></a>
                      <a id="search-btn"><img src="../imges/search.svg"></a>
-                     <a href="#"><img src="../imges/shopping_cart.svg"></a>
+                     <a id="desktop-cart" href="#"><img src="../imges/shopping_cart.svg"></a>
                  </div>
 
                  <!--Ikoner och länkar för hamburgermeny-->
@@ -59,7 +61,7 @@
                      <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
                  </div>
                  <div class="nav-img">
-                     <img src="../imges/shopping_cart.svg" alt="">
+                     <img id="cart" src="../imges/shopping_cart.svg" alt="">
                      <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
                  </div>
              </ul>
@@ -177,6 +179,7 @@
                 <div id="checkout">
                     <h1>checkout</h1>
                     <div id="checkout-products">
+                        <span id="exit-cart"></span>
                         <div id="cart-content">
 
                         </div>

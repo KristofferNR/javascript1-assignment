@@ -1,4 +1,5 @@
 import { startCart } from "./cart.js";
+import { updateCart, item } from "./CartFunctions.js";
 
 //Hämta element
 const infoBtn = document.getElementById("infoBtn-small");
@@ -12,27 +13,13 @@ const colors = document.getElementById("color-list-big");
 const colorsSmall = document.getElementById("color-list");
 
 let size;
-//Class
- export class item {
-  constructor(img, price, size, color, name) {
-    this.img = img;
-    this.price = price;
-    this.size = size;
-    this.color = color;
-    this.name = name;
-    this.amount = 1;
-  }
-}
 
-
-
-let activeArray = startCart();
-
+let activeArray = startCart(document.getElementById("cart-content"));
 
 //Arry för att spara i localstorage
 
 // Info
-infoBtn.addEventListener("click", () => {
+infoBtn.addEventListener("click", (e) => {
   if (infopopup.style.display === "block") {
     infopopup.style.display = "none";
   } else {
@@ -74,20 +61,17 @@ sizeUl.addEventListener("click", (event) => {
 addBotton.addEventListener("click", () => {
   let color;
   if (!sizeCmboBox.classList.contains("ready")) {
-    console.log("size not valid");
     return;
   }
 
   if (window.getComputedStyle(colors).display === "flex") {
     if ((color = testColor(colors)) === "") {
-      console.log("color not valid");
       return;
     }
   }
 
   if (window.getComputedStyle(colorsSmall).display === "flex") {
     if ((color = testColor(colorsSmall)) === "") {
-      console.log("color not valid small");
       return;
     }
   }
@@ -100,9 +84,9 @@ addBotton.addEventListener("click", () => {
     color,
     document.getElementById("product-title").textContent,
   );
-  console.log(newItem);
+
   activeArray.push(newItem);
-  console.log(activeArray);
+
   document.getElementById("cart-continer").style.display = "flex";
   document.getElementById("cart-continer").focus();
   updateCart(document.getElementById("cart-content"), activeArray);
@@ -122,40 +106,12 @@ document.getElementById("desktop-cart").addEventListener("click", (e) => {
   document.getElementById("cart-continer").focus();
   document.getElementById("cart-continer").style.display = "flex";
 });
-export function updateCart(continer, activeArray) {
-  continer.textContent = "";
 
-  for (let i = 0; i < activeArray.length; i++) {
-    const divItem = document.createElement("div");
-    const itemImg = document.createElement("img");
-    const itemTitle = document.createElement("span");
-    const itemPrice = document.createElement("span");
-    const deleteItem = document.createElement("button");
-
-    divItem.style.display = "flex";
-    deleteItem.id = i;
-    divItem.classList.add("item-continer");
-    itemImg.classList.add("item-img");
-    itemTitle.classList.add("item-title");
-    itemPrice.classList.add("item-price");
-    deleteItem.classList.add("delete-item");
-
-    deleteItem.textContent = "X";
-    itemImg.src = activeArray[i].img;
-    itemTitle.textContent = activeArray[i].name;
-    itemPrice.textContent = activeArray[i].price;
-    divItem.append(itemImg, itemTitle, itemPrice, deleteItem);
-    continer.appendChild(divItem);
-  }
-  localStorage.setItem("cart", JSON.stringify(activeArray));
-  
-}
 //När man klickar på delete så tar vi bort det "item som inte ska var med längre i våran array eller cart"
 document.getElementById("cart-content").addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-item")) {
-    console.log("du tryckte delete");
     let deleteIndex = e.target.id;
-    console.log(activeArray.splice(deleteIndex, 1).name + " was deleted");
+    activeArray.splice(deleteIndex, 1);
   }
   updateCart(document.getElementById("cart-content"), activeArray);
 });
@@ -213,13 +169,10 @@ colorsSmall.addEventListener("click", (event) => {
 });
 
 //bilder
+let objectString = localStorage.getItem("activeItem");
+let activeitem = JSON.parse(objectString);
 
-addImg(
-  document.getElementById("mainProductImg"),
-  "/imges/Group-13.png",
-  "Description of image",
-);
-
+addInfo(document.getElementById("mainProductImg"), activeitem.imgSrc, activeitem.description, activeitem.title, activeitem.price, activeitem.description)
 // addInfo(
 //   document.getElementById("mainProductImg"),
 //   "/imges/Group-13.png",
@@ -256,6 +209,13 @@ function addInfo(continer, imgSrc, imgAlt, title, price, description) {
   document.getElementById("money-big").textContent = price;
   document.getElementById("product-title").textContent = title;
   document.getElementById("product-description").textContent = description;
+  const aboutList = document.querySelectorAll(".about-des");
+
+  aboutList.forEach(
+    (text) => {
+      text.textContent = description;
+    });
+
 }
 
 // addMoreLike(document.getElementById("more-like-continer"));
