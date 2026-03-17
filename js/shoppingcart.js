@@ -52,9 +52,27 @@ orderBtn.addEventListener("click", () => {
 
 const myCart = startCart(document.querySelector("#cart-content"))
 
+const cartArray = localStorage.getItem("cart")
+const cartParse = JSON.parse(cartArray)
+let totalSum = 0
+
+/*Går igenom alla produkter som vi sparar i localstorage(cart) och tar bort $ och ändrar price från string
+ till nummer och sedan summerar dom för att få ett total pris */
+cartParse.forEach(product => {
+    const price = product.price.replace("$", "")
+    const numberPrice = Number(price)
+    totalSum += numberPrice
+})
+
+document.getElementById("price-total").textContent = "Total: " + totalSum + "$"
+
+/* Kollar så att allt finns med för att dom ska kunna göra en beställning. Den kollar om man
+har produkter i sin varukorg, om man har valt ett leverans alternativ och ett betalnings alternativ.
+Om allt det stämmer så kommer ordern gå igenom och man får en pop up i 3s och sen försvinner den
+och produkterna töms ur varukorgen */
 function orderAllSelect() {
 
-    if(checkboxOne.style.display === "none" || checkboxTwo.style.display === "none") {
+    if(!checkboxOne.checked && !checkboxTwo.checked) {
         alert("You need to select a delivery option to proceed")
         return
     } 
@@ -80,7 +98,19 @@ function orderAllSelect() {
         orderComplete.classList.remove("show-order")
 
         myCart.length = 0
+        totalSum = 0
+
+        document.getElementById("price-total").textContent = "Total: " + totalSum + "$"
+
+        localStorage.setItem("cart", JSON.stringify([]))
+
+        console.log("LocalStorage efter rensning:", localStorage.getItem("cart"));
+
         updateCart(document.querySelector("#cart-content"), myCart)
+
+        location.reload();
+
+        
     }, 3000);
 
 }
@@ -91,13 +121,6 @@ paymentImg.forEach(img => {
         event.target.classList.add("payment-btn-clicked");
     });
 });
-
-
-
-
-
-
-
 
 checkboxOne.addEventListener("change", check)
 
