@@ -1,7 +1,7 @@
-import { updateCart,item } from "./productPage.js";
+import { updateCart, item } from "./CartFunctions.js";
 
 //Funktion som startar carten när användaren är i product sidan. Uppdaterar även cart så att den stämmer.
-export function startCart() {
+export function startCart(continer) {
   let arrayString = localStorage.getItem("cart");
   let updatedArry = JSON.parse(arrayString);
   let activeArray = [];
@@ -22,14 +22,32 @@ export function startCart() {
       activeArray.push(updatedArry[i]);
     }
     console.log(activeArray);
-    updateCart(document.getElementById("cart-content"), activeArray);
+    updateCart(continer, activeArray);
   } else {
     for (let i = 0; i < updatedArry.length; i++) {
       activeArray.push(updatedArry[i]);
     }
-    console.log(activeArray);
-    updateCart(document.getElementById("cart-content"), activeArray);
+
+    updateCart(continer, activeArray);
   }
 
   return activeArray;
 }
+
+
+document.getElementById("exit-cart").addEventListener("click", () => {
+  document.getElementById("cart-continer").style.display = "none";
+});
+
+document.getElementById("cart").addEventListener("click", (e) => {
+  document.getElementById("cart-continer").style.display = "flex";
+  document.getElementById("cart-continer").focus();
+  if (document.getElementById("navMenu").classList.contains("active")) {
+    document.getElementById("navMenu").classList.remove("active");
+  }
+});
+document.getElementById("desktop-cart").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.getElementById("cart-continer").focus();
+  document.getElementById("cart-continer").style.display = "flex";
+});

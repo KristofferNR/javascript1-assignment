@@ -302,7 +302,8 @@ footer {
 @media screen and (min-width: 875px) {
     #headerContainer > h1 {
     
-    top: 30rem;
+    top: 25rem;
+    font-size: 7rem;
     
   }
    #headerContainer > a h1 {
