@@ -30,7 +30,7 @@ export function updateCart(continer, activeArray) {
   localStorage.setItem("cart", JSON.stringify(activeArray));
 }
 
-//class
+//class för sparad lista som ska vara cart i localstorage
 export class item {
   constructor(img, price, size, color, name) {
     this.img = img;

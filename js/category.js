@@ -90,7 +90,7 @@ nextButton.addEventListener("click", () => {
 
 showPage(currentPage);
 
-
+//Dynamiskt lägger till en discription.
 const descriptions = [
   {
     name: "Matrix Wash Tee",
@@ -182,13 +182,9 @@ productList.forEach((product) => {
     const title = card.querySelector(".title").textContent;
     const price = card.querySelector(".price").textContent;
 
+    //Letar efter objekt med samma namn
     const found = descriptions.find((item) => item.name === title);
     const description = found.description;
-
-    console.log(ImgSrc);
-    console.log(title);
-    console.log(description);
-    console.log(price);
 
     const activeProduct = {
       imgSrc: ImgSrc,
@@ -196,11 +192,9 @@ productList.forEach((product) => {
       description: description,
       price: price,
     };
-    console.log(activeProduct);
+   
     localStorage.setItem("activeItem", JSON.stringify(activeProduct));
-    let objectString = localStorage.getItem("activeItem");
-    let item = JSON.parse(objectString);
-    console.log(item);
+    
     window.open("http://127.0.0.1:5500/html/productPage.html");
   });
 });
