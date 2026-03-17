@@ -3,6 +3,11 @@
   --primaryColor: white;
   --greenBtnColor: rgb(68, 255, 0);
 }
+
+* {
+    font-family: space grotesk; 
+} 
+
 body {
   display: flex;
   flex-direction: column;

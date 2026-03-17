@@ -155,6 +155,7 @@ li {
     margin-bottom: 0.8rem;
     text-transform: uppercase;
     color: #fff;
+    cursor: pointer;
 }
 
 .dropdown-col ul {
@@ -162,6 +163,7 @@ li {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
+    cursor: pointer;
 }
 
 .dropdown-col ul li a {

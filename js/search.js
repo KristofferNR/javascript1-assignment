@@ -8,6 +8,16 @@ const searchModal = document.getElementById("search-modal")
 
 const closeBtn = document.getElementById("close-btn")
 
+document.getElementById("search-result").addEventListener("click", () =>{
+    const activeProduct = {
+      imgSrc: "/imges/Group-13.png",
+      title: "Cargo pants",
+      description: "Statement cargos with a functional edge. Easy to wear, hard to ignore — made for late nights, long days, and standout fits.",
+      price: "130$",
+    };
+   
+    localStorage.setItem("activeItem", JSON.stringify(activeProduct));
+});
 
 function showModal () {
     searchModal.classList.toggle("show")

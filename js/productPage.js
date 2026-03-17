@@ -57,7 +57,7 @@ sizeUl.addEventListener("click", (event) => {
   }
 });
 
-//For adding to cart
+//Lägger till i cart efter att man har tryckt knappen
 addBotton.addEventListener("click", () => {
   let color;
   if (!sizeCmboBox.classList.contains("ready")) {
@@ -107,7 +107,8 @@ document.getElementById("desktop-cart").addEventListener("click", (e) => {
   document.getElementById("cart-continer").style.display = "flex";
 });
 
-//När man klickar på delete så tar vi bort det "item som inte ska var med längre i våran array eller cart"
+//När man klickar på delete så tar vi bort det "item som inte ska 
+// var med längre i våran array eller cart"
 document.getElementById("cart-content").addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-item")) {
     let deleteIndex = e.target.id;
@@ -119,7 +120,8 @@ document.getElementById("cart-content").addEventListener("click", (e) => {
 document.getElementById("exit-cart").addEventListener("click", () => {
   document.getElementById("cart-continer").style.display = "none";
 });
-//Retunerar om användare har gjort ett val med färg eller inte samt att den kollar vilken färg.
+//Retunerar om användare har gjort ett val med färg eller inte 
+// samt att den kollar vilken färg.
 function testColor(continer) {
   const allLi = continer.querySelectorAll("li");
   let selectedColor = "";
@@ -168,24 +170,12 @@ colorsSmall.addEventListener("click", (event) => {
   }
 });
 
-//bilder
+//Hämta klickade produkten från localstorage.
 let objectString = localStorage.getItem("activeItem");
 let activeitem = JSON.parse(objectString);
 
 addInfo(document.getElementById("mainProductImg"), activeitem.imgSrc, activeitem.description, activeitem.title, activeitem.price, activeitem.description)
-// addInfo(
-//   document.getElementById("mainProductImg"),
-//   "/imges/Group-13.png",
-//   "Description of image",
-//   "Cargo Pants",
-//   "$400",
-//   "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-// );
-// addImg(
-//   document.getElementById("small-productImg"),
-//   "/imges/Group-13.png",
-//   "Description of image",
-// );
+
 
 //En åternvändbar funktion för att lägga till bilder i divarna som jag skapat som placeholders
 export function addImg(continer, imgSrc, imgAlt) {
@@ -203,6 +193,8 @@ export function addImg(continer, imgSrc, imgAlt) {
 
   continer.appendChild(img);
 }
+
+//Här hämtar vi rätt html element och ändrar till relevant information.
 function addInfo(continer, imgSrc, imgAlt, title, price, description) {
   addImg(continer, imgSrc, imgAlt);
   document.getElementById("money").textContent = price;
