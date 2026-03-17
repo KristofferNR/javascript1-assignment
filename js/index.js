@@ -1,5 +1,6 @@
 import { startCart } from "./cart.js";
 import { updateCart } from "./CartFunctions.js";
+
 let activeArray = startCart(document.getElementById("cart-content"));
 //När man klickar på delete så tar vi bort det "item som inte ska var med längre i våran array eller cart"
 document.getElementById("cart-content").addEventListener("click", (e) => {

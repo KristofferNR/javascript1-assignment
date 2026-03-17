@@ -1,3 +1,5 @@
+import { loadProducts, getDataFromApi } from "./api.js"
+
 const searchBtn = document.getElementById("search-btn")
 const searchBtnMenu = document.getElementById("search-btn-menu")
 
@@ -38,55 +40,6 @@ window.addEventListener("keydown", (e) => {
         }
     }
 })
-/*function till att hämta ett api där vi specificerar vilket api vi
-vill hämta i paramsen på functionen
-Detta gör functionen återanvändiningsbar*/
-async function getDataFromApi(url) {
-        
-        const response = await fetch(url);
-
-        if(!response.ok) {
-            throw new Error("Server didnt start properly")
-        }
-        const data = await response.json();
-
-        return data;
-}
-
-async function loadProducts() {
-
-    try {
-        const data = await getDataFromApi('https://fakestoreapi.com/products')
-
-        const carouselGallery = document.querySelector(".carousel-gallery")
-
-        //går igenom alla products och printar ut dom till carousel div
-        data.forEach((product) => {
-            const productCard = document.createElement('div');
-            const productDiv = document.createElement('div');
-
-
-            const productImg = document.createElement("img")
-            //const productTitle = document.createElement("h3")
-            //const productDescription = document.createElement("p")
-            //const productPrice = document.createElement("p")
-
-            productImg.src = product.image
-            productImg.alt = product.title
-            //productTitle.textContent = product.title
-            //productDescription.textContent = product.description
-            //productPrice.textContent = `$ ${product.price}`
-            
-            productCard.classList.add("carousel-item")
-
-            productDiv.append(productImg)
-            productCard.append(productDiv)
-            carouselGallery.appendChild(productCard); 
-        });
-    } catch (error) {
-        console.error('Error fetching products:', error);
-    }}
-
 
 //sökfunktion som går igenom alla product titlar som vi hämtar från api:et, om titeln på producten matchar det vi har skrivit i inputfältet så skapar den en ny li för den titeln
 async function apiSearchFunction(searchValue) {
