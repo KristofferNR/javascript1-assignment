@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../Css/styles.css">
+    <link rel="stylesheet" href="/Css/cart.css">
     <link rel="stylesheet" href="../Css/searchbar.css">
     <link rel="stylesheet" href="../Css/navbarStyle.css">
-
+    <link rel="icon" type="image/x-icon" href="/imges/logoPage.png">
+    <script src="/js/cart.js" type="module" ></script>
+    <script src="../js/index.js" type="module" ></script>
     <title>Cool fashion</title>
     <script src="../js/search.js" defer></script>
-    <script src="../js/index.js" defer></script>
+    
     
 </head>
 
@@ -45,7 +48,7 @@
 
                      <a href="loginPage.html"><img src="../imges/person.svg"></a>                                    
                      <a id="search-btn"><img src="../imges/search.svg"></a>
-                     <a href="#"><img src="../imges/shopping_cart.svg"></a>
+                     <a href="#"><img id = "desktop-cart" src="../imges/shopping_cart.svg"></a>
                  </div>
 
                  <!--Ikoner och länkar för hamburgermeny-->
@@ -57,7 +60,7 @@
                      <img src="../imges/search.svg" alt="">
                      <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
                  </div>
-                 <div class="nav-img">
+                 <div id="cart" class="nav-img">
                      <img src="../imges/shopping_cart.svg" alt="">
                      <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
                  </div>
@@ -135,6 +138,15 @@
          </div>
      </nav>   
  </header>
+ <section id="cart-section">
+    <div id="cart-continer">
+    <button id="exit-cart">X</button>
+    <div id="cart-content">
+
+    </div>
+    <button id="checkoutBtn">Checkout</button>
+    </div>
+</section>
     <main>
         <div id="search-modal">
             <button id="close-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#D9D9D9"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
@@ -153,7 +165,7 @@
                         <li><a href="#">Accessories</a></li>
                         <li><a href="#">Jeans</a></li>
                         <li><a href="#">Shoes</a></li>
-                        <li><a href="productPage.html">Cargo Pants</a></li>
+                        <li><a id = "search-result" href="productPage.html">Cargo Pants</a></li>
                     </ul>
                     <ul id="api-search-results"></ul>
                 </div>
@@ -254,5 +266,6 @@
         </div>
     </footer>
     </body>
-    <script src="/js/index.js"></script>
+    
+    
 </html>

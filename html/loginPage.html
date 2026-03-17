@@ -9,9 +9,11 @@
              <link rel="stylesheet" href="../Css/styles.css">
              <link rel="stylesheet" href="../Css/navbarStyle.css">
              <link rel="stylesheet" href="../Css/loginStyle.css">
+             <link rel="stylesheet" href="../Css/cart.css">
 
              <title>Cool fashion</title>
-             <script src="../js/index.js" defer></script>
+             <script src="/js/cart.js" type="module"></script>
+             <script src="../js/index.js" type="module"></script>
              <script src="../js/loginPage.js" defer></script>
              
          </head>
@@ -41,7 +43,7 @@
                          <div class="nav-desktop">
                              <a href="#"><img src="../imges/person.svg"></a>
                              <a href="#"><img src="../imges/search.svg"></a>
-                             <a href="#"><img src="../imges/shopping_cart.svg"></a>
+                             <a href="#"><img id="desktop-cart" src="../imges/shopping_cart.svg"></a>
                          </div>
 
                          <!--Ikoner och länkar för hamburgermeny-->
@@ -53,7 +55,7 @@
                              <img src="../imges/search.svg" alt="">
                              <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
                          </div>
-                         <div class="nav-img">
+                         <div id="cart" class="nav-img">
                              <img src="../imges/shopping_cart.svg" alt="">
                              <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
                          </div>
@@ -131,6 +133,15 @@
                  </div>
              </nav>
          </header>
+             <section id="cart-section">
+    <div id="cart-continer">
+    <button id="exit-cart">X</button>
+    <div id="cart-content">
+
+    </div>
+    <button id="checkoutBtn">Checkout</button>
+    </div>
+</section>
 
          <!-- LOGIN vy -->
          <section id="login-section">

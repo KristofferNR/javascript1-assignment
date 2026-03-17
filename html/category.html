@@ -7,13 +7,17 @@
     <link href='https://fonts.googleapis.com/css?family=Space Grotesk' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../Css/styles.css">
-    <link rel="stylesheet" href="../Css/category.css">
-    <link rel="stylesheet" href="../Css/navbarStyle.css">
-    <link rel="stylesheet" href="../Css/searchbar.css">
+    <link rel="stylesheet" href="/Css/styles.css">
+    <link rel="stylesheet" href="/Css/cart.css">
+    <link rel="stylesheet" href="/Css/category.css">
+    <link rel="stylesheet" href="/Css/navbarStyle.css">
+    <link rel="stylesheet" href="/Css/searchbar.css">
     
-    <script src="../js/index.js" defer></script> 
-    <script src="../js/category.js" defer></script>
+
+    <script src="../js/index.js" type="module"></script>
+    <script src="/js/category.js" type="module"></script>  
+    <script src="/js/search.js" defer></script>
+
     <title>Cool fashion</title>
 </head>
 
@@ -43,9 +47,9 @@
 
                  <!--Ikoner och länkar för desktop-->
                  <div class="nav-desktop">
-                     <a href="loginPage.html"><img src="../imges/person.svg"></a>
-                     <a id="search-btn"><img src="../imges/search.svg"></a>
-                     <a href="#"><img src="../imges/shopping_cart.svg"></a>
+                     <a href="#"><img src="../imges/person.svg"></a>
+                     <a href="#"><img src="../imges/search.svg"></a>
+                     <a href="#"><img id= "desktop-cart"src="../imges/shopping_cart.svg"></a>
                  </div>
 
                  <!--Ikoner och länkar för hamburgermeny-->
@@ -57,7 +61,7 @@
                      <img src="../imges/search.svg" alt="">
                      <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
                  </div>
-                 <div class="nav-img">
+                 <div id= "cart"class="nav-img">
                      <img src="../imges/shopping_cart.svg" alt="">
                      <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
                  </div>
@@ -135,6 +139,15 @@
          </div>
      </nav>   
     </header>
+    <section id="cart-section">
+    <div id="cart-continer">
+    <button id="exit-cart">X</button>
+    <div id="cart-content">
+
+    </div>
+    <button id="checkoutBtn">Checkout</button>
+    </div>
+</section>
     <main>
         <section id="main-category">
             <!--Kategori titel-->
@@ -157,98 +170,101 @@
                 <div id="category-container"> 
                     <div class="card black"><img src="../imges/image 21.png">
                         <div class="product-name-price">
-                            <p>Matrix Wash Tee</p>
-                            <p>39.99$</p>
+                            <p class="title">Matrix Wash Tee</p>
+                            <p class = "price">39.99$</p>
+                            
                         </div>
                     </div>
                     <div class="card grey"><img src="../imges/Group-6.png">
                          <div class="product-name-price">
-                            <p>Grey Tee</p>
-                            <p>29.99$</p>
+                            <p class="title">Grey Tee</p>
+                            <p class = "price">29.99$</p>
+                            
+
                         </div>
                     </div>
                     <div class="card white"><img src="../imges/Group-11.png">
                          <div class="product-name-price">
-                            <p>Stud Tee</p>
-                            <p>49.99$</p>
+                            <p class="title">Stud Tee</p>
+                            <p class = "price">49.99$</p>
                         </div>
                     </div>
                     <div class="card grey"><img src="../imges/image 20.png">
                          <div class="product-name-price">
-                            <p>All Star Wash Tee</p>
-                            <p>39.99$</p>
+                            <p class="title">All Star Wash Tee</p>
+                            <p class = "price">39.99$</p>
                         </div>
                     </div>
                     <div class="card black"><img src="../imges/image 23.png">
                          <div class="product-name-price">
-                            <p>Strawberry Jaws Tee</p>
-                            <p>49.99$</p>
+                            <p class="title">Strawberry Jaws Tee</p>
+                            <p class = "price">49.99$</p>
                         </div>
                     </div>
                     <div class="card black"><img src="../imges/tshirt.png">
                         <div class="product-name-price">
-                            <p>Print Tee</p>
-                            <p>35.9$</p>
+                            <p class="title">Print Tee</p>
+                            <p class = "price">35.9$</p>
                         </div>
                     </div>
                     <div class="card grey"><img src="../imges/Rectangle.png">
                         <div class="product-name-price">
-                            <p>Spiraling Wash Tee</p>
-                            <p>45.99$</p>
+                            <p class="title" >Spiraling Wash Tee</p>
+                            <p class = "price">45.99$</p>
                         </div>
                     </div>
                     <div class="card grey"><img src="../imges/carharrt.png">
                         <div class="product-name-price">
-                            <p>Carharrt Tee</p>
-                            <p>56.99$</p>
+                            <p class="title">Carharrt Tee</p>
+                            <p class = "price">56.99$</p>
                         </div>
                     </div>
                      <div class="card white green"><img src="../imges/ownstyle.png">
                         <div class="product-name-price">
-                            <p>Green Print Tee</p>
-                            <p>34.99$</p>
+                            <p class="title">Green Print Tee</p>
+                            <p class = "price">34.99$</p>
                         </div>
                     </div>
                     <div class="card green"><img src="../imges/greentee.png">
                          <div class="product-name-price">
-                            <p>With Love Tee</p>
-                            <p>25.99$</p>
+                            <p class="title">With Love Tee</p>
+                            <p class = "price">25.99$</p>
                         </div>
                     </div>
                     <div class="card black"><img src="../imges/tshirt.png">
                          <div class="product-name-price">
-                            <p>Print Wash Tee</p>
-                            <p>39.99$</p>
+                            <p class="title">Print Wash Tee</p>
+                            <p class = "price">39.99$</p>
                         </div>
                     </div>
                     <div class="card grey"><img src="../imges/sinnerstee.png">
                          <div class="product-name-price">
-                            <p>Sinners Tee</p>
-                            <p>29.99$</p>
+                            <p class="title">Sinners Tee</p>
+                            <p class = "price">29.99$</p>
                         </div>
                     </div>
                     <div class="card white"><img src="../imges/fluketee.jpg">
                          <div class="product-name-price">
-                            <p>Fluke Tee</p>
-                            <p>34.99$</p>
+                            <p class="title">Fluke Tee</p>
+                            <p class = "price">34.99$</p>
                         </div>
                     </div>
                     <div class="card white"><img src="../imges/alaska.png">
                         <div class="product-name-price">
-                            <p>Alaska Tee</p>
-                            <p>25.99$</p>
+                            <p class="title">Alaska Tee</p>
+                            <p class = "price">25.99$</p>
                         </div>
                     </div>
                     <div class="card white"><img src="../imges/aura.jpg">
                         <div class="product-name-price">
-                            <p>Aura Tee</p>
-                            <p>29.99$</p>
+                            <p class="title">Aura Tee</p>
+                            <p class = "price">29.99$</p>
                         </div>
                     </div>
                     <div class="card black"><img src="../imges/reality.jpg">
                         <div class="product-name-price">
-                            <p>Reality Tee</p>
-                            <p>43.99$</p>
+                            <p class="title">Reality Tee</p>
+                            <p class = "price">43.99$</p>
                         </div>
                     </div>
                 </div>
