@@ -1,103 +1,105 @@
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 #searchbar-container {
-    display: flex;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    justify-content: center;
-    box-sizing: border-box;
-    overflow: hidden;
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 #searchbar {
-    width: 60%;
-    box-sizing: border-box;
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 12px 12px rgba(0,0,0,0.1);
-    
+  width: 60%;
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1);
 }
 
 #search-modal {
-    position: absolute;
-    box-sizing: border-box;
-    top: 315px;
-    left: 0;
-    width: 100%;
-    height: 700px;
-    background-color: black;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    z-index: 100;
-    display: none;
-    border-radius: 8px;
-    overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  top: 315px;
+  left: 0;
+  width: 100%;
+  height: 700px;
+  background-color: black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  display: none;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 #search-modal.show {
-    display: block;
+  display: block;
 }
 
 .modal-img {
-    width: 11rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 11rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 #modal-products {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
 }
 
-#trending-product, #recent-product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    width: 14rem;
+#trending-product,
+#recent-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 14rem;
 }
 
-#trending-product p, #recent-product p {
-    margin-bottom: 0;
-    font-size: 1.3rem;
+#trending-product p,
+#recent-product p {
+  margin-bottom: 0;
+  font-size: 1.3rem;
 }
 
 #search-btn {
-    z-index: 101;
-    background-color: transparent;
-    border: 1px solid transparent;
+  z-index: 101;
+  background-color: transparent;
+  border: 1px solid transparent;
 }
 
 #search-btn img {
-    width: 1.6rem;
+  width: 1.6rem;
 }
 
 #search-result-container {
-    position: absolute;
-    margin-top: 30px;
-    border: 1px solid rgba(0,0,0,0.1);
-    width: 60%;
-    max-width: 359px;
-    backdrop-filter: blur(10px);
+  position: absolute;
+  margin-top: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 60%;
+  max-width: 359px;
+  backdrop-filter: blur(10px);
 }
 
-#categorie-ul, #api-search-results {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    
+#categorie-ul,
+#api-search-results {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 #categorie-ul li {
-    display: none;
+  display: none;
 }
 
-#categorie-ul li a, #api-search-results li a {
+#categorie-ul li a,
+#api-search-results li a {
   margin-top: -2px;
   padding: 0.5rem;
   text-decoration: none;
@@ -108,59 +110,56 @@ input:focus {
 }
 
 #search-img {
-    position: absolute;
-    box-sizing: border-box;
-    top: 0;
-    z-index: -1;
-    max-width: 467px;
-    opacity: 0.3;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  z-index: -1;
+  max-width: 467px;
+  opacity: 0.3;
 }
 
 #logo-wrapper {
-    position: relative;
-    max-width: 1000px; /* Samma bredd som din huvudlayout */
-    margin: 0 auto;
+  position: relative;
+  max-width: 1000px; /* Samma bredd som din huvudlayout */
+  margin: 0 auto;
 }
 
 #logo1-search-img {
-    position: absolute;
-    left: 800px;
-    top: 200px;
+  position: absolute;
+  left: 800px;
+  top: 200px;
 }
 
 #logo2-search-img {
-    position: absolute;
-    right: 800px;
-    top: 200px;
+  position: absolute;
+  right: 800px;
+  top: 200px;
 }
 
 #close-btn {
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 25px;
-    font-size: 2rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  font-size: 2rem;
 }
 
 @media screen and (min-width: 376px) {
-    
 }
 
 @media screen and (min-width: 667px) {
-    #search-modal {
+  #search-modal {
     top: 400px;
-    }
-
-    
+  }
 }
 
 @media screen and (min-width: 875px) {
-    #search-modal {
+  #search-modal {
     top: 600px;
-    }
+  }
 }
 
 @media (max-width: 1024px) {
-    #recent-product {
-        display: none;
-    }
+  #recent-product {
+    display: none;
+  }
 }
