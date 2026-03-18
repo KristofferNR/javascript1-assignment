@@ -1,125 +1,120 @@
-import { loadProducts, getDataFromApi } from "./api.js"
+import { loadProducts, getDataFromApi } from "./api.js";
 
-const searchBtn = document.getElementById("search-btn")
-const searchBtnMenu = document.getElementById("search-btn-menu")
+const searchBtn = document.getElementById("search-btn");
+const searchBtnMenu = document.getElementById("search-btn-menu");
 
-const searchbar = document.getElementById("searchbar")
-const searchModal = document.getElementById("search-modal")
+const searchbar = document.getElementById("searchbar");
+const searchModal = document.getElementById("search-modal");
 
-const closeBtn = document.getElementById("close-btn")
+const closeBtn = document.getElementById("close-btn");
 
-document.getElementById("search-result").addEventListener("click", () =>{
-    const activeProduct = {
-      imgSrc: "/imges/Group-13.png",
-      title: "Cargo pants",
-      description: "Statement cargos with a functional edge. Easy to wear, hard to ignore — made for late nights, long days, and standout fits.",
-      price: "130$",
-    };
-   
-    localStorage.setItem("activeItem", JSON.stringify(activeProduct));
+document.getElementById("search-result").addEventListener("click", () => {
+  const activeProduct = {
+    imgSrc: "/imges/Group-13.png",
+    title: "Cargo pants",
+    description:
+      "Statement cargos with a functional edge. Easy to wear, hard to ignore — made for late nights, long days, and standout fits.",
+    price: "130$",
+  };
+
+  localStorage.setItem("activeItem", JSON.stringify(activeProduct));
 });
 
-function showModal () {
-    searchModal.classList.toggle("show")
+function showModal() {
+  searchModal.classList.toggle("show");
 }
 
-function closeModal () {
-    searchModal.classList.remove("show")
+function closeModal() {
+  searchModal.classList.remove("show");
 }
 
 searchBtn.addEventListener("click", () => {
-    showModal()
-    searchbar.focus()
-})
+  showModal();
+  searchbar.focus();
+});
 
 searchBtnMenu.addEventListener("click", () => {
-    showModal()
-    searchbar.focus()
-})
+  showModal();
+  searchbar.focus();
+});
 
 closeBtn.addEventListener("click", () => {
-    closeModal()
-})
-
+  closeModal();
+});
 
 window.addEventListener("keydown", (e) => {
-    console.log(e)
-    if (e.key === "Escape") {
-        if(closeModal()) {
-            showModal()
-        }
+  console.log(e);
+  if (e.key === "Escape") {
+    if (closeModal()) {
+      showModal();
     }
-})
+  }
+});
 
-//sökfunktion som går igenom alla product titlar som vi hämtar från api:et, om titeln på producten matchar det vi har skrivit i inputfältet så skapar den en ny li för den titeln
+/*sökfunktion som går igenom alla product titlar som vi hämtar från api:et, om titeln på producten 
+matchar det vi har skrivit i inputfältet så skapar den en ny li för den titeln*/
 async function apiSearchFunction(searchValue) {
+  const apiResultContainer = document.getElementById("api-search-results");
 
-    const apiResultContainer = document.getElementById("api-search-results");
+  apiResultContainer.innerHTML = "";
 
-    apiResultContainer.innerHTML = ""
+  if (searchValue.length === 0) return;
 
-    if(searchValue.length === 0) return;
- 
-    const data = await getDataFromApi('https://fakestoreapi.com/products');
+  const data = await getDataFromApi("https://fakestoreapi.com/products");
 
-    data.forEach(product => {
-        if (product.title.toUpperCase().includes(searchValue)) {
+  data.forEach((product) => {
+    if (product.title.toUpperCase().includes(searchValue)) {
+      const li = document.createElement("li");
+      const productTitle = document.createElement("a");
 
-            const li = document.createElement("li");
-            const productTitle = document.createElement("a")
+      productTitle.textContent = product.title;
 
-            productTitle.textContent = product.title;
-                
-            li.append(productTitle)
-            apiResultContainer.appendChild(li);
-        }
-    });
+      li.append(productTitle);
+      apiResultContainer.appendChild(li);
+    }
+  });
 }
 
 //sök funktion som går igenom alla hårdkodade li och visar dom på skärmen om dom matchar det du har skrivit i inputfältet annars syns dom inte
 function htmlSearchFunction(searchValue) {
-    
-    const li = document.querySelectorAll("#categorie-ul li")
+  const li = document.querySelectorAll("#categorie-ul li");
 
-    li.forEach(item => {
-        const text = item.textContent.toUpperCase()
-        if (searchValue.length === 0) {
-            item.style.display  = "none"
-        } else if (text.includes(searchValue)) {
-            item.style.display = "block"
-        } else {
-            item.style.display = "none"
-        }
-        
-    })
+  li.forEach((item) => {
+    const text = item.textContent.toUpperCase();
+    if (searchValue.length === 0) {
+      item.style.display = "none";
+    } else if (text.includes(searchValue)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
 }
 
 //en funktion som hämtar båda sökfunktionerna för kategorie och api
-async function searchHandler (searchbar) {
+async function searchHandler(searchbar) {
+  const searchValue = document.getElementById(searchbar);
+  const searchResult = searchValue.value.toUpperCase();
 
-    const searchValue = document.getElementById(searchbar)
-    const searchResult = searchValue.value.toUpperCase()
-
-    htmlSearchFunction(searchResult)
-    await apiSearchFunction(searchResult)
+  htmlSearchFunction(searchResult);
+  await apiSearchFunction(searchResult);
 }
 
-//funktion för att inte ladda alla sökresultat direkt när du skriver, den väntar 300ms innan den ger dig sökresultat på det du har skrivit, för varje gång du skriver något så börjar timern om
+//Återanvändabar debounce funktion för att inte ladda alla sökresultat direkt när du skriver, den väntar 300ms innan den ger dig sökresultat på det du har skrivit, för varje gång du skriver något så börjar timern om
 function debounce(func, delay) {
-    let timer;
-    return function(...args) {
-        clearTimeout(timer)
-        timer = setTimeout(() => {
-            func.apply(this, args);
-        }, delay)
-    }
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
 }
 
-let debounceSearch = debounce(searchHandler, 300)
+let debounceSearch = debounce(searchHandler, 300);
 
 searchbar.addEventListener("input", () => {
-    debounceSearch("searchbar")
-})
-
+  debounceSearch("searchbar");
+});
 
 loadProducts();
