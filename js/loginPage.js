@@ -106,7 +106,7 @@ function renderPreviousPurchases(products) {
         productImg.classList.add("product-image");
         productPrice.classList.add("price");
 
-        //Hämtar datan från API:et
+        //Tilldela den specifika datan från API:et till varje produkt
         productImg.src = product.image;
         productImg.alt = product.title;
         productTitle.textContent = product.title.substring(0, 50) + (product.title.length > 50 ? "..." : "");
