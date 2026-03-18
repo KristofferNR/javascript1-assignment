@@ -15,16 +15,19 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="../Css/styles.css" />
-    <link rel="stylesheet" href="/Css/cart.css" />
-    <link rel="stylesheet" href="../Css/searchbar.css" />
-    <link rel="stylesheet" href="../Css/navbarStyle.css" />
     <link rel="icon" type="image/x-icon" href="/imges/logoPage.png" />
-    <script src="/js/cart.js" type="module"></script>
-    <script src="../js/index.js" type="module"></script>
+    <link rel="stylesheet" href="../Css/styles.css" />
+    <link rel="stylesheet" href="../Css/searchbar.css" />
+    <link rel="stylesheet" href="../Css/shoppingcart.css" />
+    <link rel="stylesheet" href="../Css/navbarStyle.css" />
+
     <title>Cool fashion</title>
     <script src="../js/search.js" type="module"></script>
+    <script src="../js/index.js" type="module"></script>
     <script src="../js/api.js" type="module"></script>
+    <script src="../js/shoppingcart.js" type="module"></script>
+    <script src="../js/cart.js" type="module"></script>
+    <script src="../js/CartFunctions.js" type="module"></script>
   </head>
 
   <body>
@@ -46,33 +49,33 @@
 
         <ul class="nav-menu" id="navMenu">
           <li><a href="#" class="nav-link" id="womanLink">Woman</a></li>
-          <li><a href="#" class="nav-link" id="new-in">NewIn</a></li>
+          <li><a href="index.html" class="nav-link" id="new-in">NewIn</a></li>
           <li><a href="#" class="nav-link" id="manLink">Man</a></li>
-        
-        <!--Ikoner och länkar för desktop-->
-        <div class="nav-desktop">
-          <a href="loginPage.html"><img src="../imges/person.svg" /></a>
-          <a id="search-btn"><img src="../imges/search.svg" /></a>
-          <a href="#"
-            ><img id="desktop-cart" src="../imges/shopping_cart.svg"
-          /></a>
-        </div>
 
-        <!--Ikoner och länkar för hamburgermeny-->
-        <div class="nav-img">
-          <img src="../imges/person.svg" alt="" />
-          <li class="nav-item">
-            <a href="loginPage.html" class="nav-link">My Account</a>
-          </li>
-        </div>
-        <div id="search-btn-menu" class="nav-img">
-          <img src="../imges/search.svg" alt="" />
-          <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
-        </div>
-        <div id="cart" class="nav-img">
-          <img src="../imges/shopping_cart.svg" alt="" />
-          <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
-        </div>
+          <!--Ikoner och länkar för desktop-->
+          <div class="nav-desktop">
+            <a href="#"><img src="../imges/person.svg" /></a>
+            <a id="search-btn"><img src="../imges/search.svg" /></a>
+            <a id="desktop-cart" href="#"
+              ><img src="../imges/shopping_cart.svg"
+            /></a>
+          </div>
+
+          <!--Ikoner och länkar för hamburgermeny-->
+          <div class="nav-img">
+            <img src="../imges/person.svg" alt="" />
+            <li class="nav-item">
+              <a href="#" class="nav-link">My Account</a>
+            </li>
+          </div>
+          <div id="search-btn-menu" class="nav-img">
+            <img src="../imges/search.svg" alt="" />
+            <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
+          </div>
+          <div class="nav-img">
+            <img id="cart" src="../imges/shopping_cart.svg" alt="" />
+            <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+          </div>
         </ul>
 
         <!-- Dropdown-navigering meny (woman) -->
@@ -118,7 +121,7 @@
             <div class="dropdown-col">
               <h4>Clothes</h4>
               <ul>
-                <li><a href="/html/category.html">T-Shirt</a></li>
+                <li><a href="#"></a>T-Shirt</li>
                 <li><a href="#"></a>Pants</li>
                 <li><a href="#"></a>Sweatshirt</li>
                 <li><a href="#"></a>Hoodie</li>
@@ -146,15 +149,6 @@
         </div>
       </nav>
     </header>
-    <section id="cart-section">
-      <div id="cart-continer">
-        <button id="exit-cart">X</button>
-        <div id="cart-content"></div>
-        <button id="checkoutBtn">
-          <a href="./shoppingcart.html">Checkout</a>
-        </button>
-      </div>
-    </section>
     <main>
       <div id="search-modal">
         <button id="close-btn">
@@ -193,9 +187,7 @@
               <li><a href="#">Accessories</a></li>
               <li><a href="#">Jeans</a></li>
               <li><a href="#">Shoes</a></li>
-              <li>
-                <a id="search-result" href="productPage.html">Cargo Pants</a>
-              </li>
+              <li><a href="productPage.html">Cargo Pants</a></li>
             </ul>
             <ul id="api-search-results"></ul>
           </div>
@@ -213,100 +205,98 @@
           </div>
         </div>
       </div>
-      <section id="hero">
-        <div id="hero-image">
-          <div id="crop">
-            <img src="../imges/Hero-image.png" alt="Hero Image" />
-            <img
-              id="accent-img"
-              src="../imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png"
-              alt="Hero Image"
-            />
+      <div id="shoppingcart">
+        <div id="shoppingcart-container">
+          <div id="checkout">
+            <h1>checkout</h1>
+            <div id="checkout-products">
+              <span id="exit-cart"></span>
+              <div id="cart-content"></div>
+            </div>
+            <h2 id="price-total">Total:</h2>
+          </div>
+
+          <div id="order-info">
+            <div id="delivery">
+              <h1>Select delivery</h1>
+              <div id="delivery-options">
+                <div class="delivery-input">
+                  <input
+                    type="radio"
+                    name="delivery-select"
+                    id="delivery-select-1"
+                    class="delivery-selected"
+                  />
+                  <label for="delivery-select-1">UPS</label>
+                  <p id="delivery-time-1">delivery in 5-6 days</p>
+                </div>
+                <div class="delivery-input">
+                  <input
+                    type="radio"
+                    name="delivery-select"
+                    id="delivery-select-2"
+                    class="delivery-selected"
+                  />
+                  <label for="delivery-select-2">Postnord</label>
+                  <p id="delivery-time-2">Delivery in 2-3 days</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="payment">
+              <h1>Select payment</h1>
+              <div id="payment-options">
+                <button class="payment-btn" id="swish">
+                  <img
+                    class="payment-img"
+                    src="../imges/Swish_(payment)-Logo.wine.svg"
+                  />
+                </button>
+                <button class="payment-btn" id="paypal">
+                  <img
+                    class="payment-img"
+                    src="../imges/PayPal-Logo.wine.svg"
+                  />
+                </button>
+                <button class="payment-btn" id="apple-pay">
+                  <img
+                    class="payment-img"
+                    src="../imges/Apple_Pay-Logo.wine.svg"
+                  />
+                </button>
+                <button class="payment-btn" id="google-pay">
+                  <img
+                    class="payment-img"
+                    src="../imges/Google_Pay-Logo.wine.svg"
+                  />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div id="hero-text">
-          <p>
-            “Cool Fashion is where everyday style becomes self-expression. We
-            curate streetwear for people who move with confidence, comfort, and
-            intention. Every piece is designed to feel natural, look effortless,
-            and make a statement without saying a word.”
-          </p>
-        </div>
-      </section>
-      <section id="main">
-        <div id="bentoContainer">
-          <img
-            class="bentoImg"
-            src="../imges/Group-10.png"
-            alt=""
-            style="grid-area: box-1"
-          />
-          <img
-            class="bentoImg"
-            src="../imges/Group-3.png"
-            alt=""
-            style="grid-area: box-3"
-          />
-          <img
-            class="bentoImg"
-            src="../imges/image 33 (1).png"
-            alt=""
-            style="grid-area: box-4"
-          />
-          <img
-            class="bentoImg"
-            src="../imges/Group-13.png"
-            alt=""
-            style="grid-area: box-5"
-          />
-          <img
-            class="bentoImg"
-            src="../imges/Group-6.png"
-            alt=""
-            style="grid-area: box-6"
-          />
-          <img
-            class="bentoImg"
-            src="../imges/Group-7.png"
-            alt=""
-            style="grid-area: box-7"
-          />
-        </div>
-      </section>
-    </main>
-    <footer>
-      <!-- karusell -->
-      <div class="carousel">
-        <p>Collections</p>
-        <div class="carousel-gallery">
-          <div class="carousel-item">
-            <div>
-              <img src="../imges/group-4.png" alt="carousel image" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div>
-              <img src="../imges/group-5.png" alt="carousel image" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div>
-              <img src="../imges/group-6.png" alt="carousel image" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div>
-              <img src="../imges/group-7.png" alt="carousel image" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div>
-              <img src="../imges/group-8.png" alt="carousel image" />
-            </div>
-          </div>
+        <button type="button" id="order-btn">Confirm Order</button>
+
+        <div id="order-complete">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="125"
+            height="125"
+            fill="#60b326"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.31 14H9.72L5.95 2.68A1 1 0 0 0 5 2H2v2h2.28l3.54 10.63A2 2 0 0 0 9.72 16h7.59a2 2 0 0 0 1.87-1.3l2.76-7.35-1.87-.7zM10 18a2 2 0 1 0 0 4 2 2 0 1 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 1 0 0-4"
+            ></path>
+            <path
+              d="m11.71 7.29-1.42 1.42 2.71 2.7 4.71-4.7-1.42-1.42L13 8.59z"
+            ></path>
+          </svg>
+          <h1>Thanks for your order</h1>
+          <p>"Good taste can’t be bought. But you just came pretty close."</p>
         </div>
       </div>
-      <footer>
+    </main>
+    <footer>
       <div id="footer-list">
         <ul>
           <li>Customer service</li>
@@ -325,10 +315,11 @@
         <button class="social-media-btn">
           <i class="fa fa-instagram"></i>
         </button>
-        <button class="social-media-btn">
+        <button type="button" class="social-media-btn">
           <i class="fa fa-twitter"></i>
         </button>
       </div>
     </footer>
   </body>
+  <script src="/js/index.js"></script>
 </html>

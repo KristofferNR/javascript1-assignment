@@ -102,3 +102,8 @@
     width: 2rem;
     border-radius: 2px;
 }
+
+#checkoutBtn a {
+  text-decoration: none;
+  color: black;
+}
