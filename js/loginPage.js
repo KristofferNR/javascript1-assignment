@@ -68,17 +68,18 @@ async function loadPreviousPurchases() {
         const response3 = await fetch("https://fakestoreapi.com/products/18");
         const response4 = await fetch("https://fakestoreapi.com/products/19");
 
+        //Kontrollerar med .ok-egenskapen att servern har svarat med ett lyckat http-anrop 
         if (!response1.ok || !response2.ok || !response3.ok || !response4.ok) {
             throw new Error("Failed to retrieve products from server.");
         }
 
-        //Skapar variabler för att ta in alla svar som JSON
+        //Tolkar och konverterar JSON-data
         const product1 = await response1.json();
         const product2 = await response2.json();
         const product3 = await response3.json();
         const product4 = await response4.json();
 
-        //Samla alla produkter i en array och anropar render-funktionen
+        //Samla alla produkter i en JS-array och anropar render-funktionen
         const products = [product1, product2, product3, product4];
         renderPreviousPurchases(products);
         
@@ -113,13 +114,13 @@ function renderPreviousPurchases(products) {
         productPrice.textContent = `$${product.price}`;
         productCategorySmall.textContent = `Category: ${product.category}`;
 
-        //Sätter small inuti p-taggen
+        //Sätter element inuti p-taggen
         productCategory.appendChild(productCategorySmall);
 
-        //Sätter ihop kortet
+        //I ett anrop lägger vi till alla element som skapar ett kort
         productCard.append(productImg, productTitle, productPrice, productCategory);
 
-        //Lägger till kortet på sidan
+        //Lägger till kortet till DOM så att det syns
         previousPurchases.appendChild(productCard);
     });
 }
