@@ -1,4 +1,5 @@
-import { loadProducts, getDataFromApi } from "./api.js";
+import { getDataFromApi } from "./api.js";
+import { loadProducts } from "./loadProducts.js";
 
 const searchBtn = document.getElementById("search-btn");
 const searchBtnMenu = document.getElementById("search-btn-menu");
