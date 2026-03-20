@@ -1,6 +1,5 @@
 * {
-    font-family: 'Space Grotesk', sans-serif;
-    color: white; 
+    font-family: 'Space Grotesk', sans-serif; 
 }
 
 #login-img {
@@ -9,6 +8,7 @@
 }
 
 #login-section, #app-section {
+    color: white;
     background-color: black;
     gap: 0.8rem;
     padding-bottom: 2rem;
