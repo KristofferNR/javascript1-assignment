@@ -1,5 +1,6 @@
 import { startCart } from "./cart.js";
 import { updateCart } from "./CartFunctions.js";
+import { updateTotal } from "./updateTotalPrice.js";
 
 const checkboxOne = document.getElementById("delivery-select-1");
 const deliveryTimeOne = document.getElementById("delivery-time-1");
@@ -45,19 +46,7 @@ orderBtn.addEventListener("click", () => {
 
 const myCart = startCart(document.querySelector("#cart-content"));
 
-const cartArray = localStorage.getItem("cart");
-const cartParse = JSON.parse(cartArray);
 let totalSum = 0;
-
-/*Går igenom alla produkter som vi sparar i localstorage(cart) och tar bort $ och ändrar price från string
- till nummer och sedan summerar dom för att få ett total pris */
-cartParse.forEach((product) => {
-  const price = product.price.replace("$", "");
-  const numberPrice = Number(price);
-  totalSum += numberPrice;
-});
-
-document.getElementById("price-total").textContent = "Total: " + totalSum + "$";
 
 /* Kollar så att allt finns med för att dom ska kunna göra en beställning. Den kollar om man
 har produkter i sin varukorg, om man har valt ett leverans alternativ och ett betalnings alternativ.
@@ -91,12 +80,9 @@ function orderAllSelect() {
     myCart.length = 0;
     totalSum = 0;
 
-    document.getElementById("price-total").textContent =
-      "Total: " + totalSum + "$";
+    document.getElementById("price-total").textContent = "Total: 0$";
 
     localStorage.setItem("cart", JSON.stringify([]));
-
-    console.log("LocalStorage efter rensning:", localStorage.getItem("cart"));
 
     updateCart(document.querySelector("#cart-content"), myCart);
 
@@ -110,6 +96,8 @@ paymentImg.forEach((img) => {
     event.target.classList.add("payment-btn-clicked");
   });
 });
+
+updateTotal();
 
 checkboxOne.addEventListener("change", check);
 

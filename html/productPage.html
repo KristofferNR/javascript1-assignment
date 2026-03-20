@@ -1,279 +1,383 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link href='https://fonts.googleapis.com/css?family=Space Grotesk' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/Css/styles.css">
-    <link rel="stylesheet" href="/Css/productStyles.css">
-    <link rel="stylesheet" href="/Css/cart.css">
-     <link rel="stylesheet" href="../Css/navbarStyle.css">
-      <link rel="icon" type="image/x-icon" href="/imges/logoPage.png">
-      <script src="/js/cart.js" type="module" ></script>
-     <script src="../js/index.js" type="module"></script>
-     <script src="../js/productPage.js" type="module" ></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Space Grotesk"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/Css/styles.css" />
+    <link rel="stylesheet" href="/Css/productStyles.css" />
+    <link rel="stylesheet" href="/Css/cart.css" />
+    <link rel="stylesheet" href="/Css/searchbar.css" />
+    <link rel="stylesheet" href="../Css/navbarStyle.css" />
+    <link rel="icon" type="image/x-icon" href="/imges/logoPage2.png" />
+    <script src="/js/cart.js" type="module"></script>
+    <script src="../js/index.js" type="module"></script>
+    <script src="../js/productPage.js" type="module"></script>
+    <script src="../js/search.js" type="module"></script>
+    <script src="../js/api.js" type="module"></script>
     <title>product page</title>
-</head>
-<body>
-    <div id="headerContainer">
-    <img id="headerImg" src="../imges/image 1.png" alt="">
-    <h1>✦ Cool fashion ✦ </h1>
-</div>
-         <nav class="navbar">
-             <div class="nav-header">
-                  <!--Ikonen för hamburgermeny-->
-                 <div class="hamburger" id="hamburger">
-                     <span class="bar"></span>
-                     <span class="bar"></span>
-                     <span class="bar"></span>
-                 </div>
-             </div>
+  </head>
+  <body>
+    <header>
+      <div id="headerContainer">
+        <img id="headerImg" src="../imges/image 1.png" alt="" />
+        <h1>✦ Cool fashion ✦</h1>
+      </div>
 
-             <ul class="nav-menu" id="navMenu">
-                 <li><a href="#" class="nav-link" id="womanLink">Woman</a></li>
-                 <li><a href="./index.html" class="nav-link" id="new-in">NewIn</a></li>
-                 <li><a href="#" class="nav-link" id="manLink">Man</a></li>
+      <nav class="navbar">
+        <div class="nav-header">
+          <!--Ikonen för hamburgermeny-->
+          <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
 
-                 <!--Ikoner och länkar för desktop-->
-                 <div class="nav-desktop">
-                     <a href="#"><img src="../imges/person.svg"></a>
-                     <a href="#"><img src="../imges/search.svg"></a>
-                     <a id="desktop-cart" href="#"><img src="../imges/shopping_cart.svg"></a>
-                 </div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#" class="nav-link" id="womanLink">Woman</a></li>
+          <li><a href="#" class="nav-link" id="new-in">NewIn</a></li>
+          <li><a href="#" class="nav-link" id="manLink">Man</a></li>
 
-                 <!--Ikoner och länkar för hamburgermeny-->
-                 <div class="nav-img">
-                     <img src="../imges/person.svg" alt="">
-                     <li class="nav-item"><a href="#" class="nav-link">My Account</a></li>
-                 </div>
-                 <div class="nav-img">
-                     <img src="../imges/search.svg" alt="">
-                     <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
-                 </div>
-                 <div id="cart" class="nav-img">
-                     <img src="../imges/shopping_cart.svg" alt="">
-                     <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
-                 </div>
-             </ul>
+          <!--Ikoner och länkar för desktop-->
+          <div class="nav-desktop">
+            <a href="loginPage.html"><img src="../imges/person.svg" /></a>
+            <a id="search-btn"><img src="../imges/search.svg" /></a>
+            <a href="#"
+              ><img id="desktop-cart" src="../imges/shopping_cart.svg"
+            /></a>
+          </div>
 
-             <!-- Dropdown-navigering meny (woman) -->
-             <div class="dropdown-panel" id="womanDropdown">
-                 <button class="dropdown-close" aria-label="Stäng">✕</button>
+          <!--Ikoner och länkar för hamburgermeny-->
+          <div class="nav-img">
+            <img src="../imges/person.svg" alt="" />
+            <li class="nav-item">
+              <a href="loginPage.html" class="nav-link">My Account</a>
+            </li>
+          </div>
+          <div id="search-btn-menu" class="nav-img">
+            <img src="../imges/search.svg" alt="" />
+            <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
+          </div>
+          <div id="cart" class="nav-img">
+            <img src="../imges/shopping_cart.svg" alt="" />
+            <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+          </div>
+        </ul>
 
-                 <div class="dropdown-columns">
-                     <div class="dropdown-col">
-                         <h4>Clothes</h4>
-                         <ul>
-                             <li><a href="/html/category.html"></a>T-Shirt</li>
-                             <li><a href="#"></a>Pants</li>
-                             <li><a href="#"></a>Sweatshirt</li>
-                             <li><a href="#"></a>Hoodie</li>
-                         </ul>
-                     </div>
-                     <div class="dropdown-col">
-                         <h4>Shoes</h4>
-                         <ul>
-                             <li><a href="#"></a>Boots</li>
-                             <li><a href="#"></a>Sneakers</li>
-                             <li><a href="#"></a>Loafers</li>
-                         </ul>
-                     </div>
-                     <div class="dropdown-col">
-                         <h4>Accessories</h4>
-                         <ul>
-                             <li><a href="#"></a>Headwear</li>
-                             <li><a href="#"></a>Bags</li>
-                             <li><a href="#"></a>Jewelry</li>
-                         </ul>
-                     </div>
-                 </div>
-                 <!-- Bild i dropdown -->
-                 <img class="dropdown-image" src="../imges/nav-woman.png" alt="">
-             </div>
+        <!-- Dropdown-navigering meny (woman) -->
+        <div class="dropdown-panel" id="womanDropdown">
+          <button class="dropdown-close" aria-label="Stäng">✕</button>
 
-             <!-- Dropdown-navigering meny (man) -->
-             <div class="dropdown-panel" id="manDropdown">
-                 <button class="dropdown-close" aria-label="Stäng">✕</button>
+          <div class="dropdown-columns">
+            <div class="dropdown-col">
+              <h4>Clothes</h4>
+              <ul>
+                <li><a href="category.html">T-Shirt</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Sweatshirt</a></li>
+                <li><a href="#">Hoodie</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Shoes</h4>
+              <ul>
+                <li><a href="#">Boots</a></li>
+                <li><a href="#">Sneakers</a></li>
+                <li><a href="#">Loafers</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Accessories</h4>
+              <ul>
+                <li><a href="#">Headwear</a></li>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">Jewelry</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Bild i dropdown -->
+          <img class="dropdown-image" src="../imges/nav-woman.png" alt="" />
+        </div>
 
-                 <div class="dropdown-columns">
-                     <div class="dropdown-col">
-                         <h4>Clothes</h4>
-                         <ul>
-                             <li><a href="#"></a>T-Shirt</li>
-                             <li><a href="#"></a>Pants</li>
-                             <li><a href="#"></a>Sweatshirt</li>
-                             <li><a href="#"></a>Hoodie</li>
-                         </ul>
-                     </div>
-                     <div class="dropdown-col">
-                         <h4>Shoes</h4>
-                         <ul>
-                             <li><a href="#"></a>Boots</li>
-                             <li><a href="#"></a>Sneakers</li>
-                             <li><a href="#"></a>Loafers</li>
-                         </ul>
-                     </div>
-                     <div class="dropdown-col">
-                         <h4>Accessories</h4>
-                         <ul>
-                             <li><a href="#"></a>Headwear</li>
-                             <li><a href="#"></a>Bags</li>
-                             <li><a href="#"></a>Jewelry</li>
-                         </ul>
-                     </div>
-                 </div>
-                 <!-- Bild i dropdown -->
-                 <img class="dropdown-image" src="../imges/nav-man.png" alt="">
-             </div>
-         </div>
-     </nav>     
+        <!-- Dropdown-navigering meny (man) -->
+        <div class="dropdown-panel" id="manDropdown">
+          <button class="dropdown-close" aria-label="Stäng">✕</button>
+
+          <div class="dropdown-columns">
+            <div class="dropdown-col">
+              <h4>Clothes</h4>
+              <ul>
+                <li><a href="/html/category.html">T-Shirt</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Sweatshirt</a></li>
+                <li><a href="#">Hoodie</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Shoes</h4>
+              <ul>
+                <li><a href="#">Boots</a></li>
+                <li><a href="#">Sneakers</a></li>
+                <li><a href="#">Loafers</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Accessories</h4>
+              <ul>
+                <li><a href="#">Headwear</a></li>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">Jewelry</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Bild i dropdown -->
+          <img class="dropdown-image" src="../imges/nav-man.png" alt="" />
+        </div>
+      </nav>
     </header>
-<section id="cart-section">
-    <div id="cart-continer">
-    <button id="exit-cart">X</button>
-    <div id="cart-content">
+    <section id="cart-section">
+      <div id="cart-continer">
+        <button id="exit-cart">X</button>
+        <div id="cart-content"></div>
+        <button href="./shoppingcart.html" id="checkoutBtn">
+          <a href="./shoppingcart.html">Checkout</a>
+        </button>
+      </div>
+    </section>
+    <main>
+      <div id="search-modal">
+        <button id="close-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#D9D9D9"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+        <div id="logo-wrapper">
+          <img
+            id="logo1-search-img"
+            src="../imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png"
+            alt=""
+          />
+          <img
+            id="logo2-search-img"
+            src="../imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png"
+            alt=""
+          />
+        </div>
+        <div id="searchbar-container">
+          <img id="search-img" src="../imges/image 33 (1).png" alt="" />
+          <input id="searchbar" />
+          <div id="search-result-container">
+            <ul id="categorie-ul">
+              <li><a href="#">T-shirt</a></li>
+              <li><a href="#">Hoodie</a></li>
+              <li><a href="#">Pants</a></li>
+              <li><a href="#">Accessories</a></li>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Shoes</a></li>
+              <li>
+                <a id="search-result" href="productPage.html">Cargo Pants</a>
+              </li>
+            </ul>
+            <ul id="api-search-results"></ul>
+          </div>
+        </div>
+        <div id="modal-products">
+          <div id="trending-product">
+            <p>Trending Products</p>
+            <img class="modal-img" src="../imges/Group.png" alt="" />
+            <img class="modal-img" src="../imges/Group-6.png" alt="" />
+          </div>
+          <div id="recent-product">
+            <p>Recently Viewed</p>
+            <img class="modal-img" src="../imges/Group-10.png" alt="" />
+            <img class="modal-img" src="../imges/Group-3.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <section id="product-section">
+        <div id="productImg-continer">
+          <div id="mainProductImg"></div>
+        </div>
+        <div id="productInfo-continer">
+          <ul id="color-list" class="small">
+            <li class="color-Choice red"></li>
+            <li class="color-Choice green"></li>
+            <li class="color-Choice blue"></li>
+            <li class="color-Choice beige"></li>
+          </ul>
 
-    </div>
-    <button href="./shoppingcart.html" id="checkoutBtn"><a href="./shoppingcart.html">Checkout</a></button>
-    </div>
-</section>
-   <main>
-        <section id="product-section">
-            <div id="productImg-continer">
-                <div id="mainProductImg">
-                    
+          <h1 id="product-title">Cargo Pants</h1>
+          <h2 id="product-description">
+            “Statement cargos with a functional edge. Easy to wear, hard to
+            ignore — made for late nights, long days, and standout fits.”
+          </h2>
+          <span id="money-big" class="big">$130</span>
+          <ul id="color-list-big" class="big">
+            <li class="color-Choice red"></li>
+            <li class="color-Choice green"></li>
+            <li class="color-Choice blue"></li>
+            <li class="color-Choice beige"></li>
+          </ul>
+          <div id="addProduct-continer">
+            <span id="money" class="small">$130</span>
+            <div id="add-continer">
+              <button id="size-dropdown">
+                Size----
+                <div id="size-dropdown-content">
+                  <ul id="size-list">
+                    <li class="size">34</li>
+                    <li class="size">35</li>
+                    <li class="size">36</li>
+                    <li class="size">37</li>
+                  </ul>
                 </div>
-                
+              </button>
+              <!-- Jobba med att ändra dessa så att det bli en tydligare call to action -->
+              <button id="addBtn">Add to cart</button>
             </div>
-            <div id="productInfo-continer">
-                <ul id="color-list" class="small">
-                    <li class="color-Choice red"></li>
-                    <li class="color-Choice green"></li>
-                    <li class="color-Choice blue"></li>
-                    <li class="color-Choice beige"></li>
-                </ul>
-                
-                <h1 id="product-title"> Cargo Pants </h1>
-                <h2 id="product-description">“Statement cargos with a functional edge. Easy to wear, hard to ignore — made for late nights, long days, and standout fits.”</h2>
-                <span id="money-big" class="big">$130</span>
-                <ul id="color-list-big" class="big">
-                    <li class="color-Choice red"></li>
-                    <li class="color-Choice green"></li>
-                    <li class="color-Choice blue"></li>
-                    <li class="color-Choice beige"></li>
-                </ul>
-                <div id="addProduct-continer">
-                   
-                    <span id="money" class="small">$130</span>
-                    <div id="add-continer">
-                       
-                        
-                        <button id="size-dropdown">  Size----
-                            <div id="size-dropdown-content">
-                                <ul id="size-list">
-                                    <li class="size">34</li>
-                                    <li class="size">35</li>
-                                    <li class="size">36</li>
-                                    <li class="size">37</li>
-                                </ul>
-                            </div>
-                        </button>
-                        <!-- Jobba med att ändra dessa så att det bli en tydligare call to action -->
-                        <button id="addBtn">Add to cart</button>
-                    </div>
-                </div>
-                <button id="infoBtn" class="big">Information
-                    <div id="information" class="infopopup">
-                            <div>
-                                <h4>About</h1>
-                                <span class = "about-des">Statement cargos with a functional edge. Easy to wear, hard to ignore — made for late nights, long days, and standout fits.</span>
-                            </div>
-                            <div>
-                                <h4>Material</h4>
-                                <span>Textile</span>
-                            </div>
-                            <div>
-                                <h4>Return</h4>
-                                <span>Full refund if return wthin 14 days and in original condition</span>
-                            </div>
-                        </div>
-                </button>
-                <button id="infoBtn-small" class="small">Information
+          </div>
+          <button id="infoBtn" class="big">
+            Information
+            <div id="information" class="infopopup">
+              <div>
+                <h4>About</h4>
+                <span class="about-des"
+                  >Statement cargos with a functional edge. Easy to wear, hard
+                  to ignore — made for late nights, long days, and standout
+                  fits.</span
+                >
+              </div>
+              <div>
+                <h4>Material</h4>
+                <span>Textile</span>
+              </div>
+              <div>
+                <h4>Return</h4>
+                <span
+                  >Full refund if return wthin 14 days and in original
+                  condition</span
+                >
+              </div>
+            </div>
+          </button>
+          <button id="infoBtn-small" class="small">
+            Information
 
-                    <div id="information-small" class="infopopup">
-                    <div>
-                        <h4>About</h1>
-                        <span class = "about-des" >Statement cargos with a functional edge. Easy to wear, hard to ignore — made for late nights, long days, and standout fits.</span>
-                    </div>
-                    <div>
-                        <h4>Material</h4>
-                        <span>Textile</span>
-                    </div>
-                    <div>
-                        <h4>Return</h4>
-                        <span>Full refund if return wthin 14 days and in original condition</span>
-                    </div>
-                </div>
-                </button><!-- Add info to come under button -->
-                
-            </div>
-        </section>
-        <section id="more-like-section">
-            <h3>More Like this...</h3>
+            <div id="information-small" class="infopopup">
+              <div>
+                <h4>About</h4>
+                <span class="about-des"
+                  >Statement cargos with a functional edge. Easy to wear, hard
+                  to ignore — made for late nights, long days, and standout
+                  fits.</span
+                >
+              </div>
+              <div>
+                <h4>Material</h4>
+                <span>Textile</span>
+              </div>
+              <div>
+                <h4>Return</h4>
+                <span
+                  >Full refund if return wthin 14 days and in original
+                  condition</span
+                >
+              </div>
+            </div></button
+          ><!-- Add info to come under button -->
+        </div>
+      </section>
+      <section id="more-like-section">
+        <h3>More Like this...</h3>
+        <div>
+          <img src="/imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png" alt="" />
+          <div id="more-like-continer">
             <div>
-                <img src="/imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png" alt="">
-                <div id="more-like-continer">
-                <div><img src="/imges/Group-9.png" class="morelike-img" alt=""></div>
-                <div><img src="/imges/Group-1.png" class="morelike-img" alt=""></div>
-                <div><img src="/imges/Group-3.png" class="morelike-img" alt=""></div>
-                <div><img src="/imges/Group-4.png" class="morelike-img" alt=""></div>
-                <div><img src="/imges/Group-8.png" class="morelike-img" alt=""></div>
-                <div><img src="/imges/Group-10.png" class="morelike-img" alt=""></div>
-                <div><img src="/imges/Group-11.png" class="morelike-img" alt=""></div>
-                <div><img src="/imges/Group-9.png" class="morelike-img" alt=""></div>
-                
-                </div>
-                <img src="/imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png" alt="" >
+              <img src="/imges/Group-9.png" class="morelike-img" alt="" />
             </div>
-            
-        </section>
-        <section id="Art-section">
-            <div id="art">
-                <img class="side-art left" src="/imges/image 33 (1).png" alt="">
-                <div id="bg-continer">
-                    <img id="bg-Img"src="/imges/image 27.png" alt="">
-                    <p id="art-text">“Style isn’t about being perfect — it’s about being unapologetically you.”</p>
-                </div>
-                <img class="side-art right" src="/imges/image 49 (1).png" alt="">
+            <div>
+              <img src="/imges/Group-1.png" class="morelike-img" alt="" />
             </div>
+            <div>
+              <img src="/imges/Group-3.png" class="morelike-img" alt="" />
+            </div>
+            <div>
+              <img src="/imges/Group-4.png" class="morelike-img" alt="" />
+            </div>
+            <div>
+              <img src="/imges/Group-8.png" class="morelike-img" alt="" />
+            </div>
+            <div>
+              <img src="/imges/Group-10.png" class="morelike-img" alt="" />
+            </div>
+            <div>
+              <img src="/imges/Group-11.png" class="morelike-img" alt="" />
+            </div>
+            <div>
+              <img src="/imges/Group-9.png" class="morelike-img" alt="" />
+            </div>
+          </div>
+          <img src="/imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png" alt="" />
+        </div>
+      </section>
+      <section id="Art-section">
+        <div id="art">
+          <img class="side-art left" src="/imges/image 33 (1).png" alt="" />
+          <div id="bg-continer">
+            <img id="bg-Img" src="/imges/image 27.png" alt="" />
+            <p id="art-text">
+              “Style isn’t about being perfect — it’s about being
+              unapologetically you.”
+            </p>
+          </div>
+          <img class="side-art right" src="/imges/image 49 (1).png" alt="" />
+        </div>
+      </section>
+    </main>
 
-        </section>
-   </main>
-     <div id="footer-list">
-            <ul>
-                <li>Customer service</li>
-                <p>|</p>
-                <li>Payment</li>
-                <p>|</p>
-                <li>Cookies</li>
-            </ul>
-            <ul>
-                <li>Purchase conditions</li>
-                <p>|</p>
-                <li>Privacy policy</li>
-            </ul>
-        </div>
-        <div id="social-media">
-            <button class="social-media-btn">
-                <i class="fa fa-instagram"></i>
-            </button>
-            <button class="social-media-btn">
-                <i class="fa fa-twitter"></i>
-            </button>
-        </div>
-        </div>
+    <footer>
+      <div id="footer-list">
+        <ul>
+          <li>Customer service</li>
+          <p>|</p>
+          <li>Payment</li>
+          <p>|</p>
+          <li>Cookies</li>
+        </ul>
+        <ul>
+          <li>Purchase conditions</li>
+          <p>|</p>
+          <li>Privacy policy</li>
+        </ul>
+      </div>
+      <div id="social-media">
+        <button class="social-media-btn">
+          <i class="fa fa-instagram"></i>
+        </button>
+        <button class="social-media-btn">
+          <i class="fa fa-twitter"></i>
+        </button>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

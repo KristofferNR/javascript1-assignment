@@ -1,5 +1,7 @@
 import { startCart } from "./cart.js";
 import { updateCart } from "./CartFunctions.js";
+import { updateTotal } from "./updateTotalPrice.js";
+
 //Startar carten och lägger till defult produkter om det inte finns något.
 //Tydligare för demo
 let activeArray = startCart(document.getElementById("cart-content"));
@@ -8,8 +10,10 @@ document.getElementById("cart-content").addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-item")) {
     let deleteIndex = e.target.id;
     activeArray.splice(deleteIndex, 1);
+    updateCart(document.getElementById("cart-content"), activeArray);
+    updateTotal();
   }
-  updateCart(document.getElementById("cart-content"), activeArray);
+  
 });
 // Hämtar ikonen och navigering från HTML
 const hamburgerIcon = document.getElementById('hamburger');
