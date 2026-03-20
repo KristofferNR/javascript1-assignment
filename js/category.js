@@ -195,6 +195,6 @@ productList.forEach((product) => {
    
     localStorage.setItem("activeItem", JSON.stringify(activeProduct));
     
-    window.open("http://127.0.0.1:5500/html/productPage.html");
+    window.open("./productPage.html");
   });
 });

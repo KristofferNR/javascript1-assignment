@@ -249,8 +249,10 @@ body {
   padding: 1rem;
   background-image: url("/imges/image\ 49.png");
   background-size: cover;
-
   box-sizing: border-box;
+  scroll-snap-type: both mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primaryColor) transparent;
 }
 #more-like-section {
   margin-top: 5rem;

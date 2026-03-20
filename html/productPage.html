@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <link
       href="https://fonts.googleapis.com/css?family=Space Grotesk"
       rel="stylesheet"
@@ -21,15 +20,18 @@
     <link rel="stylesheet" href="/Css/productStyles.css" />
     <link rel="stylesheet" href="/Css/cart.css" />
     <link rel="stylesheet" href="../Css/navbarStyle.css" />
-    <link rel="icon" type="image/x-icon" href="/imges/logoPage.png" />
+    <link rel="stylesheet" href="../Css/searchbar.css" />
+
+    <link rel="icon" type="image/x-icon" href="/imges/logoPage2.png" />
 
     <script src="/js/cart.js" type="module"></script>
     <script src="../js/index.js" type="module"></script>
     <script src="../js/productPage.js" type="module"></script>
+    <script src="../js/search.js" type="module"></script>
 
     <title>product page</title>
   </head>
-
+  
   <body>
     <header>
       <div id="headerContainer">
@@ -57,7 +59,7 @@
           <!--Ikoner och länkar för desktop-->
           <div class="nav-desktop">
             <a href="#"><img src="../imges/person.svg" /></a>
-            <a href="#"><img src="../imges/search.svg" /></a>
+            <a id="search-btn" href="#"><img src="../imges/search.svg" /></a>
             <a id="desktop-cart" href="#"
               ><img src="../imges/shopping_cart.svg"
             /></a>
@@ -71,7 +73,7 @@
             </li>
           </div>
 
-          <div class="nav-img">
+          <div id="search-btn-menu" class="nav-img">
             <img src="../imges/search.svg" alt="" />
             <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
           </div>
@@ -90,28 +92,26 @@
             <div class="dropdown-col">
               <h4>Clothes</h4>
               <ul>
-                <li><a href="/html/category.html"></a>T-Shirt</li>
-                <li><a href="#"></a>Pants</li>
-                <li><a href="#"></a>Sweatshirt</li>
-                <li><a href="#"></a>Hoodie</li>
+                <li><a href="category.html">T-Shirt</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Sweatshirt</a></li>
+                <li><a href="#">Hoodie</a></li>
               </ul>
             </div>
-
             <div class="dropdown-col">
               <h4>Shoes</h4>
               <ul>
-                <li><a href="#"></a>Boots</li>
-                <li><a href="#"></a>Sneakers</li>
-                <li><a href="#"></a>Loafers</li>
+                <li><a href="#">Boots</a></li>
+                <li><a href="#">Sneakers</a></li>
+                <li><a href="#">Loafers</a></li>
               </ul>
             </div>
-
             <div class="dropdown-col">
               <h4>Accessories</h4>
               <ul>
-                <li><a href="#"></a>Headwear</li>
-                <li><a href="#"></a>Bags</li>
-                <li><a href="#"></a>Jewelry</li>
+                <li><a href="#">Headwear</a></li>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">Jewelry</a></li>
               </ul>
             </div>
           </div>
@@ -128,28 +128,26 @@
             <div class="dropdown-col">
               <h4>Clothes</h4>
               <ul>
-                <li><a href="/html/category.html"></a>T-Shirt</li>
-                <li><a href="#"></a>Pants</li>
-                <li><a href="#"></a>Sweatshirt</li>
-                <li><a href="#"></a>Hoodie</li>
+                <li><a href="category.html">T-Shirt</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Sweatshirt</a></li>
+                <li><a href="#">Hoodie</a></li>
               </ul>
             </div>
-
             <div class="dropdown-col">
               <h4>Shoes</h4>
               <ul>
-                <li><a href="#"></a>Boots</li>
-                <li><a href="#"></a>Sneakers</li>
-                <li><a href="#"></a>Loafers</li>
+                <li><a href="#">Boots</a></li>
+                <li><a href="#">Sneakers</a></li>
+                <li><a href="#">Loafers</a></li>
               </ul>
             </div>
-
             <div class="dropdown-col">
               <h4>Accessories</h4>
               <ul>
-                <li><a href="#"></a>Headwear</li>
-                <li><a href="#"></a>Bags</li>
-                <li><a href="#"></a>Jewelry</li>
+                <li><a href="#">Headwear</a></li>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">Jewelry</a></li>
               </ul>
             </div>
           </div>
@@ -159,8 +157,6 @@
         </div>
       </nav>
     </header>
-
-    <!-- Gör varukorgen aktiv på alla sidor -->
     <section id="cart-section">
       <div id="cart-continer">
         <button id="exit-cart">X</button>
@@ -170,15 +166,68 @@
         </button>
       </div>
     </section>
-
     <main>
-      <!---- Huvudinnehåll ProductPage ---->
-
+      <div id="search-modal">
+        <button id="close-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#D9D9D9"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+        <div id="logo-wrapper">
+          <img
+            id="logo1-search-img"
+            src="../imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png"
+            alt=""
+          />
+          <img
+            id="logo2-search-img"
+            src="../imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png"
+            alt=""
+          />
+        </div>
+        <div id="searchbar-container">
+          <img id="search-img" src="../imges/image 33 (1).png" alt="" />
+          <input id="searchbar" />
+          <div id="search-result-container">
+            <ul id="categorie-ul">
+              <li><a href="#">T-shirt</a></li>
+              <li><a href="#">Hoodie</a></li>
+              <li><a href="#">Pants</a></li>
+              <li><a href="#">Accessories</a></li>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Shoes</a></li>
+              <li>
+                <a id="search-result" href="productPage.html">Cargo Pants</a>
+              </li>
+            </ul>
+            <ul id="api-search-results"></ul>
+          </div>
+        </div>
+        <div id="modal-products">
+          <div id="trending-product">
+            <p>Trending Products</p>
+            <img class="modal-img" src="../imges/Group.png" alt="" />
+            <img class="modal-img" src="../imges/Group-6.png" alt="" />
+          </div>
+          <div id="recent-product">
+            <p>Recently Viewed</p>
+            <img class="modal-img" src="../imges/Group-10.png" alt="" />
+            <img class="modal-img" src="../imges/Group-3.png" alt="" />
+          </div>
+        </div>
+      </div>
       <section id="product-section">
         <div id="productImg-continer">
           <div id="mainProductImg"></div>
         </div>
-
         <div id="productInfo-continer">
           <ul id="color-list" class="small">
             <li class="color-Choice red"></li>
@@ -199,7 +248,6 @@
             <li class="color-Choice blue"></li>
             <li class="color-Choice beige"></li>
           </ul>
-
           <div id="addProduct-continer">
             <span id="money" class="small">$130</span>
             <div id="add-continer">
@@ -214,12 +262,10 @@
                   </ul>
                 </div>
               </button>
-
               <!-- Jobba med att ändra dessa så att det bli en tydligare call to action -->
               <button id="addBtn">Add to cart</button>
             </div>
           </div>
-
           <button id="infoBtn" class="big">
             Information
             <div id="information" class="infopopup">
@@ -231,12 +277,10 @@
                   fits.</span
                 >
               </div>
-
               <div>
                 <h4>Material</h4>
                 <span>Textile</span>
               </div>
-
               <div>
                 <h4>Return</h4>
                 <span
@@ -246,9 +290,9 @@
               </div>
             </div>
           </button>
-
           <button id="infoBtn-small" class="small">
             Information
+
             <div id="information-small" class="infopopup">
               <div>
                 <h4>About</h4>
@@ -258,12 +302,10 @@
                   fits.</span
                 >
               </div>
-
               <div>
                 <h4>Material</h4>
                 <span>Textile</span>
               </div>
-
               <div>
                 <h4>Return</h4>
                 <span
@@ -275,7 +317,6 @@
           ><!-- Add info to come under button -->
         </div>
       </section>
-
       <section id="more-like-section">
         <h3>More Like this...</h3>
         <div>
@@ -337,14 +378,12 @@
           <p>|</p>
           <li>Cookies</li>
         </ul>
-
         <ul>
           <li>Purchase conditions</li>
           <p>|</p>
           <li>Privacy policy</li>
         </ul>
       </div>
-
       <div id="social-media">
         <button class="social-media-btn">
           <i class="fa fa-instagram"></i>

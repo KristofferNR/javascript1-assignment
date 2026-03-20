@@ -60,18 +60,22 @@ sizeUl.addEventListener("click", (event) => {
 //Lägger till i cart efter att man har tryckt knappen
 addBotton.addEventListener("click", () => {
   let color;
-  if (!sizeCmboBox.classList.contains("ready")) {
-    return;
-  }
-
+  
   if (window.getComputedStyle(colors).display === "flex") {
     if ((color = testColor(colors)) === "") {
+      alert("Pick a color to proceed")
       return;
     }
   }
 
+  if (!sizeCmboBox.classList.contains("ready")) {
+    alert("Pick a size to proceed")
+    return;
+  }
+
   if (window.getComputedStyle(colorsSmall).display === "flex") {
     if ((color = testColor(colorsSmall)) === "") {
+      alert("Pick a color to proceed")
       return;
     }
   }

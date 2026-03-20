@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap");
 
 * {
-    font-family: space grotesk; 
+  font-family: space grotesk;
 }
 
 :root {
@@ -9,16 +9,12 @@
   --primaryColor: white;
 }
 
-* {
-    font-family: space grotesk; 
-}
-
 body {
   margin: 0;
   width: 100%;
   color: var(--primaryColor);
   background-color: var(--bgColor);
-  overflow-x: hidden
+  overflow-x: hidden;
 }
 
 #hero {
@@ -65,7 +61,7 @@ body {
   text-shadow: 1px 2px 1px black;
   color: var(--primaryColor);
   cursor: pointer;
-} 
+}
 
 #main {
   display: flex;
@@ -128,10 +124,6 @@ body {
   font-size: 0.7rem;
 }
 
-footer {
-  font-family: "Space Grotesk";
-}
-
 .carousel {
   max-width: 871px;
   background-image: url(/imges/image\ 65.png);
@@ -160,12 +152,9 @@ footer {
   overflow-x: scroll;
   scrollbar-width: thin;
   scrollbar-color: var(--primaryColor) transparent;
-  
-
   height: 100%;
   scroll-snap-type: both mandatory;
 }
-
 
 .carousel-item {
   scroll-snap-align: center; /* centrerar bild */
@@ -176,7 +165,7 @@ footer {
   border-radius: 2px;
   width: 150px;
   height: 200px;
-
+  box-sizing: border-box;
 }
 
 #footer-list ul {
@@ -223,7 +212,6 @@ footer {
   background: black;
 }
 @media screen and (min-width: 376px) {
-  
   #bentoContainer {
     margin-top: 5rem;
     display: grid;
@@ -242,7 +230,6 @@ footer {
   }
 }
 @media screen and (min-width: 667px) {
-   
   #bentoContainer {
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 771px;
@@ -252,10 +239,8 @@ footer {
       "box-5 box-6 box-7";
   }
   #headerImg {
-  
-  height: 25rem;
-  
-}
+    height: 25rem;
+  }
   #crop {
     width: 20rem;
   }
@@ -274,50 +259,39 @@ footer {
   #headerContainer > h1 {
     font-size: 3em;
     top: 18rem;
-    
   }
-   #headerContainer > a h1 {
+  #headerContainer > a h1 {
     font-size: 3em;
     top: 18rem;
-    
   }
   .carousel-gallery {
-  
-  grid-template-columns: repeat(25, 17rem);
-  grid-template-rows: 20rem;
-
-}
-.carousel {
-  max-width: 1000px;
-}
-.carousel-item img {
-  width:15rem;
-  height: 19rem;
-  
-}
-.bentoImg{
-        width:15rem;
-        height: 20rem;
-    }
-
+    grid-template-columns: repeat(25, 17rem);
+    grid-template-rows: 20rem;
+  }
+  .carousel {
+    max-width: 1000px;
+  }
+  .carousel-item img {
+    width: 15rem;
+    height: 19rem;
+  }
+  .bentoImg {
+    width: 15rem;
+    height: 20rem;
+  }
 }
 
 @media screen and (min-width: 875px) {
-    #headerContainer > h1 {
-    
+  #headerContainer > h1 {
     top: 25rem;
     font-size: 7rem;
-    
   }
-   #headerContainer > a h1 {
-    
+  #headerContainer > a h1 {
     top: 30rem;
-    
   }
   #headerImg {
-  height: 40rem;
-  
-}
+    height: 40rem;
+  }
   footer {
     display: flex;
     flex-direction: column;

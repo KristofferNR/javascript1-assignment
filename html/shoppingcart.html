@@ -13,10 +13,10 @@
      <link rel="stylesheet" href="../Css/searchbar.css"/>
      <link rel="stylesheet" href="../Css/shoppingcart.css"/>
      <link rel="stylesheet" href="../Css/navbarStyle.css"/>
+     <link rel="icon" type="image/x-icon" href="/imges/logoPage2.png" />
 
      <script src="../js/search.js" type="module"></script>
      <script src="../js/index.js" type="module"></script>
-     <script src="../js/api.js" type="module"></script>
      <script src="../js/shoppingcart.js" type="module"></script>
      <script src="../js/cart.js" type="module"></script>
      <script src="../js/CartFunctions.js" type="module"></script>
@@ -77,34 +77,32 @@
          <div class="dropdown-panel" id="womanDropdown">
            <button class="dropdown-close" aria-label="Stäng">✕</button>
            <div class="dropdown-columns">
-             <div class="dropdown-col">
-               <h4>Clothes</h4>
-               <ul>
-                 <li><a href="category.html">T-Shirt</a></li>
-                 <li><a href="#"></a>Pants</li>
-                 <li><a href="#"></a>Sweatshirt</li>
-                 <li><a href="#"></a>Hoodie</li>
-               </ul>
-             </div>
-             
-             <div class="dropdown-col">
-               <h4>Shoes</h4>
-               <ul>
-                 <li><a href="#"></a>Boots</li>
-                 <li><a href="#"></a>Sneakers</li>
-                 <li><a href="#"></a>Loafers</li>
-               </ul>
-             </div>
-            
-             <div class="dropdown-col">
-               <h4>Accessories</h4>
-               <ul>
-                 <li><a href="#"></a>Headwear</li>
-                 <li><a href="#"></a>Bags</li>
-                 <li><a href="#"></a>Jewelry</li>
-               </ul>
-             </div>
-           </div>
+            <div class="dropdown-col">
+              <h4>Clothes</h4>
+              <ul>
+                <li><a href="category.html">T-Shirt</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Sweatshirt</a></li>
+                <li><a href="#">Hoodie</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Shoes</h4>
+              <ul>
+                <li><a href="#">Boots</a></li>
+                <li><a href="#">Sneakers</a></li>
+                <li><a href="#">Loafers</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Accessories</h4>
+              <ul>
+                <li><a href="#">Headwear</a></li>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">Jewelry</a></li>
+              </ul>
+            </div>
+          </div>
             
            <!-- Bild i dropdown -->
            <img class="dropdown-image" src="../imges/nav-woman.png" alt="" />
@@ -114,34 +112,32 @@
          <div class="dropdown-panel" id="manDropdown">
            <button class="dropdown-close" aria-label="Stäng">✕</button>
            <div class="dropdown-columns">
-             <div class="dropdown-col">
-               <h4>Clothes</h4>
-               <ul>
-                 <li><a href="/html/category.html"></a>T-Shirt</li>
-                 <li><a href="#"></a>Pants</li>
-                 <li><a href="#"></a>Sweatshirt</li>
-                 <li><a href="#"></a>Hoodie</li>
-               </ul>
-             </div>
-             
-             <div class="dropdown-col">
-               <h4>Shoes</h4>
-               <ul>
-                 <li><a href="#"></a>Boots</li>
-                 <li><a href="#"></a>Sneakers</li>
-                 <li><a href="#"></a>Loafers</li>
-               </ul>
-             </div>
-            
-             <div class="dropdown-col">
-               <h4>Accessories</h4>
-               <ul>
-                 <li><a href="#"></a>Headwear</li>
-                 <li><a href="#"></a>Bags</li>
-                 <li><a href="#"></a>Jewelry</li>
-               </ul>
-             </div>
-           </div>
+            <div class="dropdown-col">
+              <h4>Clothes</h4>
+              <ul>
+                <li><a href="category.html">T-Shirt</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Sweatshirt</a></li>
+                <li><a href="#">Hoodie</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Shoes</h4>
+              <ul>
+                <li><a href="#">Boots</a></li>
+                <li><a href="#">Sneakers</a></li>
+                <li><a href="#">Loafers</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Accessories</h4>
+              <ul>
+                <li><a href="#">Headwear</a></li>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">Jewelry</a></li>
+              </ul>
+            </div>
+          </div>
            
            <!-- Bild i dropdown -->
            <img class="dropdown-image" src="../imges/nav-man.png" alt="" />
@@ -151,62 +147,68 @@
     
      <main>
         
-       <!---- Aktiverar/länkar specifik produkt i SÖK-funktionen  --> 
-       <div id="search-modal">
-         <button id="close-btn">
-           <svg
-             xmlns="http://www.w3.org/2000/svg"
-             height="24px"
-             viewBox="0 -960 960 960"
-             width="24px"
-             fill="#D9D9D9">
-             <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-           </svg>
-         </button>
-        
-         <div id="logo-wrapper">
-           <img
+       <!---- Aktiverar specifik produkt i SÖK-funktionen  -->
+      <div id="search-modal">
+        <button id="close-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#D9D9D9"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+
+        <div id="logo-wrapper">
+          <img
             id="logo1-search-img"
             src="../imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png"
-            alt=""/>
-           <img
+            alt=""
+          />
+          <img
             id="logo2-search-img"
             src="../imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png"
-            alt=""/>
-         </div>
-         
-         <div id="searchbar-container">
-           <img id="search-img" src="../imges/image 33 (1).png" alt="" />
-           <input id="searchbar" />
-           <div id="search-result-container">
-             <ul id="categorie-ul">
-               <li><a href="#">T-shirt</a></li>
-               <li><a href="#">Hoodie</a></li>
-               <li><a href="#">Pants</a></li>
-               <li><a href="#">Accessories</a></li>
-               <li><a href="#">Jeans</a></li>
-               <li><a href="#">Shoes</a></li>
-               <li><a href="productPage.html">Cargo Pants</a></li>
-             </ul>
-             
-             <ul id="api-search-results"></ul>
-           </div>
-         </div>
-         
-         <div id="modal-products">
-           <div id="trending-product">
-             <p>Trending Products</p>
-             <img class="modal-img" src="../imges/Group.png" alt="" />
-             <img class="modal-img" src="../imges/Group-6.png" alt="" />
-           </div>
-           
-           <div id="recent-product">
-             <p>Recently Viewed</p>
-             <img class="modal-img" src="../imges/Group-10.png" alt="" />
-             <img class="modal-img" src="../imges/Group-3.png" alt="" />
-           </div>
-         </div>
-       </div>
+            alt=""
+          />
+        </div>
+
+        <div id="searchbar-container">
+          <img id="search-img" src="../imges/image 33 (1).png" alt="" />
+          <input id="searchbar" />
+          <div id="search-result-container">
+            <ul id="categorie-ul">
+              <li><a href="#">T-shirt</a></li>
+              <li><a href="#">Hoodie</a></li>
+              <li><a href="#">Pants</a></li>
+              <li><a href="#">Accessories</a></li>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Shoes</a></li>
+              <li>
+                <a id="search-result" href="productPage.html">Cargo Pants</a>
+              </li>
+            </ul>
+
+            <ul id="api-search-results"></ul>
+          </div>
+        </div>
+
+        <div id="modal-products">
+          <div id="trending-product">
+            <p>Trending Products</p>
+            <img class="modal-img" src="../imges/Group.png" alt="" />
+            <img class="modal-img" src="../imges/Group-6.png" alt="" />
+          </div>
+          <div id="recent-product">
+            <p>Recently Viewed</p>
+            <img class="modal-img" src="../imges/Group-10.png" alt="" />
+            <img class="modal-img" src="../imges/Group-3.png" alt="" />
+          </div>
+        </div>
+      </div>
 
 
        <!---- Huvudinnehåll Shoppingcart Checkout  ---->
