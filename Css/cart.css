@@ -3,6 +3,10 @@
   --primaryColor: white;
   --greenBtnColor: rgb(68, 255, 0);
 }
+
+* {
+    font-family: space grotesk;
+}
 #cart-section{
     display: flex;
     position: relative;

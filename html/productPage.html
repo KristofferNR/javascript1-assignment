@@ -15,19 +15,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
     <link rel="stylesheet" href="/Css/styles.css" />
     <link rel="stylesheet" href="/Css/productStyles.css" />
     <link rel="stylesheet" href="/Css/cart.css" />
-    <link rel="stylesheet" href="/Css/searchbar.css" />
     <link rel="stylesheet" href="../Css/navbarStyle.css" />
+    <link rel="stylesheet" href="../Css/searchbar.css" />
+
     <link rel="icon" type="image/x-icon" href="/imges/logoPage2.png" />
+
     <script src="/js/cart.js" type="module"></script>
     <script src="../js/index.js" type="module"></script>
     <script src="../js/productPage.js" type="module"></script>
-    <script src="../js/search.js" type="module"></script>
-    <script src="../js/api.js" type="module"></script>
+
     <title>product page</title>
   </head>
+  
   <body>
     <header>
       <div id="headerContainer">
@@ -35,6 +38,7 @@
         <h1>✦ Cool fashion ✦</h1>
       </div>
 
+      <!----- Navigerings-sektionen ---->
       <nav class="navbar">
         <div class="nav-header">
           <!--Ikonen för hamburgermeny-->
@@ -46,16 +50,17 @@
         </div>
 
         <ul class="nav-menu" id="navMenu">
+          <a href="/html/index.html"><img src="../imges/home.svg" /></a>
           <li><a href="#" class="nav-link" id="womanLink">Woman</a></li>
-          <li><a href="#" class="nav-link" id="new-in">NewIn</a></li>
+          <li><a href="./index.html" class="nav-link" id="new-in">NewIn</a></li>
           <li><a href="#" class="nav-link" id="manLink">Man</a></li>
 
           <!--Ikoner och länkar för desktop-->
           <div class="nav-desktop">
-            <a href="loginPage.html"><img src="../imges/person.svg" /></a>
-            <a id="search-btn"><img src="../imges/search.svg" /></a>
-            <a href="#"
-              ><img id="desktop-cart" src="../imges/shopping_cart.svg"
+            <a href="#"><img src="../imges/person.svg" /></a>
+            <a href="#"><img src="../imges/search.svg" /></a>
+            <a id="desktop-cart" href="#"
+              ><img src="../imges/shopping_cart.svg"
             /></a>
           </div>
 
@@ -63,20 +68,22 @@
           <div class="nav-img">
             <img src="../imges/person.svg" alt="" />
             <li class="nav-item">
-              <a href="loginPage.html" class="nav-link">My Account</a>
+              <a href="#" class="nav-link">My Account</a>
             </li>
           </div>
-          <div id="search-btn-menu" class="nav-img">
+
+          <div class="nav-img">
             <img src="../imges/search.svg" alt="" />
             <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
           </div>
+
           <div id="cart" class="nav-img">
             <img src="../imges/shopping_cart.svg" alt="" />
             <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
           </div>
         </ul>
 
-        <!-- Dropdown-navigering meny (woman) -->
+        <!-- Dropdown-panel -->
         <div class="dropdown-panel" id="womanDropdown">
           <button class="dropdown-close" aria-label="Stäng">✕</button>
 
@@ -107,11 +114,12 @@
               </ul>
             </div>
           </div>
+
           <!-- Bild i dropdown -->
           <img class="dropdown-image" src="../imges/nav-woman.png" alt="" />
         </div>
 
-        <!-- Dropdown-navigering meny (man) -->
+        <!-- Dropdown-panel (man) -->
         <div class="dropdown-panel" id="manDropdown">
           <button class="dropdown-close" aria-label="Stäng">✕</button>
 
@@ -119,7 +127,7 @@
             <div class="dropdown-col">
               <h4>Clothes</h4>
               <ul>
-                <li><a href="/html/category.html">T-Shirt</a></li>
+                <li><a href="category.html">T-Shirt</a></li>
                 <li><a href="#">Pants</a></li>
                 <li><a href="#">Sweatshirt</a></li>
                 <li><a href="#">Hoodie</a></li>
@@ -142,6 +150,7 @@
               </ul>
             </div>
           </div>
+
           <!-- Bild i dropdown -->
           <img class="dropdown-image" src="../imges/nav-man.png" alt="" />
         </div>
@@ -337,9 +346,11 @@
               <img src="/imges/Group-9.png" class="morelike-img" alt="" />
             </div>
           </div>
+
           <img src="/imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png" alt="" />
         </div>
       </section>
+
       <section id="Art-section">
         <div id="art">
           <img class="side-art left" src="/imges/image 33 (1).png" alt="" />
@@ -350,11 +361,13 @@
               unapologetically you.”
             </p>
           </div>
+
           <img class="side-art right" src="/imges/image 49 (1).png" alt="" />
         </div>
       </section>
     </main>
 
+    <!---- FOOTER -sektion ---->
     <footer>
       <div id="footer-list">
         <ul>

@@ -1,177 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
-
 :root {
-    --secondary-text: #9C9C9C;
-    --filter-btn: rgb(68, 255, 0);
+  --secondary-text: #9c9c9c;
+  --filter-btn: rgb(68, 255, 0);
 }
 
 * {
-    font-family: space grotesk; 
+  font-family: space grotesk;
 }
 
 section #main-category {
-    display: flex;
+  display: flex;
 }
 
 #secondary-category {
-    color: var(--secondary-text);
+  color: var(--secondary-text);
 }
- 
+
 #logo img {
-    display: flex;
-    align-items: center;
-    width: 150px;
-    gap: 0;
-    padding: 0;
-} 
+  display: flex;
+  align-items: center;
+  width: 150px;
+  gap: 0;
+  padding: 0;
+}
 
 @media screen and (min-width: 375px) {
-
-#category-title {
+  #category-title {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
     padding: 1rem;
     font-size: 1.5rem;
-}
+  }
 
-#category-container {
+  #category-container {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
     gap: 1.2rem;
     margin: 1rem;
-}
+  }
 
-#category-container div img {
-        height: 200px;
-        
-    } 
+  #category-container div img {
+    height: 200px;
+    object-fit: contain;
+  }
 }
 
 #category-container div {
-    display: grid;
-    background: white;
-    color: black;
-    border-radius: 1%;
-    margin-top: 0px;
-    text-align: center;
-    padding: 0px;
+  display: grid;
+  background: white;
+  color: black;
+  border-radius: 1%;
+  margin-top: 0px;
+  text-align: center;
+  padding: 0px;
 }
 
 #category-container div:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .product-name-price {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-name-price p {
-    margin: 0.4rem;
-    word-wrap: break-word;
+  margin: 0.4rem;
+  word-wrap: break-word;
 }
 
 @media screen and (min-width: 667px) {
+  #category-title {
+    font-size: 2rem;
+  }
 
-    #category-title {
-        font-size: 2rem;
-    }
-
-    #category-container div img {
-        height: 250px;
-    }
+  #category-container div img {
+    height: 250px;
+  }
 }
 
 @media screen and (min-width: 875px) {
-
-    #category-container {
-        grid-template-columns: auto auto auto auto;
-    }
+  #category-container {
+    grid-template-columns: auto auto auto auto;
+  }
 }
 
 .pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0px;
 }
 
 .pagination a {
-    display: inline-block;
-    margin: 0 12px;
-    cursor: pointer;
-    text-align: center;
-    color: white;
-    text-decoration: none;
+  display: inline-block;
+  margin: 0 12px;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  text-decoration: none;
 }
 
 .page-link.active {
-    padding: 0.3rem;
-    border: solid;
-    border-radius: 30%;
+  padding: 0.3rem;
+  border: solid;
+  border-radius: 30%;
 }
 
 #prev-btn {
-    display: inline-flex;
-    align-items: center;
-    background-color: black;
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 #prev-btn:hover {
-    background-color: white;
-    border-radius: 30%;
-    color: black;
+  background-color: white;
+  border-radius: 30%;
+  color: black;
 }
 
 #next-btn {
-    display: inline-flex;
-    align-items: center;
-    background-color: black;
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 #next-btn:hover {
-    background-color: white;
-    border-radius: 30%;
-    color: black;
+  background-color: white;
+  border-radius: 30%;
+  color: black;
 }
 
 #filtering {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .filter-btn {
-    border-radius: 10%;
-    cursor: pointer;
-    border-color: white;
-    padding: 0.3rem;
-    border-style: solid;
+  border-radius: 10%;
+  cursor: pointer;
+  border-color: white;
+  padding: 0.3rem;
+  border-style: solid;
 }
 
 .filter-btn:hover {
-    background-color: black;
-    color: white;
-    border-color: black;
+  background-color: black;
+  color: white;
+  border-color: black;
 }
 
 .filter-btn.active {
-    background-color: var(--filter-btn);
-    color: black;
-    border: var(--filter-btn);
+  background-color: var(--filter-btn);
+  color: black;
+  border: var(--filter-btn);
 }
