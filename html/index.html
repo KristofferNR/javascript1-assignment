@@ -3,28 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
       href="https://fonts.googleapis.com/css?family=Space Grotesk"
       rel="stylesheet"
     />
     <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
     />
     <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="../Css/styles.css" />
+
+    <link rel="stylesheet" href="/Css/styles.css" />
     <link rel="stylesheet" href="/Css/cart.css" />
-    <link rel="stylesheet" href="../Css/searchbar.css" />
-    <link rel="stylesheet" href="../Css/navbarStyle.css" />
+    <link rel="stylesheet" href="/Css/searchbar.css" />
+    <link rel="stylesheet" href="/Css/navbarStyle.css" />
     <link rel="icon" type="image/x-icon" href="/imges/logoPage.png" />
+
     <script src="/js/cart.js" type="module"></script>
-    <script src="../js/index.js" type="module"></script>
+    <script src="/js/index.js" type="module"></script>
+    <script src="/js/search.js" type="module"></script>
+    <script src="/js/api.js" type="module"></script>
+
     <title>Cool fashion</title>
-    <script src="../js/search.js" type="module"></script>
-    <script src="../js/api.js" type="module"></script>
   </head>
 
   <body>
@@ -33,6 +37,8 @@
         <img id="headerImg" src="../imges/image 1.png" alt="" />
         <h1>✦ Cool fashion ✦</h1>
       </div>
+
+      <!----- Navigerings-sektionen ---->
 
       <nav class="navbar">
         <div class="nav-header">
@@ -45,37 +51,40 @@
         </div>
 
         <ul class="nav-menu" id="navMenu">
+          <a href="/html/index.html"><img src="../imges/home.svg" /></a>
           <li><a href="#" class="nav-link" id="womanLink">Woman</a></li>
           <li><a href="#" class="nav-link" id="new-in">NewIn</a></li>
           <li><a href="#" class="nav-link" id="manLink">Man</a></li>
-        
-        <!--Ikoner och länkar för desktop-->
-        <div class="nav-desktop">
-          <a href="loginPage.html"><img src="../imges/person.svg" /></a>
-          <a id="search-btn"><img src="../imges/search.svg" /></a>
-          <a href="#"
-            ><img id="desktop-cart" src="../imges/shopping_cart.svg"
-          /></a>
-        </div>
 
-        <!--Ikoner och länkar för hamburgermeny-->
-        <div class="nav-img">
-          <img src="../imges/person.svg" alt="" />
-          <li class="nav-item">
-            <a href="loginPage.html" class="nav-link">My Account</a>
-          </li>
-        </div>
-        <div id="search-btn-menu" class="nav-img">
-          <img src="../imges/search.svg" alt="" />
-          <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
-        </div>
-        <div id="cart" class="nav-img">
-          <img src="../imges/shopping_cart.svg" alt="" />
-          <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
-        </div>
+          <!--Ikoner och länkar för desktop-->
+          <div class="nav-desktop">
+            <a href="loginPage.html"><img src="../imges/person.svg" /></a>
+            <a id="search-btn"><img src="../imges/search.svg" /></a>
+            <a href="#"
+              ><img id="desktop-cart" src="../imges/shopping_cart.svg"
+            /></a>
+          </div>
+
+          <!--Ikoner och länkar för hamburgermeny-->
+          <div class="nav-img">
+            <img src="../imges/person.svg" alt="" />
+            <li class="nav-item">
+              <a href="loginPage.html" class="nav-link">My Account</a>
+            </li>
+          </div>
+
+          <div id="search-btn-menu" class="nav-img">
+            <img src="../imges/search.svg" alt="" />
+            <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
+          </div>
+
+          <div id="cart" class="nav-img">
+            <img src="../imges/shopping_cart.svg" alt="" />
+            <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+          </div>
         </ul>
 
-        <!-- Dropdown-navigering meny (woman) -->
+        <!-- Dropdown-panel (woman) -->
         <div class="dropdown-panel" id="womanDropdown">
           <button class="dropdown-close" aria-label="Stäng">✕</button>
 
@@ -89,6 +98,7 @@
                 <li><a href="#"></a>Hoodie</li>
               </ul>
             </div>
+
             <div class="dropdown-col">
               <h4>Shoes</h4>
               <ul>
@@ -97,6 +107,7 @@
                 <li><a href="#"></a>Loafers</li>
               </ul>
             </div>
+
             <div class="dropdown-col">
               <h4>Accessories</h4>
               <ul>
@@ -106,11 +117,12 @@
               </ul>
             </div>
           </div>
+
           <!-- Bild i dropdown -->
           <img class="dropdown-image" src="../imges/nav-woman.png" alt="" />
         </div>
 
-        <!-- Dropdown-navigering meny (man) -->
+        <!-- Dropdown-panel (man) -->
         <div class="dropdown-panel" id="manDropdown">
           <button class="dropdown-close" aria-label="Stäng">✕</button>
 
@@ -124,6 +136,7 @@
                 <li><a href="#"></a>Hoodie</li>
               </ul>
             </div>
+
             <div class="dropdown-col">
               <h4>Shoes</h4>
               <ul>
@@ -132,6 +145,7 @@
                 <li><a href="#"></a>Loafers</li>
               </ul>
             </div>
+
             <div class="dropdown-col">
               <h4>Accessories</h4>
               <ul>
@@ -141,11 +155,14 @@
               </ul>
             </div>
           </div>
+
           <!-- Bild i dropdown -->
           <img class="dropdown-image" src="../imges/nav-man.png" alt="" />
         </div>
       </nav>
     </header>
+
+    <!-- Gör varukorgen aktiv på alla sidor -->
     <section id="cart-section">
       <div id="cart-continer">
         <button id="exit-cart">X</button>
@@ -155,7 +172,9 @@
         </button>
       </div>
     </section>
+
     <main>
+      <!---- Aktiverar specifik produkt i SÖK-funktionen  -->
       <div id="search-modal">
         <button id="close-btn">
           <svg
@@ -170,6 +189,7 @@
             />
           </svg>
         </button>
+
         <div id="logo-wrapper">
           <img
             id="logo1-search-img"
@@ -182,6 +202,7 @@
             alt=""
           />
         </div>
+
         <div id="searchbar-container">
           <img id="search-img" src="../imges/image 33 (1).png" alt="" />
           <input id="searchbar" />
@@ -197,9 +218,11 @@
                 <a id="search-result" href="productPage.html">Cargo Pants</a>
               </li>
             </ul>
+
             <ul id="api-search-results"></ul>
           </div>
         </div>
+
         <div id="modal-products">
           <div id="trending-product">
             <p>Trending Products</p>
@@ -213,6 +236,8 @@
           </div>
         </div>
       </div>
+
+      <!---- HERO-sektionen och bild-galleri ---->
       <section id="hero">
         <div id="hero-image">
           <div id="crop">
@@ -224,6 +249,7 @@
             />
           </div>
         </div>
+
         <div id="hero-text">
           <p>
             “Cool Fashion is where everyday style becomes self-expression. We
@@ -233,6 +259,7 @@
           </p>
         </div>
       </section>
+
       <section id="main">
         <div id="bentoContainer">
           <img
@@ -274,6 +301,8 @@
         </div>
       </section>
     </main>
+
+    <!---- Bild-karusellen i footer-sektionen ---->
     <footer>
       <!-- karusell -->
       <div class="carousel">
@@ -284,21 +313,25 @@
               <img src="../imges/group-4.png" alt="carousel image" />
             </div>
           </div>
+
           <div class="carousel-item">
             <div>
               <img src="../imges/group-5.png" alt="carousel image" />
             </div>
           </div>
+
           <div class="carousel-item">
             <div>
               <img src="../imges/group-6.png" alt="carousel image" />
             </div>
           </div>
+
           <div class="carousel-item">
             <div>
               <img src="../imges/group-7.png" alt="carousel image" />
             </div>
           </div>
+
           <div class="carousel-item">
             <div>
               <img src="../imges/group-8.png" alt="carousel image" />
@@ -306,7 +339,7 @@
           </div>
         </div>
       </div>
-      <footer>
+
       <div id="footer-list">
         <ul>
           <li>Customer service</li>
@@ -315,12 +348,14 @@
           <p>|</p>
           <li>Cookies</li>
         </ul>
+
         <ul>
           <li>Purchase conditions</li>
           <p>|</p>
           <li>Privacy policy</li>
         </ul>
       </div>
+
       <div id="social-media">
         <button class="social-media-btn">
           <i class="fa fa-instagram"></i>

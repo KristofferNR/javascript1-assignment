@@ -1,341 +1,383 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Space Grotesk' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/Css/styles.css">
-    <link rel="stylesheet" href="/Css/cart.css">
-    <link rel="stylesheet" href="/Css/category.css">
-    <link rel="stylesheet" href="/Css/navbarStyle.css">
-    <link rel="stylesheet" href="/Css/searchbar.css">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Space Grotesk"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/Css/styles.css" />
+    <link rel="stylesheet" href="/Css/cart.css" />
+    <link rel="stylesheet" href="/Css/category.css" />
+    <link rel="stylesheet" href="/Css/navbarStyle.css" />
+    <link rel="stylesheet" href="/Css/searchbar.css" />
 
     <script src="../js/index.js" type="module"></script>
-    <script src="/js/category.js" type="module"></script>  
+    <script src="/js/category.js" type="module"></script>
     <script src="/js/search.js" defer></script>
 
     <title>Cool fashion</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div id="headerContainer">
-            <img id="headerImg" src="../imges/image 1.png" alt="">
-            <a href="/html/index.html">
-                <h1>✦ Cool fashion ✦ </h1>
-            </a>
+      <div id="headerContainer">
+        <img id="headerImg" src="../imges/image 1.png" alt="" />
+        <a href="/html/index.html">
+          <h1>✦ Cool fashion ✦</h1>
+        </a>
+      </div>
+      <nav class="navbar">
+        <div class="nav-header">
+          <!--Ikonen för hamburgermeny-->
+          <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
         </div>
-         <nav class="navbar">
-             <div class="nav-header">
-                  <!--Ikonen för hamburgermeny-->
-                 <div class="hamburger" id="hamburger">
-                     <span class="bar"></span>
-                     <span class="bar"></span>
-                     <span class="bar"></span>
-                 </div>
-             </div>
 
-             <ul class="nav-menu" id="navMenu">
-                 <li><a href="#" class="nav-link" id="womanLink">Woman</a></li>
-                 <li><a href="#" class="nav-link" id="new-in">NewIn</a></li>
-                 <li><a href="#" class="nav-link" id="manLink">Man</a></li>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#" class="nav-link" id="womanLink">Woman</a></li>
+          <li><a href="#" class="nav-link" id="new-in">NewIn</a></li>
+          <li><a href="#" class="nav-link" id="manLink">Man</a></li>
 
-                 <!--Ikoner och länkar för desktop-->
-                 <div class="nav-desktop">
-                     <a href="#"><img src="../imges/person.svg"></a>
-                     <a href="#"><img src="../imges/search.svg"></a>
-                     <a href="#"><img id= "desktop-cart"src="../imges/shopping_cart.svg"></a>
-                 </div>
+          <!--Ikoner och länkar för desktop-->
+          <div class="nav-desktop">
+            <a href="#"><img src="../imges/person.svg" /></a>
+            <a href="#"><img src="../imges/search.svg" /></a>
+            <a href="#"
+              ><img id="desktop-cart" src="../imges/shopping_cart.svg"
+            /></a>
+          </div>
 
-                 <!--Ikoner och länkar för hamburgermeny-->
-                 <div class="nav-img">
-                     <img src="../imges/person.svg" alt="">
-                     <li class="nav-item"><a href="#" class="nav-link">My Account</a></li>
-                 </div>
-                 <div class="nav-img">
-                     <img src="../imges/search.svg" alt="">
-                     <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
-                 </div>
-                 <div id= "cart"class="nav-img">
-                     <img src="../imges/shopping_cart.svg" alt="">
-                     <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
-                 </div>
-             </ul>
+          <!--Ikoner och länkar för hamburgermeny-->
+          <div class="nav-img">
+            <img src="../imges/person.svg" alt="" />
+            <li class="nav-item">
+              <a href="#" class="nav-link">My Account</a>
+            </li>
+          </div>
+          <div class="nav-img">
+            <img src="../imges/search.svg" alt="" />
+            <li class="nav-item"><a href="#" class="nav-link">Search</a></li>
+          </div>
+          <div id="cart" class="nav-img">
+            <img src="../imges/shopping_cart.svg" alt="" />
+            <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+          </div>
+        </ul>
 
-             <!-- Dropdown-navigering meny (woman) -->
-             <div class="dropdown-panel" id="womanDropdown">
-                 <button class="dropdown-close" aria-label="Stäng">✕</button>
+        <!-- Dropdown-navigering meny (woman) -->
+        <div class="dropdown-panel" id="womanDropdown">
+          <button class="dropdown-close" aria-label="Stäng">✕</button>
 
-                 <div class="dropdown-columns">
-                     <div class="dropdown-col">
-                         <h4>Clothes</h4>
-                         <ul>
-                             <li><a href="#"></a>T-Shirt</li>
-                             <li><a href="#"></a>Pants</li>
-                             <li><a href="#"></a>Sweatshirt</li>
-                             <li><a href="#"></a>Hoodie</li>
-                         </ul>
-                     </div>
-                     <div class="dropdown-col">
-                         <h4>Shoes</h4>
-                         <ul>
-                             <li><a href="#"></a>Boots</li>
-                             <li><a href="#"></a>Sneakers</li>
-                             <li><a href="#"></a>Loafers</li>
-                         </ul>
-                     </div>
-                     <div class="dropdown-col">
-                         <h4>Accessories</h4>
-                         <ul>
-                             <li><a href="#"></a>Headwear</li>
-                             <li><a href="#"></a>Bags</li>
-                             <li><a href="#"></a>Jewelry</li>
-                         </ul>
-                     </div>
-                 </div>
-                 <!-- Bild i dropdown -->
-                 <img class="dropdown-image" src="../imges/nav-woman.png" alt="">
-             </div>
+          <div class="dropdown-columns">
+            <div class="dropdown-col">
+              <h4>Clothes</h4>
+              <ul>
+                <li><a href="#"></a>T-Shirt</li>
+                <li><a href="#"></a>Pants</li>
+                <li><a href="#"></a>Sweatshirt</li>
+                <li><a href="#"></a>Hoodie</li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Shoes</h4>
+              <ul>
+                <li><a href="#"></a>Boots</li>
+                <li><a href="#"></a>Sneakers</li>
+                <li><a href="#"></a>Loafers</li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Accessories</h4>
+              <ul>
+                <li><a href="#"></a>Headwear</li>
+                <li><a href="#"></a>Bags</li>
+                <li><a href="#"></a>Jewelry</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Bild i dropdown -->
+          <img class="dropdown-image" src="../imges/nav-woman.png" alt="" />
+        </div>
 
-             <!-- Dropdown-navigering meny (man) -->
-             <div class="dropdown-panel" id="manDropdown">
-                 <button class="dropdown-close" aria-label="Stäng">✕</button>
+        <!-- Dropdown-navigering meny (man) -->
+        <div class="dropdown-panel" id="manDropdown">
+          <button class="dropdown-close" aria-label="Stäng">✕</button>
 
-                 <div class="dropdown-columns">
-                     <div class="dropdown-col">
-                         <h4>Clothes</h4>
-                         <ul>
-                             <li><a href="#"></a>T-Shirt</li>
-                             <li><a href="#"></a>Pants</li>
-                             <li><a href="#"></a>Sweatshirt</li>
-                             <li><a href="#"></a>Hoodie</li>
-                         </ul>
-                     </div>
-                     <div class="dropdown-col">
-                         <h4>Shoes</h4>
-                         <ul>
-                             <li><a href="#"></a>Boots</li>
-                             <li><a href="#"></a>Sneakers</li>
-                             <li><a href="#"></a>Loafers</li>
-                         </ul>
-                     </div>
-                     <div class="dropdown-col">
-                         <h4>Accessories</h4>
-                         <ul>
-                             <li><a href="#"></a>Headwear</li>
-                             <li><a href="#"></a>Bags</li>
-                             <li><a href="#"></a>Jewelry</li>
-                         </ul>
-                     </div>
-                 </div>
-                 <!-- Bild i dropdown -->
-                 <img class="dropdown-image" src="../imges/nav-man.png" alt="">
-             </div>
-         </div>
-     </nav>   
+          <div class="dropdown-columns">
+            <div class="dropdown-col">
+              <h4>Clothes</h4>
+              <ul>
+                <li><a href="#"></a>T-Shirt</li>
+                <li><a href="#"></a>Pants</li>
+                <li><a href="#"></a>Sweatshirt</li>
+                <li><a href="#"></a>Hoodie</li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Shoes</h4>
+              <ul>
+                <li><a href="#"></a>Boots</li>
+                <li><a href="#"></a>Sneakers</li>
+                <li><a href="#"></a>Loafers</li>
+              </ul>
+            </div>
+            <div class="dropdown-col">
+              <h4>Accessories</h4>
+              <ul>
+                <li><a href="#"></a>Headwear</li>
+                <li><a href="#"></a>Bags</li>
+                <li><a href="#"></a>Jewelry</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Bild i dropdown -->
+          <img class="dropdown-image" src="../imges/nav-man.png" alt="" />
+        </div>
+      </nav>
     </header>
     <section id="cart-section">
-    <div id="cart-continer">
-    <button id="exit-cart">X</button>
-    <div id="cart-content">
+      <div id="cart-continer">
+        <button id="exit-cart">X</button>
+        <div id="cart-content"></div>
+        <button id="checkoutBtn">Checkout</button>
+      </div>
+    </section>
 
-    </div>
-    <button id="checkoutBtn">Checkout</button>
-    </div>
-</section>
     <main>
-        <section id="main-category">
-            <!--Kategori titel-->
-            <div id="category-title">
-                <p>T-SHIRTS</p>
-                <p id="secondary-category">FOR MEN</p>
-                <div id="logo">
-                    <img src="/imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png">
-                </div>
-            </div>
-            <!--Filtrering-->
-            <div id="filtering">
-                <button class="filter-btn" data-filter="all">Show All</button>
-                <button class="filter-btn" data-filter="black"">Black</button>
-                <button class="filter-btn" data-filter="white">White</button>
-                <button class="filter-btn" data-filter="grey">Grey</button>
-                <button class="filter-btn" data-filter="green">Green</button>
-            </div>
-            <div id="category-page">
-                <div id="category-container"> 
-                    <div class="card black"><img src="/imges/image 21.png">
-                        <div class="product-name-price">
-                            <p class="title">Matrix Wash Tee</p>
-                            <p class = "price">39.99$</p>
-                            
-                        </div>
-                    </div>
-                    <div class="card grey"><img src="/imges/Group-6.png">
-                         <div class="product-name-price">
-                            <p class="title">Grey Tee</p>
-                            <p class = "price">29.99$</p>
-                            
-
-                        </div>
-                    </div>
-                    <div class="card white"><img src="/imges/Group-11.png">
-                         <div class="product-name-price">
-                            <p class="title">Stud Tee</p>
-                            <p class = "price">49.99$</p>
-                        </div>
-                    </div>
-                    <div class="card grey"><img src="/imges/image 20.png">
-                         <div class="product-name-price">
-                            <p class="title">All Star Wash Tee</p>
-                            <p class = "price">39.99$</p>
-                        </div>
-                    </div>
-                    <div class="card black"><img src="/imges/image 23.png">
-                         <div class="product-name-price">
-                            <p class="title">Strawberry Jaws Tee</p>
-                            <p class = "price">49.99$</p>
-                        </div>
-                    </div>
-                    <div class="card black"><img src="/imges/tshirt.png">
-                        <div class="product-name-price">
-                            <p class="title">Print Tee</p>
-                            <p class = "price">35.9$</p>
-                        </div>
-                    </div>
-                    <div class="card grey"><img src="/imges/Rectangle.png">
-                        <div class="product-name-price">
-                            <p class="title" >Spiraling Wash Tee</p>
-                            <p class = "price">45.99$</p>
-                        </div>
-                    </div>
-                    <div class="card grey"><img src="/imges/carharrt.png">
-                        <div class="product-name-price">
-                            <p class="title">Carharrt Tee</p>
-                            <p class = "price">56.99$</p>
-                        </div>
-                    </div>
-                     <div class="card white green"><img src="/imges/ownstyle.png">
-                        <div class="product-name-price">
-                            <p class="title">Green Print Tee</p>
-                            <p class = "price">34.99$</p>
-                        </div>
-                    </div>
-                    <div class="card green"><img src="/imges/greentee.png">
-                         <div class="product-name-price">
-                            <p class="title">With Love Tee</p>
-                            <p class = "price">25.99$</p>
-                        </div>
-                    </div>
-                    <div class="card black"><img src="/imges/tshirt.png">
-                         <div class="product-name-price">
-                            <p class="title">Print Wash Tee</p>
-                            <p class = "price">39.99$</p>
-                        </div>
-                    </div>
-                    <div class="card grey"><img src="/imges/sinnerstee.png">
-                         <div class="product-name-price">
-                            <p class="title">Sinners Tee</p>
-                            <p class = "price">29.99$</p>
-                        </div>
-                    </div>
-                    <div class="card white"><img src="/imges/fluketee.jpg">
-                         <div class="product-name-price">
-                            <p class="title">Fluke Tee</p>
-                            <p class = "price">34.99$</p>
-                        </div>
-                    </div>
-                    <div class="card white"><img src="/imges/alaska.png">
-                        <div class="product-name-price">
-                            <p class="title">Alaska Tee</p>
-                            <p class = "price">25.99$</p>
-                        </div>
-                    </div>
-                    <div class="card white"><img src="/imges/aura.jpg">
-                        <div class="product-name-price">
-                            <p class="title">Aura Tee</p>
-                            <p class = "price">29.99$</p>
-                        </div>
-                    </div>
-                    <div class="card black"><img src="/imges/reality.jpg">
-                        <div class="product-name-price">
-                            <p class="title">Reality Tee</p>
-                            <p class = "price">43.99$</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- pagination -->
-            <div class="pagination">
-                <button id="prev-btn"><</button>
-                        <a class="page-link active" href="" data-page="1">1</a>
-                        <a class="page-link" href="" data-page="2">2</a>
-                        <a class="page-link" href="" data-page="3">3</a>
-                <button id="next-btn">></button>
-            </div>
+      <section id="main-category">
+        <!--Kategori titel-->
+        <div id="category-title">
+          <p>T-SHIRTS</p>
+          <p id="secondary-category">FOR MEN</p>
+          <div id="logo">
+            <img src="/imges/ChatGPT Image 23 jan. 2026 12_25_24 1.png" />
+          </div>
+        </div>
+        <!--Filtrering-->
+        <div id="filtering">
+          <button class="filter-btn" data-filter="all">Show All</button>
+          <button class="filter-btn" data-filter="black">Black</button>
+          <button class="filter-btn" data-filter="white">White</button>
+          <button class="filter-btn" data-filter="grey">Grey</button>
+          <button class="filter-btn" data-filter="green">Green</button>
+        </div>
+        <div id="category-page">
+          <div id="category-container">
+            <div class="card black">
+              <img src="/imges/image 21.png" alt="Matrix Wash Tee" />
+              <div class="product-name-price">
+                <p class="title">Matrix Wash Tee</p>
+                <p class="price">39.99$</p>
+              </div>
             </div>
 
-        </section>
+            <div class="card grey">
+              <img src="/imges/Group-6.png" alt="Grey Tee" />
+              <div class="product-name-price">
+                <p class="title">Grey Tee</p>
+                <p class="price">29.99$</p>
+              </div>
+            </div>
+            <div class="card white">
+              <img src="/imges/Group-11.png" alt="Stud Tee" />
+              <div class="product-name-price">
+                <p class="title">Stud Tee</p>
+                <p class="price">49.99$</p>
+              </div>
+            </div>
+            <div class="card grey">
+              <img src="/imges/image 20.png" alt="All Star Wash Tee" />
+              <div class="product-name-price">
+                <p class="title">All Star Wash Tee</p>
+                <p class="price">39.99$</p>
+              </div>
+            </div>
+            <div class="card black">
+              <img src="/imges/image 23.png" alt="Strawberry Jaws Tee" />
+              <div class="product-name-price">
+                <p class="title">Strawberry Jaws Tee</p>
+                <p class="price">49.99$</p>
+              </div>
+            </div>
+            <div class="card black">
+              <img src="/imges/tshirt.png" alt="Print Tee" />
+              <div class="product-name-price">
+                <p class="title">Print Tee</p>
+                <p class="price">35.9$</p>
+              </div>
+            </div>
+            <div class="card grey">
+              <img src="/imges/Rectangle.png" alt="Spiraling Wash Tee" />
+              <div class="product-name-price">
+                <p class="title">Spiraling Wash Tee</p>
+                <p class="price">45.99$</p>
+              </div>
+            </div>
+            <div class="card grey">
+              <img src="/imges/carharrt.png" alt="Carharrt Tee" />
+              <div class="product-name-price">
+                <p class="title">Carharrt Tee</p>
+                <p class="price">56.99$</p>
+              </div>
+            </div>
+            <div class="card white green">
+              <img src="/imges/ownstyle.png" alt="Green Print Tee" />
+              <div class="product-name-price">
+                <p class="title">Green Print Tee</p>
+                <p class="price">34.99$</p>
+              </div>
+            </div>
+            <div class="card green">
+              <img src="/imges/greentee.png" alt="With Love Tee" />
+              <div class="product-name-price">
+                <p class="title">With Love Tee</p>
+                <p class="price">25.99$</p>
+              </div>
+            </div>
+            <div class="card black">
+              <img src="/imges/tshirt.png" alt="Print Wash Tee" />
+              <div class="product-name-price">
+                <p class="title">Print Wash Tee</p>
+                <p class="price">39.99$</p>
+              </div>
+            </div>
+            <div class="card grey">
+              <img src="/imges/sinnerstee.png" alt="Sinners Tee" />
+              <div class="product-name-price">
+                <p class="title">Sinners Tee</p>
+                <p class="price">29.99$</p>
+              </div>
+            </div>
+            <div class="card white">
+              <img src="/imges/fluketee.jpg" alt="Fluke Tee" />
+              <div class="product-name-price">
+                <p class="title">Fluke Tee</p>
+                <p class="price">34.99$</p>
+              </div>
+            </div>
+            <div class="card white">
+              <img src="/imges/alaska.png" alt="Alaska Tee" />
+              <div class="product-name-price">
+                <p class="title">Alaska Tee</p>
+                <p class="price">25.99$</p>
+              </div>
+            </div>
+            <div class="card white">
+              <img src="/imges/aura.jpg" alt="Aura Tee" />
+              <div class="product-name-price">
+                <p class="title">Aura Tee</p>
+                <p class="price">29.99$</p>
+              </div>
+            </div>
+            <div class="card black">
+              <img src="/imges/reality.jpg" alt="Reality Tee" />
+              <div class="product-name-price">
+                <p class="title">Reality Tee</p>
+                <p class="price">43.99$</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- pagination -->
+        <div class="pagination">
+          <button id="prev-btn"><</button>
+          <a class="page-link active" href="" data-page="1">1</a>
+          <a class="page-link" href="" data-page="2">2</a>
+          <a class="page-link" href="" data-page="3">3</a>
+          <button id="next-btn">></button>
+        </div>
+      </section>
     </main>
+
     <footer>
-        <!-- karusell -->
-        <div class="carousel">
-            <p>Collections</p>
-            <div class="carousel-gallery">
-                <div class="carousel-item">
-                    <div>
-                        <img src="../imges/group-4.png" alt="carousel image" height="200px;">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div>
-                        <img src="../imges/group-5.png" alt="carousel image" height="200px;">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div>
-                        <img src="../imges/group-6.png" alt="carousel image" height="200px">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div>
-                        <img src="../imges/group-7.png" alt="carousel image" height="200px;">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div>
-                        <img src="../imges/group-8.png" alt="carousel image" height="200px;">
-                    </div>
-                </div>
+      <!-- karusell -->
+      <div class="carousel">
+        <p>Collections</p>
+        <div class="carousel-gallery">
+          <div class="carousel-item">
+            <div>
+              <img
+                src="../imges/group-4.png"
+                alt="carousel image"
+                height="200px;"
+              />
             </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img
+                src="../imges/group-5.png"
+                alt="carousel image"
+                height="200px;"
+              />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img
+                src="../imges/group-6.png"
+                alt="carousel image"
+                height="200px"
+              />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img
+                src="../imges/group-7.png"
+                alt="carousel image"
+                height="200px;"
+              />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img
+                src="../imges/group-8.png"
+                alt="carousel image"
+                height="200px;"
+              />
+            </div>
+          </div>
         </div>
-        </div>
-        <div id="footer-list">
-            <ul>
-                <li>Customer service</li>
-                <p>|</p>
-                <li>Payment</li>
-                <p>|</p>
-                <li>Cookies</li>
-            </ul>
-            <ul>
-                <li>Purchase conditions</li>
-                <p>|</p>
-                <li>Privacy policy</li>
-            </ul>
-        </div>
-        <div id="social-media">
-            <button class="social-media-btn">
-                <i class="fa fa-instagram"></i>
-            </button>
-            <button class="social-media-btn">
-                <i class="fa fa-twitter"></i>
-            </button>
-        </div>
-        </div>
+      </div>
+
+      <div id="footer-list">
+        <ul>
+          <li>Customer service</li>
+          <p>|</p>
+          <li>Payment</li>
+          <p>|</p>
+          <li>Cookies</li>
+        </ul>
+        <ul>
+          <li>Purchase conditions</li>
+          <p>|</p>
+          <li>Privacy policy</li>
+        </ul>
+      </div>
+
+      <div id="social-media">
+        <button class="social-media-btn">
+          <i class="fa fa-instagram"></i>
+        </button>
+        <button class="social-media-btn">
+          <i class="fa fa-twitter"></i>
+        </button>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
